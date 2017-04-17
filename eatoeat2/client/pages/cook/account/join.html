@@ -1,0 +1,52 @@
+<div ng-controller="cook_register">
+
+<div ng-include="'pages/inc/header.html'" class="common-header" ng-init="cook_login_check_for_cookie()"></div>
+
+<div class="container" ng-controller="cook_register">
+
+	<div class="user-join-page w-shadow">
+		<div class="form-display">
+			<h2 class="page-name">Cook Account
+			<p class="caption">Join to have awesome food, and save your time to cook</p>
+			</h2>
+			<div class="activity">
+				<ul class="buttons">
+					<li class="list active"><a href="#/cook_login" class="link">Login</a></li>
+					<li class="list"><a href="#/cook_create" class="link">Sign up</a></li>
+				</ul>
+
+				<p class="caption">Enter your email and password to <b>login</b></p>
+				<div class="form-field">
+					<div class="field-fillup">
+						<label class="label required">Email</label>
+						<input type="text" name="" class="input-box" placeholder="Your Email" ng-model="cook_login.email">
+					</div>
+
+					<div class="field-fillup">
+						<label class="label required">Password</label>
+						<input type="password" name="" class="input-box" placeholder="Your Password" ng-model="cook_login.password">
+					</div>
+				</div>
+
+				<p ng-show="after_success_login_message" style="font-size:12px;color:green">Login Successfull !!! <br><b>Redirecting You....</b></p>
+				<p ng-show="after_failed_login_message" style="font-size:12px;color:red">Login Failed .! <b>Try Again.!</b></p>
+				<p ng-show="cook_status" style="font-size:12px;color:red">Your Account has been deactivated.! <br><b>Please contact Administrator.!</b></p>
+
+
+				<div class="switch-btn">
+					<div class="list padding-20px"><a href="#/forgot_cook" class="forgot">Forgot your password ?</a></div>
+					<div class="list padding-20px"><input type="submit" name="" class="submit-btn" value="Log in" ng-click="cook_login_check(cook_login)"></div>
+				</div>
+
+				<!-- <div class="external-button">
+					<a href="#0" class="facebook"><span class="icon"><i class="fa fa-facebook"></i></span>Sign in with <b>Facebook</b></a>
+					<a href="#0" class="google"><span class="icon"><i class="fa fa-google-plus"></i></span>Sign in with <b>Google +</b></a>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+</div>

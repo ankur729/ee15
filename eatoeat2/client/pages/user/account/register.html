@@ -1,0 +1,31 @@
+	<style>
+	
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+
+}
+	</style>
+<div id="loading-bar-container"></div>
+<div ng-include="'pages/inc/header.html'" class="common-header" ng-cloak></div>
+
+<div class="container">
+	<div class="user-join-page w-shadow">
+		<div class="form-display">
+			<h2 class="page-name">User Account
+			<p class="caption">Enter your email and password to <b>Register</b></p>
+			</h2>
+			<div class="activity">
+				<ul class="buttons">
+					<li class="list"><a href="#/user_login" class="link">Login</a></li>
+					<li class="list active"><a href="#/user_create" class="link">Sign up</a></li>
+				</ul>
+
+				<p class="caption">Enter your detail to <b>create</b> your account</p>
+				<div ng-include="'pages/user/account/register-area.html'"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-include="'pages/inc/footer.html'"></div>
+
+

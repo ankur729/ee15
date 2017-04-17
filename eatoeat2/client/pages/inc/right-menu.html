@@ -1,0 +1,101 @@
+<div  ng-controller="right_menu_controller" ng-init="login_logout_button_check()">
+
+<div class="right-menu-slide" ng-controller="user_register" ng-init="fetch_cart()">
+
+	<div class="more-food-list" ng-init="fetch_all_cuisine()">
+		<div class="box-model">
+			<h4 class="national-name">Food Menu {{pp}} <i class="fa fa-close close-food-menu"></i></h4>
+			<ul class="cat-listing">
+				<li class="cat-list">
+					<h6 class="cat-name">Indian</h6>
+					<ul class="sub-inner">
+						<li class="inner-list" ng-repeat="cuisine in view_cuisine_details_user">
+							
+							
+							<a href="#0" class="inner-link">{{cuisin}}</a>
+							
+							</li>
+					
+					</ul>
+				</li>
+				<li class="cat-list">
+					<h6 class="cat-name">Italian</h6>
+					<ul class="sub-inner">
+						<li class="inner-list"><a href="#0" class="inner-link">Punjabi</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Rajasthani</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+						<li class="inner-list"><a class="inner-link view-more">View More</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">South Indian</a></li>
+						<li class="inner-list"><a href="#0" class="inner-link">Gujrati</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="right-panel" ng-init="get_details_for_logged_in_user_right_menu()">
+		<!-- user detail start here -->
+	
+		<div class="user-detail">
+			
+			<h2 class="user-name"><a href="#/my_profile_update" style="color: #FFF;font-weight: bolder">	 Hi, {{u_left_detail.name}} </a><i class="fa fa-angle-left close-menu" aria-hidden="true"></i></h2>
+			<span class="email">{{u_left_detail.email}}</span>
+		</div>
+		
+		<!-- user detail end here -->
+		<ul class="main-menu" >
+			<li class="menu-list">
+				<h4 class="section-name">Food Menu</h4>
+				<ul class="sub-cat">
+					<li class="sub-cat-list" ng-repeat="cuisine in view_cuisine_details_user"><a href="#0" class="sub-cat-link">{{cuisine.category_name}}</a></li>
+					
+				</ul>
+			</li>
+			
+			<li class="menu-list"><span class="copyright">Copyright © 2016, eatoeato</span></li>
+		</ul>
+
+	</div>
+	<span class="overlay"></span>
+</div>
+
+<div class="joint-widgets" ng-init="fetch_cart()" > 
+	<ul class="mobile-apps">
+		<li class="list"><a href="#0" class="link"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+		<li class="list"><a href="#0" class="link"><i class="fa fa-android" aria-hidden="true"></i></a></li>
+	</ul>
+
+	<div href="#/cart" class="cart-btn" ng-click="saveCart()"> <span class="number">{{cart_total_item}}</span></div>
+	<span class="login-btn"  ng-click="ask_user_type()" ng-show="login_button_show">Login</span>
+	<span class="login-btn"  ng-click="logout_for_user_cook()" ng-show="logout_button_show">Log Out</span>
+</div>
+
+<span class="menu-btn" ><i class="fa fa-bars" aria-hidden="true"></i></span>
+
+
+</div>

@@ -1,0 +1,218 @@
+ <span us-spinner="{radius:30, width:8, length: 16}"></span>
+
+<div ng-controller="right_menu_controller" ng-init="login_check_for_cook()">
+
+<div ng-controller="cook_register">
+
+<link rel="stylesheet" href="plugin/time-picker/wickedpicker.css">
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/cook/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel profile-update-page" ng-init="check_activation_status()">
+			<h4 class="page-name">Update your Profile</h4>
+	<span style="color: mediumseagreen">Activation Status
+
+			<div ng-if="vv=='Approved'" style="color:green">
+					Approved
+			</div>
+			<div ng-if="vv=='Pending For Approval'" style="color:red">
+					Pending For Approval
+			</div>
+		 
+		 </span>
+<div class="seaTabs row margin-top-20px" ng-init="get_cook_profile_data()"> 
+
+	<div class="seaTabs_switch row order-cat">
+		<div class="seaTabs_tab seaTabs_switch_active">Personal Details</div>
+		<div class="seaTabs_tab">Time Update</div>
+	</div>
+
+	<div class="seaTabs_content w-shadow row">
+		<div class="seaTabs_item seaTabs_content_active">
+		
+			<ul class="table-view ng-scope">
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Name </span>
+			      <div class="input-div"><input name="" class="input-box" placeholder="User Name" type="text" value="{{cook_data_for_view.cook_name}}" ng-model="cook_data_for_view.cook_name"></div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Email</span>
+			      <div class="input-div"><input name="" class="input-box" placeholder="Email" type="text" value="{{cook_data_for_view.cook_email}}" ng-model="cook_data_for_view.cook_email"></div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Phone</span>
+			      <div class="input-div"><input name="" class="input-box" placeholder="10 Digit Mobile Number" type="text" value="{{cook_data_for_view.cook_contact}}" ng-model="cook_data_for_view.cook_contact"></div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Additional Phone</span>
+			      <div class="input-div"><input name="" class="input-box" placeholder="Additional Phone number" type="text" value="{{cook_data_for_view.cook_addition_contact}}" ng-model="cook_data_for_view.cook_addition_contact"></div>
+			    </li>
+			    <li class="list field-fillup">
+				    <span class="input-field-title">Gender</span>
+				    <div class="input-div">
+				        <input id="check1" name="check" value="Male" class="fancy-radio" type="radio" ng-model="cook_data_for_view.gender">
+				        <label for="check1" class="fancy-radio-label">Male</label>
+
+				        <input id="check2" name="check" value="Female" class="fancy-radio" type="radio" ng-model="cook_data_for_view.gender">
+				        <label for="check2" class="fancy-radio-label"> Female </label>
+				    </div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Street Address</span>
+			      <div class="input-div"><input name="" class="input-box" placeholder="Flat/House No. Colony/Street No." type="text" value="{{cook_data_for_view.street_address}}" ng-model="cook_data_for_view.street_address"></div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Locality / Landmark</span>
+			      <div class="input-div"><input name="" class="input-box" placeholder="Your Near Location/Landmark" type="text" value="{{cook_data_for_view.landmark}}" ng-model="cook_data_for_view.landmark"></div>
+			    </li>
+			 
+
+
+
+
+			    <li class="list field-fillup">
+			      <span class="input-field-title">City</span>
+
+				  <select class="select-option" ng-model="cook_data_for_view.city" >
+												<option value="">Select City</option>
+												<option value="delhi/ncr">Delhi / NCR</option>
+												<option value="new delhi"> New Delhi </option>
+											</select>
+			      
+			    </li>
+
+			    <li class="list field-fillup">
+			      <span class="input-field-title">State</span>
+			       <div class="input-div">
+
+					   <select class="select-option" ng-model="update_details.state" >
+												<option value="">Select State</option>
+												<option value="delhi/ncr">Delhi / NCR</option>
+												<option value="new delhi"> New Delhi </option>
+											</select>
+			       		
+			       		</select>
+			       	</div>
+			    </li>
+			 
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Pincode</span>
+			       <div class="input-div"><input name="" class="input-box" placeholder="Enter 6 Digit Pincode" type="text" value="{{cook_data_for_view.pincode}}" ng-model="cook_data_for_view.pincode"></div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Latitude</span>
+			       <div class="input-div"><input name="" class="input-box" placeholder="Latitude" type="text" value="{{cook_data_for_view.latitude}}" ng-model="cook_data_for_view.cook_latitude"></div>
+			    </li>
+			    <li class="list field-fillup">
+			      <span class="input-field-title">Longitude</span>
+			       <div class="input-div"><input name="" class="input-box" placeholder="Longitude" type="text" value="{{cook_data_for_view.longitude}}" ng-model="cook_data_for_view.cook_longitude"></div>
+			    </li>
+
+			</ul>
+		</div>
+
+		
+		<div class="seaTabs_item">
+			
+	<h5 class="new-section-head">Please add your availablity days and times</h5>
+
+	<div class="col-md-50">
+		<ul class="select-timings" >
+			<li class="list">
+				<div class="v-small">
+			        <label for="check3"  >Mon</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="cook_data_for_view.available_hours.mon_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="cook_data_for_view.available_hours.mon_to"></div>
+			</li>
+			<li class="list">
+				<div class="v-small">
+			        <label for="check4" >Tue</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box"  ng-model="cook_data_for_view.available_hours.tue_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.tue_to"></div>
+			</li>
+			<li class="list">
+				<div class="v-small">
+			        <label for="check3" >Wed</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.wed_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.wed_to"></div>
+			</li>
+			<li class="list">
+				<div class="v-small">
+			        <label for="check3" >Thu</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.thu_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.thu_to"></div>
+			</li>
+			<li class="list">
+				<div class="v-small">
+			        <label for="check3" >Fri</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.fri_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.fri_to"></div>
+			</li>
+			<li class="list">
+				<div class="v-small">
+			        <label for="check3" >Sat</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.sat_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.sat_to"></div>
+			</li>
+			<li class="list">
+				<div class="v-small">
+			        <label for="check3" >Sun</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.sun_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker" class="timepicker input-box" ng-model="cook_data_for_view.available_hours.sun_to"></div>
+			</li>
+			<div class="row field-fillup margin-top-20px center">
+		      <input name="" class="submit-btn" value="Save" type="submit" ng-click="cook_profile_update(cook_data_for_view)">
+			  	<p ng-show="after_success_profile_update" style="font-size:12px;color:green;padding:10px;"><b>Your Profile Successfully Updated..!</b></p>
+	
+		    </div>
+		</ul>
+	</div>
+
+		</div>
+	</div>
+</div>
+
+		</div>
+	</div>
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+<div ng-include="'pages/inc/footer.html'"></div>
+<script type="text/javascript" src="plugin/time-picker/wickedpicker.js"></script>
+<script type="text/javascript">
+$('.timepicker').wickedpicker({now: '8:16', twentyFour: false, title:
+        'Delivery Time', showSeconds: false});
+
+</script>
+
+</div>
+
+</div>

@@ -1,0 +1,215 @@
+
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+	<div class="work-pannel"  ng-init="update_cuisine_fetch()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Edit Cuisines</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Edit Cuisines</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="update_cuisine_details(category_details)"><i class="fa fa-floppy-o" aria-hidden="true" ></i></div></li>
+						<li class="list"><a href="#/admin/view-category"  class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+					 <p ng-show="complete_category_saved" style="color:green;font-size:14px;padding:5px;margin-left: 10px;">Cuisines Successfully saved</p>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Edit Cuisines</h3>
+					<div class="seaTabs row">
+						<div class="tab-style">
+						<div class="seaTabs_switch row">
+							<div class="seaTabs_tab seaTabs_switch_active">General</div>
+							<div class="seaTabs_tab">Data</div>
+							
+						</div>
+
+						<div class="seaTabs_content">
+							<!-- active tab start here -->
+							<div class="seaTabs_item seaTabs_content_active">
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Cuisines Name</span>
+									<div class="col-md-80 input-div">
+										<input type="text" name="" class="input-box" placeholder="Cuisines Name"  ng-model="category_details.category_name"></div>
+								</div>
+							
+							
+							
+						
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Meta Tag Title</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Title"  ng-model="category_details.meta_tag_title"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Meta Tag Description</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Description" ng-model="category_details.meta_tag_desc"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Meta Tag Keyword</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Keyword" ng-model="category_details.meta_tag_keyword"></div>
+								</div>
+								</div>	
+
+							<div class="seaTabs_item">
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Parent</span>
+									<div class="col-md-80 input-div relative">
+										<input type="text" name="" class="input-box add-sugges" placeholder="Parent Cuisines Name" ng-model="category_details.parent">
+										<ul class="dropdown-sugges">
+											<li class="list"><a href="#0" class="link">Old cat name</a></li>
+											<li class="list"><a href="#0" class="link">Old cat name</a></li>
+											<li class="list"><a href="#0" class="link">Old cat name</a></li>
+											<li class="list"><a href="#0" class="link">Old cat name</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">SEO URL</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="SEO URL" ng-model="category_details.seo_url"></div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title">Cuisines Image</span>
+									<div class="col-md-80 input-div">
+
+
+											 	<label class="upload-single-image left" title="Please upload your logo">
+			 <input type="file" id="category-image" class="input-file" name="file"  ngf-change="upload_cateogory_image($files)" ngf-select ng-model="picFile2" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+			 
+			<span class="thumb" ><img src="{{category_details.cat_img }}"  ngf-src="picFile2[0]" 	></span>
+						
+			</label>
+
+
+
+
+									
+
+										
+									</div>
+									<p ng-show="category_status_show" style="color:green"> Uploaded</p>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title">Cuisines Banner</span>
+									<div class="col-md-80 input-div">
+
+
+
+											 	<label class="upload-single-image left" title="Please upload your logo">
+			 <input type="file" id="category-banner" class="input-file" name="file2"  ngf-change="upload_cateogory_banner($files)" ngf-select ng-model="picFile3" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+			 
+			<span class="thumb" ><img src="{{category_details.cat_banner}}"  ngf-src="picFile3[0]" 	></span>
+						
+			</label>
+
+									</div>
+										
+								</div>
+
+
+								<div class="row field-fillup">
+									<span class="input-field-title">Bottom</span>
+									<div class="col-md-80 input-div">
+										<input id="check1" type="checkbox" name="check" value="true" class="fancy-checkbox"  ng-model="category_details.category_isBottom">
+										<label for="check1"  class="fancy-checkbox-label"></label>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Sort Order</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Sort Order"  ng-model="category_details.category_sortOrder"></div>
+								</div>
+
+
+								<div class="row field-fillup">
+									<span class="input-field-title">Status</span>
+									<div class="col-md-80 input-div"  ng-model="category_details.category_status">
+										<select class="select-option">
+											<option value="">--Select Status--</option>
+											<option value="Enable">Enable</option>
+											<option value="Disable">Disable</option>	
+										</select>
+									</div>
+								</div>
+								</div>
+
+
+							</div>
+							<!-- active tab end here -->
+
+
+
+					</div>
+					</div>
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+
+<!-- <script src="plugin/upload/js/upload.js"></script> -->
+
+<script type="text/javascript">
+
+$(document).keydown(function(e) {
+    if (e.keyCode == 27) {
+       $(".action-btn").hide();
+    }
+});
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+// remove
+$(document).on("click" , ".remove-row" , function(){
+	$(this).parents(".list").remove();
+});
+
+
+$(".field-fillup .add-sugges").focus(function(){
+	$(this).next(".dropdown-sugges").show();
+});
+
+$(".field-fillup .add-sugges").blur(function(){
+	$(this).next(".dropdown-sugges").hide();
+});
+
+</script>
+</body>
+</html>

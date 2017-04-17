@@ -1,0 +1,136 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="fetch_cuisine_name_for_add()">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Coupons</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Coupons</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="save_coupon_page(save_coupon_details)"><i class="fa fa-floppy-o" aria-hidden="true"></i></div></li>
+						<li class="list"><a href="#/admin/view-coupon"  class="blue-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Add Coupon</h3>
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Coupon Name</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Coupon Name" ng-model="save_coupon_details.coupon_name"></div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Code</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Coupon Code" ng-model="save_coupon_details.coupon_code"></div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Discount Operation</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="save_coupon_details.coupon_discount_operation">
+										<option value=" - ">' - '</option>
+										<option value=" % ">' % '</option>
+									</select>
+								</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Discount</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Discount Amount" ng-model="save_coupon_details.coupon_discount_amount"></div>
+							</div><!-- 
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Total Amount</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Attribute Name"></div>
+							</div> -->
+						
+							<div class="row field-fillup">
+								<span class="input-field-title">Category</span>
+								<div class="col-md-80 input-div relative">
+					<div
+    isteven-multi-select
+    input-model="modernBrowsers"
+    output-model="outputBrowsers"
+    button-label=" name"
+    item-label=" name "
+    tick-property="ticked"
+    
+    orientation="horizontal" 
+>
+</div>
+								</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title" ng-click="jg()">Date Start</span>
+								<div class="col-md-80 input-div">
+								<datepicker style="width: 400px;" date-format="dd/MM/yyyy">
+									
+								<input type="text" style="width:400px;height: 30px; "   ng-model="save_coupon_details.coupon_due_start"/>
+							</datepicker>
+									</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title">Date End</span>
+								<div class="col-md-80 input-div">
+										<datepicker style="width: 400px;" date-format="dd/MM/yyyy" >
+									
+								<input type="text" style="width:400px;height: 30px; "   ng-model="save_coupon_details.coupon_due_end"/>
+							</datepicker>
+								</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Voucher Limit</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Voucher Limit" ng-model="save_coupon_details.coupon_voucher_limit"></div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Uses Per Customer</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Uses Per Customer" ng-model="save_coupon_details.coupon_uses_per_customer"></div>
+							</div>
+
+							
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Status</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="save_coupon_details.coupon_status">
+										<option value="">--Select--</option>
+										<option value="Enable">Enable</option>
+										<option value="Disabled">Disabled</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>

@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="plugin/time-picker/wickedpicker.css">
+
+<div class="title-bar active">
+	<span class="number">3</span>
+	<h4 class="name">Review your order</h4>
+</div>
+
+<div ng-show="show_review_order_checkout" id="show_review_order_checkout">
+
+
+<ul class="cart-tiles">
+	<li class="list main-name">
+		<div class="coloum-div col-px-100 center"><span class="title">Image</span></div>
+		<div class="coloum-div col-md-30"><span class="title">Item Details </span></div>
+		<div class="coloum-div col-px-65 center"><span class="title">Type</span></div>
+		<div class="coloum-div col-px-200"><span class="title">Price</span></div>
+		<div class="coloum-div col-px-100"><span class="title">Subtotal</span></div>
+	</li>
+
+	<div ng-repeat="food in checkout_cart_view">
+
+		<li class="list">
+			<div class="coloum-div col-px-100 center"><span class="pro-thumb"><img ng-src="{{food.food_img}}" class="properproduct"></span></div>
+			<div class="coloum-div col-md-30">
+				<div class="product-details">
+					<a href="#0" class="link">{{food.food_name}}</a>
+					<div class="cuisines">
+						<span class="subtext">Cuisines :</span>
+						<ul class="cuisine-list">
+							<li class="list ng-binding">punjabi</li>
+						</ul>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="coloum-div col-px-65 center"><span class="title">
+			
+
+				<div ng-if="food.food_type=='Vegetarian'" >
+
+					<div class="coloum-div col-px-65 center"><span class="title"><img src="public/images/icon/veg.jpg"></span></div>
+
+	</div>
+
+	<div ng-if="food.food_type=='Non Vegetarian'">
+
+		<div class="coloum-div col-px-65 center"><span class="title"><img src="public/images/icon/veg.jpg"></span></div>
+
+	</div>
+
+
+	</span>
+	</div>
+
+	<div class="coloum-div col-px-200">
+		<span class="title price"> Rs. {{food.food_price}} </span>
+		<!-- 
+			<span class="selling-price">Selling Price: Rs. 599</span> -->
+		<span class="offer-saving">Delivery Charge : Rs. 30</span>
+	</div>
+	<div class="coloum-div col-px-100"><span class="title price">Rs. {{food.food_total_price}}</span></div>
+	</li>
+	<div ng-include="'pages/user/inc/address-list.html'" class="row"></div>
+	<div class="delivey-schedule">
+		<div class="choose-date">
+			<span class="title">Choose date</span>
+			<div class="select-date">
+
+
+				<datepicker style="width: 140px;" date-format="dd-MM-yyyy" class="_720kb-datepicker-today" >
+
+				<input type="text" class="input-box" />
+
+				</datepicker>
+
+
+</div>
+</div>
+<div class="choose-time">
+	<span class="title">Choose time</span>
+	<ul class="time-set">
+		<li class="list"><input type="text" name="" class="input-box" value="11"></li>
+		<li class="list"><input type="text" name="" class="input-box" value="00"></li>
+		<li class="list"><input type="text" name="" class="input-box" value="PM"></li>
+	</ul>
+</div>
+</div>
+</div>
+
+
+</ul>
+
+
+</div>
+
+
+<script type="text/javascript" src="plugin/time-picker/wickedpicker.js"></script>
+
+<script type="text/javascript">
+
+	$('.timepicker').wickedpicker();
+
+
+</script>

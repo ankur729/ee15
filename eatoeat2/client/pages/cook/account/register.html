@@ -1,0 +1,66 @@
+<div ng-controller="cook_register" ng-init="check_if_cook_basic_entered_complete_pending()">
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+<div class="container" ng-controller="cook_register">
+	<div class="user-join-page w-shadow">
+		<form name="myForm">
+		<div class="form-display">
+			<h2 class="page-name">Cook Account
+			<p class="caption">Enter your email and password to <b>Register</b></p>
+			</h2>
+			<div class="activity">
+				<ul class="buttons">
+					<li class="list"><a href="#/cook_login" class="link">Login</a></li>
+					<li class="list active"><a href="#/cook_create" class="link">Sign up</a></li>
+				</ul>
+
+				<p class="caption">Enter your detail to <b>create</b> your account</p>
+				<div class="form-field" >
+					<div class="field-fillup" >
+						<label class="label required">Name</label>
+						<input type="text" id="register_input" name="my_username"  class="input-box" placeholder="Your Full name" ng-model="cook_details.cook_name"  ng-minlength="3" 
+        					ng-maxlength="18" required >
+						
+											<!-- show an error if username is too short -->
+						<p class="register_cook_error"  ng-show="myForm.my_username.$error.minlength">Username is too short.</p>
+
+						<!-- show an error if username is too long -->
+						<p  class="register_cook_error"   ng-show="myForm.my_username.$error.maxlength">Username is too long.</p>
+
+						<!-- show an error if this isn't filled in -->
+						<p class="register_cook_error" ng-show="myForm.my_username.$touched && myForm.my_username.$pristine "  ng-messages="myForm.my_username.$error">* Your Name is required.</p>
+
+					</div>
+					<div class="field-fillup">
+						<label class="label required">Email</label>
+						<input type="email" name="email_check" class="input-box" placeholder="Your Email"  ng-model="cook_details.cook_email"  >
+							 <p class="register_cook_error" ng-show="myForm.email_check.$invalid ">* Email is Invalid</p>
+							 <p  class="register_cook_error"   ng-show="myForm.email_check.$touched && myForm.email_check.$pristine "  ng-messages="myForm.email_check.$error">*Email is Required</p>
+					</div>
+					<div class="field-fillup">
+						<label class="label required">mobile</label>
+						<input type="number" name="phone" class="input-box" placeholder="Your 10 Digit Mobile No."  ng-model="cook_details.cook_contact_no"  ng-minlength="10" ng-maxlength="10"  ng-required="true" >
+							<p  class="register_cook_error"   ng-show="myForm.phone.$error.minlength || myForm.email_check.$error.maxlength ">* Enter Valid Phone Number</p>
+					</div>
+
+					<div class="field-fillup">
+						<label class="label required">Password</label>
+						<input type="password" name="password" class="input-box" placeholder="Your Password"  ng-model="cook_details.cook_password"  ng-minlength="4" required>
+						<p  class="register_cook_error"   ng-show="myForm.password.$error.minlength ">* Password is too short.!</p>
+						<p  class="register_cook_error"   ng-show="myForm.password.$touched && myForm.password.$pristine "  ng-messages="myForm.password.$error">* Password is Required</p>
+					</div>
+				</div>
+				<p ng-show="after_success_reg_message" style="font-size:12px;color:green">Congratulations! You are Successfully Registered. <br> <b>Redirecting you to your profile Page...	</b></p>
+				<p ng-show="already_register_check" style="font-size:12px;color:red">* Email Already Registered with us.! <br/> Please Click on Forget Password</p>
+				<div class="switch-btn">
+					<div class="list padding-20px"><input type="submit" name="" class="submit-btn" value="Create" ng-click="add_cook_details(cook_details)" ng-disabled="myForm.$invalid || myForm.isDisabled"></div>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>
+<div ng-include="'pages/inc/footer.html'"></div>
+
+</div>

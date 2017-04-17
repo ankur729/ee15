@@ -1,0 +1,145 @@
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel" ng-init="update_banner_fetch()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Banners</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Banners</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="update_banner(update_banner_model)" style="cursor: pointer"><i class="fa fa-floppy-o" aria-hidden="true"></i></div></li>
+						<li class="list"><a href="#/admin/view-banners" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name">Edit Banner</h3>
+
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory" >Banner Name</span>
+								<div class="col-md-80 input-div"><input type="text" ng-model="update_banner_model.banner_name" name="" class="input-box" placeholder="Banner Name"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory" >Status</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="update_banner_model.banner_status">
+										
+										<option value="">-Select-</option>
+										<option value="Enable">Enable</option>
+										<option value="Disable">Disable</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+					<div class="add-more-section">
+						<ul class="cat-listing-show">
+							<li class="list main-name" >
+								<div class="coloum-div center col-md-30">
+									<span class="title"></span>
+								</div>
+								<div class="coloum-div center col-md-30">
+									<span class="title">Link</span>
+								</div>
+								<div class="coloum-div center">
+									<span class="title">Image</span>
+								</div>
+								<div class="coloum-div center col-px-150">
+									<span class="title">Sort Order</span>
+								</div>
+								<div class="coloum-div center  col-px-100">
+								
+								</div>
+							</li>
+						</ul>
+						<ul class="cat-listing-show create-list" id="create-list-2">
+						
+									  <li   class="list" ng-repeat="detail in update_banner_model_for_details">
+
+									<div class="coloum-div center col-md-30">
+									<input type="text" name="" class="input-box" placeholder="Banner Title"  ng-model="detail.banner_title" >
+									</div>
+									
+							<div class="coloum-div center col-md-30">
+									<input type="text" name="" class="input-box" placeholder="Link" ng-model="detail.banner_link">
+								</div>
+								<div class="coloum-div center">
+									<label class="upload-single-image left" title="Please upload your logo">
+		
+			 <input type="file" id={{detail._id}} class="input-file" name="file"  ngf-change="edit_banner_image_api($files,detail._id)" ngf-select ng-model="picFile2" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+			 
+			 	<span class="thumb" ><img  src="{{detail.banner_img }}" 	></span>
+
+						
+										</label>
+								</div>
+								<div class="coloum-div center col-px-150">
+									<input type="text" name="" class="input-box center" placeholder="Order" ng-model="detail.banner_order">
+								</div>
+
+						<div class="coloum-div center  col-px-100">
+
+						
+						</div>		
+						
+						
+				      
+				   </li>
+				 
+				       
+
+						</ul>
+					</div>
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+// add more add more 
+$(".add-more").click(function(){
+	$(this).parents(".list").prev(this).clone(true).prependTo($(this).parents(".create-list"));
+});
+
+// remove
+$(document).on("click" , ".remove-row" , function(){
+	$(this).parents(".list").remove();
+});
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+</script>

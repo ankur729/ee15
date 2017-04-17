@@ -1,0 +1,1213 @@
+body{font-family: 'arial';}
+
+/*------------------  common css start here ------------------*/
+/*.style="font-size:12px;color:red;padding-left:10px;"*/
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+.body-color {background: #ececec;}
+.if-bigimg {max-height: 100%; width: auto; max-width: 100%;}
+/*.if-smallimg {max-height: 100%; width: auto; max-width: 100%;}*/
+
+.fancy-radio-label , .fancy-checkbox-label {display: inline-block;cursor: pointer;position: relative;padding-left: 25px;margin-right: 15px;font-size: 13px;}
+.fancy-radio , .fancy-checkbox {display: none;}
+.fancy-radio-label:before , .fancy-checkbox-label:before {content: "";display: inline-block;width: 15px;height: 15px;margin-right: 10px;position: absolute;left: 0;top: 1px;background-color: #fff;border: 1px solid #ccc;}
+.fancy-radio-label:before {border-radius: 8px;}
+.fancy-checkbox-label {float: left; width: 100%;}
+.fancy-checkbox-label:before {border-radius: 3px;}
+.fancy-radio:checked + .fancy-radio-label:before {background: url('../images/icon/radio.png') no-repeat  50% 50%;color: #f3f3f3;font-size: 30px;text-align: center;line-height: 18px;}
+.fancy-checkbox:checked + .fancy-checkbox-label:before {background: url('../images/icon/checked.png') no-repeat  50% 50%;text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);font-size: 15px;color: #f3f3f3;text-align: center;line-height: 15px;}
+.fancy-checkbox-label .number-of-item {float: right; font-size: 12px; color: #AEAEAE;}
+
+.select-option {  height: 32px; color: #7E7E7E; cursor: pointer; border: 1px solid #ccc; padding: 5px; width: 100%; -webkit-appearance:none; appearance:none; -moz-appearance: none; background-color: #ffffff; background-position: right center; background-repeat: no-repeat;  text-indent: 0.01px; text-overflow: "";  width: 100%; background: #fff url("../images/icon/drop.png") no-repeat scroll 95% 50%;}
+.select-option option {border: none;}
+.select-option optgroup {font-size: 12px; color: #333; font-style: normal; padding:3px 0px; font-family: arial;}
+
+.main-container , .row{width: 100%; float: left; }
+.container {width: 1100px; max-width: 100%;}
+.sub-container {width: 1050px; max-width: 100%;}
+
+.input-box{width: 100%; float: left; padding: 7px; height: 32px; border: 1px solid #ccc; background: #fff;}
+.textarea{width: 100%; float: left; padding: 7px; border: 1px solid #ccc; background: #fff;}
+
+.submit-btn {background: #52ADDE; color: #fff; border-radius: 3px; padding: 7px 15px; border: 1px solid #3B88B1; cursor: pointer; font-size: 12px;}
+.submit-btn:hover {background: #333; border-color: #000;}
+
+.breadcrumbs {width: 100%; float: left;}
+.breadcrumbs .list {float: left; font-size: 11px; color: #fff; margin-right:10px;}
+.breadcrumbs .list .link {float: left; color: #fff;}
+.breadcrumbs .list .link:after{content: "//"; padding: 0px 5px; margin-left: 10px;}
+
+.load-more {clear: both; font-size: 14px; color: #fff; background: #dd3030 url(../images/icon/load-more.png)no-repeat center 10px; padding: 7px 40px; padding-top: 20px; max-width: 180px; display: table;}
+.load-more:hover  {background-color: #333;}
+
+.w-shadow {box-shadow: 1px 1px 5px #ccc; background: #fff;}
+
+
+/*user login start here*/
+
+.popup { position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 10; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85);}
+.popup .ask-user-type{padding: 20px; z-index: 11;position: absolute;top: 0;bottom: 0;right: 0;left: 0;margin: auto;max-width: 500px;max-height: 200px;background-color: #fff;}
+.popup .ask-user-type .heading {float: left; width: 100%; font-size: 18px; text-align: center; color: #3e3e3e;}
+
+.popup .ask-user-type .cat-buttons {float: left; width: 100%; margin-top: 15px;}
+.popup .ask-user-type .cat-buttons .list {float: left; width: 50%; text-align: center; padding: 0px 5px;}
+.popup .ask-user-type .cat-buttons .list .link {float: left; width: 100%; padding: 10px; border-radius:3px;  font-size: 13px; border: 1px solid #367023; cursor: pointer;}
+.popup .ask-user-type .cat-buttons .list .link.user {background: #5aac3e; color: #fff;}
+.popup .ask-user-type .cat-buttons .list .link.user:hover {background: #48962e;}
+.popup .ask-user-type .cat-buttons .list .link.cook:hover {background: #fff;}
+.popup .ask-user-type .cat-buttons .list .link.cook {background: #e4e4e4; color: #333;}
+.popup .ask-user-type .slang {float: left; width: 100%; text-align: center; margin-top: 30px;}
+.popup .ask-user-type .slang img {display: block;}
+.popup .ask-user-type .close-me {position: absolute; right: 15px; cursor: pointer; top: 10px; padding: 7px 10px; border: 1px solid #333; border-radius: 100%; font-size: 12px;}
+.popup .ask-user-type .close-me:hover {background: #333; color: #fff;}
+/*user login end here*/
+
+.right-menu-slide {display: none; position: fixed; top: 0px; right:0px;height: 100%; z-index: 9; width: 100%;}
+.right-menu-slide .right-panel { max-width: 260px; width: 100%; position: absolute; top: 0px; right: 0px;z-index: 1; height: 100%; background: #272a38; }
+.right-menu-slide .overlay {width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); position: absolute; top: 0px; left: 0px;}
+.right-menu-slide .right-panel .user-detail {float: left; width: 100%; background: rgba(0, 0, 0, 0.1); padding: 15px 25px;}
+.right-menu-slide .right-panel .user-detail .user-name {float: left; width: 100%; color: #fff; font-size: 18px;}
+.right-menu-slide .right-panel .user-detail .user-name i {cursor: pointer; float: right; font-size: 18px; margin-top: 4px; color: #19a0c3; width: 25px; text-align: center;}
+.right-menu-slide .right-panel .user-detail .email {font-size: 13px; color: #666b80;}
+
+.right-menu-slide .right-panel .main-menu {float: left; width: 100%;}
+.right-menu-slide .right-panel .main-menu .menu-list {float: left; width: 100%; border-bottom: 1px solid #2e3241; padding-bottom: 8px; margin-top: 10px;}
+.right-menu-slide .right-panel .main-menu .menu-list .section-name {float: left;width: 100%; color: #bdc1d7; font-size: 14px; padding: 10px 25px;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-cat {float: left; width: 100%;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-cat .sub-cat-list {float: left; width: 100%;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-cat .sub-cat-list .sub-cat-link {float: left;color: #5d6175; font-size: 13px; width: 100%; padding: 10px 25px;} 
+.right-menu-slide .right-panel .main-menu .menu-list .sub-cat .sub-cat-list .sub-cat-link .toggle-cat {cursor: pointer; float: right; padding: 0px 10px;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-cat .sub-cat-list:hover .sub-cat-link {color: #838799; background: rgba(0, 0, 0, 0.25);}
+
+.right-menu-slide .right-panel .main-menu .copyright {float: left; width: 100%; text-align: center; color: #848798; font-size: 12px;}
+
+.right-menu-slide .right-panel .main-menu .menu-list .sub-inner {float: left; width: 100%; display: none;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-inner .inner-list {float: left; width: 100%;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-inner .inner-list .inner-link {float: left; width: 100%; color: #9599a9; font-size: 12px; padding: 7px 30px; padding-left: 50px;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-inner .inner-list .inner-link:hover {color: #fff;}
+.right-menu-slide .right-panel .main-menu .menu-list .sub-inner .inner-list .inner-link.view-more {cursor: pointer; border-top: 1px solid #fff;border-bottom: 1px solid #fff; float: left; color: #fff;} 
+.right-menu-slide .right-panel .main-menu .menu-list .sub-inner .inner-list .inner-link.view-more:hover {background: #fff; color: #333;}
+
+.right-menu-slide .more-food-list {display: none; position: absolute; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.6); width: 100%; height: 100%; z-index: 2;}
+.right-menu-slide .more-food-list .box-model{z-index: 11;position: absolute;top: 0;bottom: 0;right: 0;left: 0;margin: auto;max-width: 750px;max-height: 400px;background-color: #fff;}
+.right-menu-slide .more-food-list .box-model .national-name {padding: 10px; float: left; width: 100%; text-align: center; font-size: 18px; color: #fff; background: #59ac3d;}
+.right-menu-slide .more-food-list .box-model .cat-listing {height: 350px; padding: 10px 30px;
+	-webkit-column-count: 4;
+    -webkit-column-gap: 40px;
+   -moz-column-count: 4;
+    -moz-column-gap: 40px;
+    -moz-column-fill: auto;
+    -moz-column-fill: balance;
+    width: 100%;
+    overflow-x: auto;}
+.right-menu-slide .more-food-list .box-model .cat-listing .cat-list {float: left; margin-bottom: 10px;}
+.right-menu-slide .more-food-list .box-model .cat-listing .cat-list .cat-name{margin-bottom: 5px; float: left; width: 100%; font-size: 14px; color: #3f3f3f; text-align: left; font-weight: bold;}
+.right-menu-slide .more-food-list .box-model .cat-listing .cat-list .sub-inner {float: left;width: 100%;}
+.right-menu-slide .more-food-list .box-model .cat-listing .cat-list .sub-inner .inner-list {float: left; width: 100%;}
+.right-menu-slide .more-food-list .box-model .cat-listing .cat-list .sub-inner .inner-list .inner-link {float: left; width: 100%; font-size: 12px; color: #8a8a8a; line-height: 24px;}
+.right-menu-slide .more-food-list .box-model .cat-listing .cat-list .sub-inner .inner-list .inner-link:hover {text-decoration: underline; color: #6F6F6F;}
+.right-menu-slide .more-food-list .box-model .close-food-menu {float: right; font-size: 12px; font-weight: normal; padding: 5px 10px; cursor: pointer;}
+/* ------------------ common css end here ------------------*/
+
+
+/* sreach start here*/
+.home-search .location-search {width: 70%;  background: #202020B3; display: table; float: none; padding: 20px; border: 1px solid #7f7f7f;}
+.home-search .location-search .coloum-div {display: table-cell;}
+.home-search .location-search .coloum-div .search-div {float: left; width: 100%; padding: 7px; height: 40px; background: #f5f5f5; border: none;}
+.home-search .location-search .coloum-div .locate-me {padding: 0px 20px; cursor: pointer; float: left; width: 100%; background: #dfdfdf; height: 40px; font-size: 12px; color: #6F6F6F; line-height: 40px;}
+.home-search .location-search .coloum-div .locate-me .icon {background: url(../images/icon/locate.png) 0px no-repeat;height: 22px; width: 18px;background-size: 180px 18px;display: inline-block;vertical-align: middle;}
+.home-search .location-search .coloum-div.col-px-100{width: 120px; }
+.home-search .location-search .coloum-div .locate-me:hover{ color: #444; }
+.home-search .location-search .coloum-div .locate-me:hover > .icon {background: url(../images/icon/locate.png) -36px no-repeat;background-size: 180px 18px;}
+
+.generic-search {border-radius: 5px; width: 100%; float: left;  background: #202020B3; display: table; padding: 20px; border: 1px solid #7f7f7f;}
+.generic-search .coloum-div {display: table-cell;}
+.generic-search .coloum-div .choose_location {float: left; width: 100%; height: 40px; background: #e5e5e5 url("../images/icon/location_choose.png") no-repeat 10px center; cursor: pointer; color: #5c5c5c; font-size: 11px; font-weight: bold; padding: 0px 10px 0px 30px; line-height: 40px; text-transform: uppercase;}
+.generic-search .coloum-div .search-div {float: left; width: 100%; height: 40px; border: none; padding: 7px;background: #fff url("../images/icon/search.png") no-repeat  98% center;}
+.listing-search {width: 65%;float: none;clear: both; margin-top: 100px;}
+.listing-search .generic-search  {margin: 80px 0px;}
+/*search end here*/
+
+
+
+/*header start here */
+.common-header{width: 100%; float: left; background: #fff;}
+.common-header .generic-search{padding: 0px; border-color:#e8e8e8;width: 50%; margin-left: 50px;}
+.common-header .bread_ui {float: left; width: 100%; background: #59ac3d; padding: 10px 0px; margin-top: 10px;}
+/*header end here */
+
+
+/*myaccount panel start here */
+.my-accout-pannel {width: 100%; float: left; background: #fff; box-shadow: 1px 1px 5px #ccc;}
+.my-accout-pannel .title-name {float: left; width: 100%; background: #2a2a2a; padding: 10px 15px; color: #fff; font-size: 14px; color: #ececec;}
+.my-accout-pannel .list {float: left; width: 100%;}
+.my-accout-pannel .list:hover , .my-accout-pannel .list.active {background: #ededed;}
+.my-accout-pannel .list .link { padding: 10px 15px; width: 100%; float: left; font-size: 12px; color: #373737; text-transform: uppercase;}
+.my-accout-pannel .list .link .bullets {float: right;}
+.my-accout-pannel .list .link .bullets img {display: block; margin-top: 5px;}
+
+.my-account-page > .left-panel {width: 22%; padding-right: 10px; float: left;}
+.my-account-page > .right-panel {float: right; width: 78%;}
+/*myaccount panel end here */
+
+
+/*footer start here */
+
+footer {width: 100%; float: left; background: #fff;padding-top: 30px; border-top: 1px solid #e3e3e3;}
+footer .link-section {width:100%; float: left; display: table;}
+footer .link-section .coloum-div {display: table-cell; width: 16.66%;}
+footer .link-section .coloum-div .title {font-size: 18px; margin-bottom: 10px;}
+footer .link-section .coloum-div .link-list {float: left; width: 100%;}
+footer .link-section .coloum-div .link-list .list {float: left; width: 100%; font-size: 12px; padding: 5px 0px;}
+footer .link-section .coloum-div .link-list .link {float: left; color: #a5a5a5;}
+footer .link-section .coloum-div .link-list .link:hover {color: #333;}
+
+footer .social-media-section {width: 100%; float: left; text-align: center; margin: 25px 0px;}
+footer .social-media-section .social-media {width: 40%; display: inline;}
+footer .social-media-section .social-media .list {display: inline-flex; margin: 10px 5px;}
+footer .social-media-section .social-media .list .link {width: 40px; height: 40px; line-height: 40px; border: 1px solid #ccc; border-radius: 100%; font-size: 13px; color: #6f6f6f;}
+
+footer .base-line {width: 100%; float: left; border-top:1px solid #e7e7e7; padding: 10px 0px;}
+footer .base-line .design-by {float: right; font-size: 12px; color: #747474;}
+footer .base-line .copyright {float: left; font-size: 12px; color: #747474;}
+
+/*footer end here */
+
+
+
+/*------------------ main-page start here -------------------*/
+
+.main-page {background: url(../images/bg/main.jpg)no-repeat top center; background-size:100%; width: 100%; float: left;}
+.header {float: left; width: 100%; padding-top: 10px;}
+.header .logo {float: left;}
+.header .logo img{display: block;}
+
+.right-menu-pannel {float: right; margin-top: 4px;}
+.right-menu-pannel .mobile-apps {float: left; line-height: 27px; padding: 0px 15px;}
+.right-menu-pannel .mobile-apps .list {float: left; padding: 3px 5px;}
+.right-menu-pannel .mobile-apps:before {content: "Connect with:"; float: left;  color: #434343; font-size: 12px; line-height: 32px;}
+.right-menu-pannel .login-btn {cursor: pointer; float: left; font-size: 13px; color: #434343; border: 1px solid #484646; padding: 8px 20px; border-radius: 3px;}
+.right-menu-pannel .login-btn:hover {background: #333;}
+.right-menu-pannel .menu-btn {cursor: pointer; float: left; font-size: 13px; color: #b5b5b5; background: #1e1e1e; border: 1px solid #484646; padding: 8px 13px; border-radius: 3px;}
+.right-menu-pannel .menu-btn:hover {background: #333;}
+
+.right-menu-pannel .number {position: relative; top: -2px; right: -15px; font-size: 11px; color: #0c0c0c; width: 20px; height: 20px; display: table-cell; vertical-align: middle; text-align: center; border-radius: 100%; background: #b5b5b5;}
+.right-menu-pannel .cart-btn:hover .number{background: #fff;}
+.main-page .slang {width: 100%; float: left; text-align: center; margin-top: 100px; margin-bottom: 30px;}
+.main-page .slang img {display: block;}
+.main-page .tagline {float: left; width: 100%; text-align: center; margin-top: 100px; margin-bottom: 50px;}
+.main-page .tagline .heading {font-size: 22px; color: #000;}
+.main-page .tagline .caption {font-size: 13px; color: #7d7d7d;}
+
+.main-page .instructions {width: 100%; float: left; display: table; background: #fff;}
+.main-page .instructions .list {display: table-cell; vertical-align: middle; text-align: center; padding: 15px 0px; background: rgba(0, 0, 0, 0.10); width: 25%;}
+.main-page .instructions .list:nth-child(even) { background: rgba(0, 0, 0, 0.05);}
+.main-page .instructions .list .style {display: inline-block;}
+.main-page .instructions .list .style .text {font-size: 12px; color: #424242; width: 100%; float: left; margin-top: 10px;}
+.main-page .instructions .list .style .icon {border-radius:100%;  width: 60px; height: 60px; border: 1px solid #ccc; vertical-align: middle; display: inline-flex;}
+.main-page .instructions .list .style .icon  img {display: block;}
+
+/*------------------ main-page end here -------------------*/
+
+
+/*------------------ listing-page start here -------------------*/
+
+.joint-widgets {float: left; background: #1e1e1e; padding: 0px 10px; border-radius:5px; border: 1px solid #484646; margin-right: 15px;}
+.joint-widgets .mobile-apps {padding-right: 5px;}
+.joint-widgets .mobile-apps .list .link:hover {color: #fff;}
+.joint-widgets .cart-btn {padding-right: 20px; float: left;content: ""; background: url(../images/icon/cart.png)  0px 0px  no-repeat; margin-top: 7px;}
+.joint-widgets .mobile-apps:before {content: "Connect with:"; float: left;  color: #b5b5b5; font-size: 12px; line-height: 32px;}
+.joint-widgets .login-btn {cursor: pointer; float: left; font-size: 13px; color: #b5b5b5; border:none; padding: 8px 10px; border-radius: 3px;}
+.joint-widgets .menu-btn {cursor: pointer; float: left; font-size: 13px; color: #b5b5b5; border: 1px solid #484646; padding: 8px 15px; border-radius: 3px;}
+.joint-widgets .mobile-apps .list .link {color: #b5b5b5;}
+
+.listing-page .header{background: url(../images/bg/listing.jpg)no-repeat top center; background-size:100%; width: 100%; float: left;}
+.listing-page .bread_ui {float: left; width: 100%; background: rgba(0, 0, 0, 0.44); padding: 12px 0px;}
+
+.listing-page .process-detail {width: 100%; float: left; background: #59ac3d;}
+.listing-page .process-detail .detail-title {float: left; color: #e2f9db; font-size: 18px; line-height: 45px;}
+
+.data-sort {position: relative;}
+.data-sort .sort-by{min-width: 175px; float: right; font-size: 13px; color: #242424; line-height: 45px; background: #fff url(../images/icon/option-down.png)no-repeat 95% center;; padding: 0px 15px; cursor: pointer;padding-right: 30px; }
+.data-sort .sort-by .get-data{color: #808080;}
+.data-sort:hover .sort-well {display: block;}
+
+.data-sort .sort-well {display: none; padding: 10px;box-shadow:0px 3px 5px rgba(0,0,0,.4); position: absolute; top: 100%;  right: 0px; background: #fff; min-width: 100%; z-index: 1;}
+.data-sort .sort-well .list {cursor: pointer; float: left; width: 100%; text-align: left;}
+.data-sort .sort-well .list .link {float: left; width: 100%; font-size: 12px; color: #333; padding: 3px 10px; border: 2px solid #fff; border-radius: 3px;}
+.data-sort .sort-well .list .link:hover { border-color: #fc8161;}
+
+.listing-page .inner-body {float: left; width: 100%; margin-top: 25px;}
+
+.listing-page .left-panel {width: 25%; float: left; padding-right: 15px;}
+.left-panel .filter-panel {width: 100%; float: left; background: #fff; box-shadow: 1px 1px 5px #ccc;}
+.left-panel .filter-panel .filter-name {float: left; width: 100%; text-transform: uppercase; font-size: 14px; color: #131313; margin-bottom: 10px;}
+.left-panel .filter-panel .filter-name .drop-toggle {float: right; cursor: pointer; height: 15px; width: 15px; text-align: center; line-height: 15px;}
+.left-panel .filter-panel .colum-adjust {border-bottom: 1px solid #e6e6e6; float: left; width: 100%; padding: 20px;}
+.left-panel .filter-panel .multipe-filter {float: left; width: 100%;}
+.left-panel .filter-panel .multipe-filter .list {float: left; width: 100%; margin: 5px 0px;}
+.left-panel .filter-panel .multipe-filter .list .fancy-checkbox-label {font-size: 12px;color: #5b5a5a; line-height: 19px;}
+.left-panel .filter-panel .multipe-filter .list .fancy-checkbox-label .total-number {float: right; color: #A5A5A5; font-size: 11px;line-height: 18px;}
+.left-panel .filter-panel .fancy-checkbox-label::before{border: 1px solid #eb6357; border-radius: 0px; width: 13px;height: 13px;}
+.left-panel .filter-panel .multipe-filter .list:hover .fancy-checkbox-label {color: #eb6357;}
+
+.left-panel .filter-panel .multipe-filter .list .fancy-radio-label {font-size: 12px;color: #5b5a5a; line-height: 19px; width: 100%;}
+.left-panel .filter-panel .multipe-filter .list .fancy-radio-label .total-number {float: right; color: #A5A5A5; font-size: 11px;line-height: 18px;}
+.left-panel .filter-panel .fancy-radio-label::before{border: 1px solid #eb6357; width: 13px;height: 13px;}
+.left-panel .filter-panel .multipe-filter .list:hover .fancy-radio-label {color: #eb6357;}
+
+.left-panel .filter-panel .select-option {background: #fff url("../images/icon/b-drop.png") no-repeat scroll 95% 50%;}
+.left-panel .filter-panel .filter-name .clear-this {float: right; font-size: 12px; color: #154693; text-transform: none;}
+.left-panel .filter-panel .filter-name .clear-this:hover {color: #D5322E;}
+.left-panel .filter-panel .input-box {background: #fff; border-radius: 3px;}
+.left-panel .filter-panel .filter-by-rate {float: left; width: 100%; background: #fff;}
+.left-panel .filter-panel .filter-by-rate .list {cursor: pointer; float: left; width: 33.3%; text-align: center; padding: 5px 0px; border-right: 1px solid #ccc; border-bottom: 4px solid #bcbcbc;}
+.left-panel .filter-panel .filter-by-rate .list .star-number {opacity: 0.4; font-size: 12px; width: 100%; float: left; color: #787878;}
+.left-panel .filter-panel .filter-by-rate .list.active .star-number  {opacity: 1;}
+.left-panel .filter-panel .filter-by-rate .list .result-number {font-size: 12px; color: #888;}
+.left-panel .filter-panel .filter-by-rate .list:last-child {border-right: none;}
+.left-panel .filter-panel .filter-by-rate .list.active {border-bottom-color: #fd8400;}
+.left-panel .filter-panel .filter-by-rate .list:hover {border-bottom-color: #333;}
+
+.listing-page .right-panel {width: 75%; float: right;}
+.listing-page .right-panel .display-ads {float: left; width: 100%;}
+.listing-page .right-panel .display-ads .list {width: 50%; float: left; height: 150px; padding: 0px 5px;}
+.listing-page .right-panel .display-ads .list img {display: block; max-height: 100%; width: auto; max-width: 100%;}
+
+.listing-page .right-panel .seaTabs_switch { padding: 0px 5px; margin-bottom: 20px;}
+.listing-page .right-panel .seaTabs_switch .seaTabs_tab {background: #fff; color: #393939; border-bottom: 3px solid #c8c7c7; border-right: 1px solid #e7e7e7;}
+.listing-page .right-panel .seaTabs_switch .seaTabs_tab.seaTabs_switch_active {border-bottom-color:#d5322e; }
+.listing-page .right-panel .seaTabs_switch .seaTabs_tab:last-child{border-right: none;}
+.listing-page .right-panel .map-view {float: left; width: 100%; padding: 5px;}
+.listing-page .right-panel .map-view .styling {float: left; width: 100%; border: 5px solid #fff; box-shadow: 1px 1px 15px #ccc;}
+.listing-page .right-panel .seaTabs {margin-top: 20px;}
+
+.listing-page .right-panel .food-list {width: 100%; float: left;}
+.listing-page .right-panel .food-list > .list {float: left; width: 50%; padding: 0px 5px; margin-bottom: 10px;}
+.listing-page .right-panel .food-list > .list .style {box-shadow: 1px 1px 5px #ccc; background: #fff; float: left; width: 100%; position: relative; display: table;}
+.listing-page .right-panel .food-list > .list .style .coloum-div {display: table-cell;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.thumb {width: 150px; vertical-align: middle; text-align: center;padding: 10px 0px 10px 10px;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.thumb img {display: block;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data {padding: 10px 20px 10px 10px;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .name {float: left; width: 100%; font-size: 18px; color: #000; margin-bottom: 3px;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .name:hover {text-decoration: underline;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .cuisines {width: 100%; float: left; font-style: italic;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .cuisines .subtext {float: left; font-size: 12px; color: #a0a0a0; margin-right: 5px;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .cuisines .cuisine-list .list {float: left; font-size: 12px; color: #636261;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .cuisines .cuisine-list .list:after{content: ","; margin: 0px 3px;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .cuisines .cuisine-list .list:last-child:after {content: ""; display: none;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .rupees {margin-top: 10px; float: left; width: 100%;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .rupees .price {font-size: 18px; color: #e84d05; float: left;}
+.listing-page .right-panel .food-list > .list .style .coloum-div.data .rupees .caption {font-size: 11px; color: #a7a7a7; float: left; width: 100%;}
+
+.listing-page .right-panel .food-list > .list .style .qty-controller {float: left; margin-top: 10px;}
+.qty-controller .button {cursor: pointer; display: block; width: 25px; float: left; height: 25px; text-align: center; line-height: 20px; color: #424242; border:1px solid #ccc; border-radius: 100%; }
+.qty-controller .button:last-child {line-height: 22px;}
+.qty-controller .qty-show {float: left; height: 25px; line-height: 25px; font-size: 12px; margin: 0px 7px;}
+.listing-page .right-panel .food-list > .list .style .video-btn {float: right; margin-top: 16px;}
+.listing-page .right-panel .food-list > .list .style .video-btn img {display: block;}
+
+/*------------------ listing-page end here -------------------*/
+
+
+/*------------------ review page start here -------------------*/
+
+.my-account-page .review-page .review-by {width: 100%; float: left; font-size: 14px; color:  #292929; text-transform: uppercase; padding: 20px;}
+.my-account-page .review-page .review-by .items {margin-left: 5px; color: #b8b8b8; font-size: 12px;}
+
+.my-account-page .review-page .rating-distribution {margin-top: 15px; float: right; width: 30%; max-width: 245px; padding-bottom: 15px;}
+.my-account-page .review-page .rating-distribution .list {padding: 1px 15px; float: left; width: 100%; margin: 3px 0px; font-size: 12px;}
+.my-account-page .review-page .rating-distribution .list .parameters {width: 50px; float: left;max-width: 20%; color: #171717; font-size: 11px;}
+.my-account-page .review-page .rating-distribution .list .number {color: #A4A1A1; display: table-cell; float: left; width: 15%; padding-left: 5px;}
+.my-account-page .review-page .rating-distribution .list .meter-line {margin-top: 5px; height: 5px; width: 65%; float: left; background: #e6e6e6; max-width: 155px;}
+.my-account-page .review-page .rating-distribution .list .meter-line .speed-up {float: left; background: #e46157; height: 5px;}
+.my-account-page .review-page .rating-distribution .title {float: left;width: 100%; font-size: 18px; margin-bottom: 10px; padding: 10px 15px; border-bottom: 1px solid #f0f0f0;}
+
+.my-account-page .review-page .review-display {float: left; width: 70%; margin-top: 15px;}
+.my-account-page .review-page .review-display .review-list {float: left; width: 100%; padding: 20px; position: relative; margin-bottom: 15px;}
+.my-account-page .review-page .review-display .review-list .date {position: absolute; right: 0px; background: #ffe402; font-size: 11px; color: #2c2c2c; padding: 3px 10px;}
+.my-account-page .review-page .review-display .review-list .delete-btn {cursor: pointer; position: absolute; bottom: 0px; right: 0px; background: #f14336; color: #fff; border-radius: 100% 0px 0px; width: 50px; height: 50px; text-align: center; line-height: 60px; padding-left: 10px;}
+.my-account-page .review-page .review-display .review-list .delete-btn:hover {background: #333;}
+.my-account-page .review-page .review-display .review-list .product-data {width: 100%; float: left;}
+.my-account-page .review-page .review-display .review-list .product-data .image {margin-right: 20px; float: left; border: 3px solid #16ac77; border-radius: 100%; padding: 5px;}
+.my-account-page .review-page .review-display .review-list .product-data .image .thumb {text-align: center; overflow: hidden; width: 60px; height: 60px; display: block; border-radius: 100%;}
+.my-account-page .review-page .review-display .review-list .product-data .image .thumb img {display: block; height: 100%;}
+.my-account-page .review-page .review-display .review-list .product-data .detail {float: left;}
+.my-account-page .review-page .review-display .review-list .product-data .detail .name{float: left; width: 100%; font-size: 16px; color: #7f7f7f; margin-bottom: 6px;}
+
+.my-account-page .review-page .review-display .review-list .product-data .detail .amount {float: left; width: 100%;}
+.my-account-page .review-page .review-display .review-list .product-data .detail .amount .price {font-size: 18px; font-weight: bold; color: #333;}
+.my-account-page .review-page .review-display .review-list .product-data .detail .order {float: left; width: 100%; font-size: 11px; color: #959595; line-height: 10px;}
+.my-account-page .review-page .review-display .review-list .review-data {margin-top: 20px; float: left; width: 100%;padding-right: 50px; }
+.my-account-page .review-page .review-display .review-list .review-data .rated-data {float: left; width: 100%; margin-bottom: 5px;}
+.my-account-page .review-page .review-display .review-list .review-data .comment {float: left; width: 100%; font-size: 12px; color: #9b9b9b; line-height: 20px;}
+
+.my-account-page .review-page .review-display .review-list .review-data .review-title {float: left; font-size: 14px; color: #393939; margin-left: 10px;}
+.my-account-page .review-page .review-display .review-list .review-data .star-rating {float: left;}
+.my-account-page .review-page .review-display .review-list .review-data .star-rating .star-list {float: left; font-size: 12px; color: #B7B5B5; padding: 0px 1px;}
+.my-account-page .review-page .review-display .review-list .review-data .star-rating .star-list.given {color: #e46157;}
+
+/*------------------ review-page end here -------------------*/
+
+
+
+
+/*------------------ wallet-page end here -------------------*/
+
+.my-account-page .wallet-page .add-money {float: left; width: 100%; padding: 20px 35px; display: table;}
+.my-account-page .wallet-page .add-money .coloum-div {display: table-cell; vertical-align: middle;}
+.my-account-page .wallet-page .add-money .coloum-div.wallet-balance { width: 145px; padding-right: 30px; border-right: 1px solid #ededed;}
+.my-account-page .wallet-page .add-money .coloum-div .amount {font-size: 18px; color: #292929;}
+.my-account-page .wallet-page .add-money .coloum-div .caption {font-size: 12px; line-height: 12px; color: #848484; float: left;}
+.my-account-page .wallet-page .add-money .coloum-div.add-field {padding-left: 30px;}
+.my-account-page .wallet-page .add-money .coloum-div.add-field .input-box {background: #f1f1f1; border-radius:3px; }
+.my-account-page .wallet-page .add-money .coloum-div.add-field .submit-btn {width: 100%; background: #ed6262; width: 100%; border: 1px solid #ed6262;}
+
+.my-account-page .wallet-page .transaction-history {float: left; width: 100%; margin-top: 15px; margin-bottom: 15px;}
+.my-account-page .wallet-page .transaction-history .main-title {float: left; width: 100%; padding: 20px 30px; font-size: 18px; color: #252525;}
+.my-account-page .wallet-page .transaction-history .table-view {float: left; width: 100%;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show {float: left; width: 100%;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list{width: 100%; float: left; display: table; border-bottom: 1px solid #e1dede;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list:last-child{border: none;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list.main-name {background: #f8f6f6; border-top: 1px solid #e1dede; border-bottom: 1px solid #e1dede;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .coloum-div { border-right:1px solid #dfdcdc;  display: table-cell; vertical-align: middle; padding-top:15px; padding-bottom: 15px; }
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .coloum-div:last-child {border: none;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list.main-name .coloum-div { padding-top:10px; padding-bottom: 10px;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list.main-name .coloum-div .title {font-size: 14px; color: #5e5e5e;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .amount-number {font-size: 12px; color: #282828;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .status{font-size: 12px;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .status.complete{color: #43b217;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .status.not-complete {color: #228dc8;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .status.failed {color: #f22d2d;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .comment {font-size: 12px; color: #919191;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .order-name {font-size: 12px; color: #363636;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .order-date {color: #aeaeae; font-size: 12px; float: left; width: 100%; line-height: 20px;}
+.my-account-page .wallet-page .transaction-history .table-view .list-show .list .order-number {color: #aeaeae; font-size: 12px; float: left; width: 100%; line-height: 20px;}
+/*------------------ wallet-page end here -------------------*/
+
+
+
+/*------------------ change-password start here -------------------*/
+.my-account-page .update-password{margin-bottom: 20px;}
+.my-account-page .update-password .page-name {width: 100%; float: left; padding: 25px 35px; font-size: 14px; text-transform: uppercase; color: #292929; border-bottom: 1px solid #e4e4e4;}
+.my-account-page .update-password .form-div {float: left; width: 100%;margin: 10px 0px;}
+.my-account-page .update-password .form-div .label {float: left; width: 100%; font-size: 13px; color: #414141; margin-bottom: 5px;}
+.my-account-page .update-password .form-div .input-box {padding: 10px; height: 40px; border-radius: 3px;}
+.my-account-page .update-password .form-div .submit-btn {width: 100%; float: left; background: #1b9b51; border-color: #1b9b51;}
+.my-account-page .update-password .form-div .submit-btn:hover{background: #158e48;}
+.my-account-page .update-password .left-panel {width: 50%; padding-right: 50px; border-right: 1px solid #e8e8e8; vertical-align: middle; display: table-cell;}
+
+.my-account-page .update-password .right-panel {width: 50%; padding-left: 50px; padding-right: 50px; vertical-align: middle; display: table-cell;}
+.my-account-page .update-password .right-panel .genrate-password {width: 100%; float: left; text-align: center;}
+.my-account-page .update-password .right-panel .genrate-password .result-div {margin-bottom: 20px; float: left; width: 100%; text-align: center; border: 1px solid #dadada; border-radius: 5px;}
+.my-account-page .update-password .right-panel .genrate-password .result-div .title {float: left; width: 100%; padding: 10px; font-size: 12px; color: #1e1e1e; border-bottom: 1px solid #dadada; }
+.my-account-page .update-password .right-panel .genrate-password .result-div .input-box{border: none; background: #f3f3f3; padding: 10px; text-align: center; font-size: 18px; height: auto;}
+.my-account-page .update-password .right-panel .genrate-password .submit-btn {width: 130px;  background: #e34f4f; border: 1px solid #e34f4f; float: none;}
+.my-account-page .update-password .right-panel .genrate-password .submit-btn:hover {background: #d14141;}
+.my-account-page .update-password .display-setting {width: 100%; float: left; padding: 20px 35px; display: table;}
+/*------------------ change-password-page end here -------------------*/
+
+
+
+/*------------------ manage-account start here -------------------*/
+
+.my-account-page .manage-account .page-name{float: left; width: 100%; padding: 25px 35px; text-transform: uppercase; font-size: 14px; color: #292929;}
+.my-account-page .manage-account .display-area {float: left; width: 100%; margin: 15px 0px;}
+.my-account-page .manage-account .display-area .left-pannel {width: 50%; float: left; padding-right: 10px;}
+.my-account-page .manage-account .display-area .right-pannel {width: 50%; float: left; padding-left: 10px;}
+.my-account-page .manage-account .display-area .update-email {width: 100%; float: left;}
+.my-account-page .manage-account .display-area .main-title {width: 100%; float: left; text-align: center; font-size: 18px; color: #292929; padding: 15px; border-bottom:1px solid #e9e9e9;}
+
+.my-account-page .manage-account .display-area .form-display {width: 100%; float: left; padding: 20px 35px;}
+.my-account-page .manage-account .display-area .form-display .label {float: left; width: 100%; font-size: 13px; color: #414141; margin-bottom: 5px;}
+.my-account-page .manage-account .display-area .form-display .form-div{width: 100%; float: left; margin-bottom: 15px;}
+.my-account-page .manage-account .display-area .form-display .form-div .input-box {padding: 10px; height: 40px; border-radius: 3px;}
+.my-account-page .manage-account .display-area .form-display .form-div .submit-btn {padding: 10px; width: 100%; float: left; background: #e34f4f; border-color: #e34f4f;}
+.my-account-page .manage-account .display-area .form-display .form-div .submit-btn:hover{background: #d14141;}
+
+/*------------------ manage-account end here -------------------*/
+
+
+
+
+/*------------------ address page start here -------------------*/
+
+.my-account-page .add-address .page-name{float: left; width: 100%; padding: 25px 35px; text-transform: uppercase; font-size: 14px; color: #292929; border-bottom: 1px solid #e4e4e4;}
+
+.address-list {float: left; width: 100%;}
+.address-list .list {float: left; width: 100%; border:1px solid #ddd; padding: 20px; position: relative; padding-top: 50px; margin-bottom: 15px;}
+.address-list .list .name {margin-bottom: 5px; float: left; width: 100%; font-size: 14px; font-weight: bold; text-transform: uppercase; color: #333;}
+.address-list .list .add-line {font-size: 12px; color: #888; float: left; width: 100%; line-height: 20px;}
+.address-list .list .Phone {float: left; font-size: 12px; color: #2F9DCB; margin-top: 10px;}
+.address-list .list .Phone i {margin-right: 5px; color: #333;}
+.address-list .list .floating-buttons {position: absolute; bottom: 20px; right: 20px;}
+.address-list .list .floating-buttons .button-list{float: left; padding: 0px 10px;}
+.address-list .list .floating-buttons .button-list .link {float: left; font-size: 12px; text-align: center;}
+.address-list .list .floating-buttons .button-list .link i {display: block; width: 30px; height: 30px; border-radius: 100%; border: 1px solid #333; line-height: 30px; color: #333;}
+.address-list .list .floating-buttons .button-list .link:hover i {color: #35b3e7; border-color:#35b3e7; }
+.address-list .list .location.default {position: absolute; left: 0px; top: 15px; font-size: 12px; padding: 5px 15px; background: #F36363; color: #fff;}
+.address-list .list .location {position: absolute; left: 0px; top: 15px; font-size: 12px; padding: 5px 15px; background: #E4E4E4; color: #333; min-width: 150px; padding-left: 20px;}  
+.address-list .list:hover {border-color:#333; }
+
+.my-account-page .add-address .address-list {padding: 0px 35px;}
+.my-account-page .add-address .table-view {float: left; width: 100%; padding: 15px 30px;}
+.my-account-page .add-address .table-view .list {float: left; width: 33.3%;padding: 7px 5px; min-height: 65px;}
+.my-account-page .add-address .table-view .field-fillup .input-field-title {float: left; color: #474747; margin-bottom: 5px; width: 100%; font-size: 12px;}  
+.my-account-page .add-address .table-view .field-fillup .input-div {width: 100%; float: left; min-height: 35px;}
+.my-account-page .add-address .table-view .field-fillup .input-div .submit-btn {background: #3dac98; width: 100px; border-color:#3dac98; }
+
+.my-account-page .add-address .table-view .field-fillup .input-div .select-option{height: 35px;}
+.my-account-page .add-address .table-view .field-fillup .input-div .input-box{border-radius: 3px; height: 35px; }
+.my-account-page .add-address .table-view .field-fillup .input-div .input-box:focus {border-color:#333;}
+.my-account-page .add-address .table-view .field-fillup .input-div .fancy-radio-label {margin-right: 0px;}
+.my-account-page .add-address .table-view .list .fancy-radio-label {margin-top: 10px;}
+.my-account-page .add-address .table-view .list .fancy-checkbox-label {margin-top: 10px;}
+
+/*------------------ address page end here -------------------*/
+
+
+/*------------------ cart page start here -------------------*/
+
+.cart-page {float: left; width: 100%;}
+.cart-page .cart-activity {float: left; width: 100%; padding: 30px;}
+.cart-page .cart-activity .thumb {text-align: center; width: 100%; float: left;}
+.cart-page .cart-activity .display {float: left; width: 100%; text-align: center; color: #727272; font-size: 18px; margin-top: 20px;}
+.cart-page .cart-activity .display .number{color: #232323;}
+
+.cart-page .cart-management {float: left; width: 100%; padding: 20px;}
+.cart-page .cart-management .left-panel {width: 75%; float: left;}
+.cart-page .cart-management .cart-tiles {float: left; width: 100%; border: 1px solid #e9e9e9; border-radius:3px; }
+.cart-page .cart-management .cart-tiles > .list {float: left; width: 100%; display: table; border-bottom: 1px solid #e9e9e9;}
+.cart-page .cart-management .cart-tiles > .list:last-child{border: none;}
+.cart-page .cart-management .cart-tiles .list .coloum-div{display: table-cell; vertical-align: middle; padding: 10px; border-left: 1px solid #e9e9e9;}
+.cart-page .cart-management .cart-tiles .list .coloum-div:first-child{border: none;}
+.cart-page .cart-management .cart-tiles .list.main-name {background: #f6f6f6; /*padding: 10px;*/}
+.cart-page .cart-management .cart-tiles .list .coloum-div .title {font-size: 13px; color: #595959;}
+.cart-page .cart-management .cart-tiles .list .pro-thumb{ height: 50px;width: 50px; overflow: hidden; display: block; border: 1px solid #dddddd; background: #fff; border-radius: 5px;}
+.cart-page .cart-management .cart-tiles .list .pro-thumb img {display: block;}
+.cart-page .cart-management .cart-tiles .list .product-details {vertical-align: middle; display: table-cell;}
+.cart-page .cart-management .cart-tiles .list .product-details .link {font-size: 13px; color: #6B6B6B;}
+.cart-page .cart-management .cart-tiles .list .product-details .link:hover {text-decoration: underline; color: #333;}
+.cart-page .cart-management .cart-tiles .list .product-details .attribute {width: 100%; float: left; margin-top: 5px;}
+.cart-page .cart-management .cart-tiles .list .product-details .attribute .list {width: 100%; float: left; font-size: 11px; color: #B0B0B0; line-height: 15px;}
+.cart-page .cart-management .cart-tiles .list .product-details .remove-btn {margin-top: 5px; float: left; color: #2e98c3; font-size: 11px;}
+.cart-page .cart-management .cart-tiles .list .deliver-part {width: 100%; float: left;}
+.cart-page .cart-management .cart-tiles .list .deliver-part .amount {float: left; width: 100%;}
+.cart-page .cart-management .cart-tiles .list .deliver-part .amount .free {font-size: 13px; color: #15B02C;}
+.cart-page .cart-management .cart-tiles .list .deliver-part .amount .charged { font-size: 12px; color: #5D5D5D;}
+.cart-page .cart-management .cart-tiles .list .deliver-part .status {float: left; width: 100%; font-size: 11px; color: #888;}
+.cart-page .cart-management .cart-tiles .list .deliver-part .not-deliver{float: left; width: 100%; font-size: 11px;color: #993939;}
+.cart-page .cart-management .cart-tiles .list .title.price{font-weight: bold; color: #333;}
+.cart-page .cart-management .cart-tiles .list .selling-price {font-size: 11px; color: #888; font-style: italic; float: left; width: 100%;}
+.cart-page .cart-management .cart-tiles .list .offer-saving {font-size: 11px; color: #34A23D; font-style: italic; float: left; width: 100%;}
+
+.cart-page .cart-management .cart-tiles .list .qty-controler {float: left; width:100%; border: 1px solid #ccc;}
+.cart-page .cart-management .cart-tiles .list .qty-controler .btn {width: 100%; border: none; background: #fff; cursor: pointer;}
+.cart-page .cart-management .cart-tiles .list .qty-controler .form-control {width: 35%; border-top: none; border-bottom: none; border-left: 1px solid #ccc;  border-right: 1px solid #ccc;}
+.cart-page .cart-management .cart-tiles .list .input-group-btn {width: 25px; text-align: center; float: left;}
+.cart-page .cart-management .cart-tiles .list .input-group-btn:last-child {float: right;}
+
+.cart-page .cart-management .cart-tiles .list .cuisines {width: 100%; float: left;}
+.cart-page .cart-management .cart-tiles .list .cuisines .subtext {float: left; font-size: 11px; color: #a0a0a0; margin-right: 5px;}
+.cart-page .cart-management .cart-tiles .list .cuisines .cuisine-list .list {float: left; font-size: 11px; color: #636261;}
+.cart-page .cart-management .cart-tiles .list .cuisines .cuisine-list .list:after{content: ","; margin: 0px 3px;}
+.cart-page .cart-management .cart-tiles .list .cuisines .cuisine-list .list:last-child:after {content: ""; display: none;}
+.cart-page .cart-management .cart-tiles .list .qty-controller {display: flex;}
+
+.cart-page .right-panel {width: 25%; padding-left: 15px; float: right;}
+.cart-page .right-panel .your-order-cart {float: left; width: 100%; border: 1px solid #e2e2e2;}
+.cart-page .right-panel .your-order-cart .head {float: left; width: 100%; padding: 10px 20px; border-bottom:1px solid #e2e2e2; }
+.cart-page .right-panel .your-order-cart .data-list {margin: 15px 0px; float: left; width: 100%;}
+.cart-page .right-panel .your-order-cart .data-list .list {float: left; width: 100%; padding: 5px 20px;}
+.cart-page .right-panel .your-order-cart .data-list .title {float: left; width: 50%; font-size: 12px; color: #a09f9f; line-height: 14px;}
+.cart-page .right-panel .your-order-cart .data-list .title:after {content: ":"; float: right;}
+.cart-page .right-panel .your-order-cart .data-list .data {font-size: 12px;float: left; color: #535353; width: 50%; padding-left: 30px;}
+
+.cart-page .right-panel .your-order-cart .grand-total {border-top: 1px solid #e5e5e5; float: left; width: 100%; padding:15px  20px;}
+.cart-page .right-panel .your-order-cart .grand-total .title{float: left; width: 50%; font-size: 13px; font-weight: bold; color: #232323; line-height: 14px;}
+.cart-page .right-panel .your-order-cart .grand-total .title:after {content: ":"; float: right;}
+.cart-page .right-panel .your-order-cart .grand-total .data {font-size: 13px; float: left; font-weight: bold; color: #636262; width: 50%; padding-left: 30px;}
+
+.cart-page .right-panel .your-order-cart .action-buttons {width: 100%; float: left; padding: 15px 20px;border-top: 1px solid #e5e5e5; text-align: center;}
+.cart-page .right-panel .your-order-cart .action-buttons .continue {float: left; width: 50%; padding-right: 2px;}
+.cart-page .right-panel .your-order-cart .action-buttons .order {float: left; width: 50%; padding-left: 2px;}
+.cart-page .right-panel .your-order-cart .action-buttons .link{float: left; width: 100%; font-size: 13px; color: #fff; padding: 7px 0px; border-radius: 3px;}
+.cart-page .right-panel .your-order-cart .action-buttons .continue .link {background: #222;}
+.cart-page .right-panel .your-order-cart .action-buttons .order .link {background: #59ac3d;}
+/*------------------ cart page end here -------------------*/
+
+/*------------------ user page start here -------------------*/
+
+.user-join-page {float: left; width: 100%;}
+.user-join-page .form-display {width: 35%; min-width: 300px;}
+.user-join-page .form-display .page-name {float: left; width: 100%; text-align: center; font-size: 18px; color: #202020; padding: 20px; margin: 10px 0px;}
+.user-join-page .form-display .page-name .caption {color: #4c705d; font-size: 12px; width: 100%; float: left; text-align: center;}
+.user-join-page .form-display .activity {float: left; width: 100%; box-shadow: 1px 1px 25px #ccc; margin-bottom: 30px;}
+.user-join-page .form-display .activity > .buttons {width: 100%; float: left;}
+.user-join-page .form-display .activity > .buttons .list {float: left; width: 50%; text-align: center; text-transform: uppercase;}
+.user-join-page .form-display .activity > .buttons .list .link {background: #e6e6e6; color: #8c8c8c; font-size: 14px; float: left; width: 100%; padding: 15px; font-weight: bold;}
+.user-join-page .form-display .activity > .buttons .list.active .link { color:#000; background: #fff;}
+
+.user-join-page .form-display .activity .field-fillup {float: left; width: 100%; padding: 10px 20px; border-top:1px solid #efefef; }
+.user-join-page .form-display .activity .field-fillup:last-child{border-bottom:1px solid #efefef;}
+.user-join-page .form-display .activity .field-fillup .input-box {border: none; color: #888; height: auto; padding: 3px 7px;}
+.user-join-page .form-display .activity .field-fillup .label {float: left; width: 100%; font-size: 13px;color: #2d2d2d; padding: 0px 7px;}
+.user-join-page .form-display .activity .field-fillup .label.required:after {content: "*"; margin-left: 3px;}
+.user-join-page .form-display .activity .form-field {float: left; width: 100%;}
+
+.user-join-page .form-display .activity .caption{float: left; color: #a0a0a0; font-size: 12px; text-align: center; width: 100%; padding: 15px;}
+.user-join-page .form-display .activity .caption b {color: #545454;}
+
+.user-join-page .form-display .activity .switch-btn {float: left; width: 100%; display: table;}
+.user-join-page .form-display .activity .switch-btn .list {display: table-cell; width: 50%; vertical-align: middle;}
+.user-join-page .form-display .activity .switch-btn .list .forgot {font-size: 11px; color: #cb2b2b;}
+.user-join-page .form-display .activity .switch-btn .list .forgot:hover {color: #333;}
+.user-join-page .form-display .activity .switch-btn .list .submit-btn {width: 100%; background: #4cb050; color: #fff; border: none; border-radius: 0px; padding: 10px;}
+.user-join-page .form-display .activity .switch-btn .list .submit-btn:hover {background: #448c47;}
+
+.user-join-page .form-display .activity .external-button {float: left; width: 100%; font-size: 13px;}
+.user-join-page .form-display .activity .external-button .facebook { float: left; width: 100%; line-height: 40px; background: #3b5999;  color: rgba(255, 255, 255, 0.8);}
+.user-join-page .form-display .activity .external-button .google {float: right; width: 100%; line-height: 40px; background: #dd4c39;  color:  rgba(255, 255, 255, 0.8);}
+.user-join-page .form-display .activity .external-button b {color: #fff;}
+.user-join-page .form-display .activity .external-button .icon {text-align: center; width: 50px; float: left; margin-right: 15px;  color: #fff; background: rgba(0, 0, 0, 0.2);}
+.user-join-page .form-display .activity .external-button .icon i { padding:15px;}
+
+/*------------------ user page end here -------------------*/
+
+
+/*------------------ cook profile create page start here -------------------*/
+
+.cook-profile-page .step-bar {float: left; width: 100%; background: #f2f2f2; padding: 10px 0px;}
+.cook-profile-page .form-sytling {float: left; width: 100%; padding: 20px 50px;}
+.cook-profile-page .page-title {float: left; width: 100%; text-align: center; color: #383838;font-size: 18px; padding:30px; }
+
+.cook-profile-page .cook-profile-setup-steps {width: 100%; float: left;}
+.cook-profile-page .cook-profile-setup-steps .list {float: left; width: 33.3%;}
+.cook-profile-page .cook-profile-setup-steps .list .number { float: left; width: 40px; height: 40px; background: #eaeaea; color: #9d9d9d; text-align: center; font-size: 13px; line-height: 40px; border-radius:100%; }
+.cook-profile-page .cook-profile-setup-steps .list .info {float: left; padding-left: 13px;}
+.cook-profile-page .cook-profile-setup-steps .list .info .title {float: left; font-size: 18px; color: #a1a1a1;}
+.cook-profile-page .cook-profile-setup-steps .list .info .step-name {float: left; clear: both; color: #b8b8b8; font-size: 12px;}
+
+.cook-profile-page .cook-profile-setup-steps .list.active .number {color: #fff; background: #59ac3d;}
+.cook-profile-page .cook-profile-setup-steps .list.active .title {color: #272727;}
+.cook-profile-page .cook-profile-setup-steps .list.active .step-name {color: #626262;}
+
+.cook-profile-page .form-layout {width: 100%; float: left;}
+.cook-profile-page .form-layout .field-fillup{float: left; margin-bottom: 25px;}
+.cook-profile-page .form-layout .field-fillup .label {float: left; width: 100%; color: #3c3c3c; font-size: 13px; margin-bottom: 10px;}
+.cook-profile-page .form-layout .field-fillup .input-div {float: left; width: 100%; min-height: 35px;}
+.cook-profile-page .form-layout .field-fillup .input-div .input-box {border-radius:5px; }
+.cook-profile-page .form-layout .field-fillup .submit-btn  {float: right; text-align: center; background: #3dac98; border-color:#3dac98; }
+.cook-profile-page .form-layout .field-fillup .submit-btn:hover {background: #349b88; border-color:#349b88; }
+.cook-profile-page .form-layout .field-fillup .input-div .input-box:focus {border-color: #333;}
+
+.cook-profile-page .form-layout .field-fillup .back-btn {float: left; font-size: 12px; background: #333;color: #fff;padding: 7px 15px; border-radius: 3px;}
+.cook-profile-page .form-layout .field-fillup .back-btn i {margin-right: 5px;}
+.cook-profile-page .form-layout .field-fillup .back-btn:hover {background: #900;}
+.cook-profile-page .form-layout .field-fillup .imp-note {float: left; font-size: 12px; color: #939393; line-height: 22px; padding: 15px 0px; border-top:1px solid #ececec; border-bottom:1px solid #ececec; }
+.cook-profile-page .form-layout .field-fillup .imp-note .title{color: #5b5b5b;}
+
+.cook-profile-page .form-layout .field-fillup .input-div .fancy-radio-label {margin-top: 10px;}
+.cook-profile-page .form-layout .field-fillup .input-div .fancy-checkbox-label {margin-top: 5px;}
+
+.cook-profile-page .form-layout .field-fillup .cuisines-list {float: left; width: 100%;}
+.cook-profile-page .form-layout .field-fillup .cuisines-list .list {float: left; width: 33.3%; padding: 10px 0px;}
+.cook-profile-page .form-layout .textarea{height: 100px;}
+
+/*------------------ cook profile create page end here -------------------*/
+
+
+
+/*------------------ Checkout page start here -------------------*/
+
+.checkout-page .left-panel {width: 70%; float: left;}
+.checkout-page .left-panel .checkout-steps { float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .title-bar .number {margin-right: 15px; float: left; width: 25px; height: 25px; line-height: 25px; text-align: center; background: #e8e8e8; color: #646464; font-size: 12px; border-radius:100%; }
+.checkout-page .left-panel .checkout-steps .title-bar { background: #f7f7f7; width: 100%; float: left;  padding: 12px 25px;}
+.checkout-page .left-panel .checkout-steps .title-bar .name {line-height: 25px; float: left; width: 160px; font-size: 12px; color: #636262; text-transform: uppercase;}
+.checkout-page .left-panel .checkout-steps .title-bar .data-coloum {display: table-cell;}
+.checkout-page .left-panel .checkout-steps .title-bar.active{background: #494949;}
+.checkout-page .left-panel .checkout-steps .title-bar.active .name {color: #e5e5e5;}
+
+.checkout-page .left-panel .checkout-steps .login-check {float: left; width: 50%; background: #fff; padding: 25px;}
+.checkout-page .left-panel .checkout-steps .login-check .section-title {margin-bottom: 30px; float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .login-check .section-title .title {float: left; width: 100%; font-size: 18px; color: #333;}
+.checkout-page .left-panel .checkout-steps .login-check .section-title .caption {float: left; width: 100%; font-size: 11px; color: #b2b2b2;}
+.checkout-page .left-panel .checkout-steps .login-check .form-field {float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .login-check .form-field .field-fillup {float: left; width: 100%; margin-bottom: 15px;}
+.checkout-page .left-panel .checkout-steps .login-check .form-field .field-fillup .label {display: none;}
+.checkout-page .left-panel .checkout-steps .login-check .form-field .field-fillup .input-box {height: 38px; border-color: #e8e8e8;}
+.checkout-page .left-panel .checkout-steps .login-check .switch-btn {float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .login-check .switch-btn .list {float: left;  width: 100%; padding: 5px 0px;}
+.checkout-page .left-panel .checkout-steps .login-check .switch-btn .list .forgot {font-size: 12px; color: #535353; float: left;}
+.checkout-page .left-panel .checkout-steps .login-check .switch-btn .list .submit-btn {float: right; background: #e04e4e; border-color:#e04e4e; width: 100%; }
+
+.checkout-page .left-panel .checkout-steps .login-check .external-button {margin-top: 32px; float: left; width: 100%; font-size: 12px;text-transform: uppercase;}
+.checkout-page .left-panel .checkout-steps .login-check .external-button .facebook { float: left; border:1px solid #e4e4e4; padding: 8px 15px; width: 49%; line-height: 20px; border-radius: 3px;}
+.checkout-page .left-panel .checkout-steps .login-check .external-button .google {float: right; border:1px solid #e4e4e4; padding: 8px 15px; width: 49%; line-height: 20px; border-radius: 3px;}
+.checkout-page .left-panel .checkout-steps .login-check .external-button .icon {width: 20px; float: left; margin-right: 10px;}
+.checkout-page .left-panel .checkout-steps .login-check .external-button .icon img {display: block; max-width: 100%;}
+
+.checkout-page .left-panel .checkout-steps .register-check {float: left; width: 50%; background: #fff; padding: 25px;}
+.checkout-page .left-panel .checkout-steps .register-check .section-title {margin-bottom: 30px; float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .register-check .section-title .title {float: left; width: 100%; font-size: 18px; color: #333;}
+.checkout-page .left-panel .checkout-steps .register-check .section-title .caption {float: left; width: 100%; font-size: 11px; color: #b2b2b2;}
+.checkout-page .left-panel .checkout-steps .register-check .form-field {float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .register-check .form-field .field-fillup {float: left; width: 100%; margin-bottom: 15px;}
+.checkout-page .left-panel .checkout-steps .register-check .form-field .field-fillup .label {display: none;}
+.checkout-page .left-panel .checkout-steps .register-check .form-field .field-fillup .input-box {height: 38px; border-color: #e8e8e8;}
+.checkout-page .left-panel .checkout-steps .register-check .switch-btn {float: left; width: 100%;}
+.checkout-page .left-panel .checkout-steps .register-check .switch-btn .list {float: left; width: 100%; padding: 0px;}
+.checkout-page .left-panel .checkout-steps .register-check .switch-btn .list .forgot {font-size: 12px; color: #535353; margin-top:10px; float: left;}
+.checkout-page .left-panel .checkout-steps .register-check .switch-btn .list .submit-btn {float: right; background: #282828; border-color:#282828; width: 100%; }
+
+
+.checkout-page .right-panel {width: 30%; float: right; padding-left: 25px;}
+.checkout-page .right-panel .food-fummery {float: left; width: 100%;}
+.checkout-page .right-panel .food-fummery .section-name {font-size: 12px; text-transform: uppercase; color: #959595; padding: 15px; border-bottom: 1px solid #e6e6e6;}
+.checkout-page .right-panel .food-fummery .section-name .items {color: #333;}
+.checkout-page .right-panel .food-fummery .order-list {border-bottom: 1px solid #e6e6e6;float: left; width: 100%; padding: 10px 15px;}
+.checkout-page .right-panel .food-fummery .order-list .list {float: left; width: 100%; margin: 10px 0px;}
+.checkout-page .right-panel .food-fummery .order-list .list .food-name {float: left;margin-bottom: 5px; width: 100%; font-size: 13px; color: #4b4a4a}
+.checkout-page .right-panel .food-fummery .order-list .list .order {float: left; width: 100%;}
+.checkout-page .right-panel .food-fummery .order-list .list .order .qty {float: left; font-size: 12px; color: #a1a1a1;}
+.checkout-page .right-panel .food-fummery .order-list .list .order .price {float: right; font-size: 12px; color: #222; font-weight: bold;}
+
+.checkout-page .right-panel .food-fummery .grand-total {background: #ead732; float: left; width: 100%; padding: 15px  15px;}
+.checkout-page .right-panel .food-fummery .grand-total .title{float: left; width: 50%; font-size: 13px; font-weight: bold; color: #5f5714; line-height: 14px;}
+.checkout-page .right-panel .food-fummery .grand-total .title:after {content: ":"; float: right;}
+.checkout-page .right-panel .food-fummery .grand-total .data {font-size: 13px; text-align: right; float: left; font-weight: bold; color: #232323; width: 50%; padding-left: 30px;}
+
+.checkout-page .right-panel .food-fummery .data-list {margin: 15px 0px; float: left; width: 100%;}
+.checkout-page .right-panel .food-fummery .data-list .list {float: left; width: 100%; padding: 5px 20px;}
+.checkout-page .right-panel .food-fummery .data-list .title {float: left; width: 50%; font-size: 12px; color: #a09f9f; line-height: 14px;}
+.checkout-page .right-panel .food-fummery .data-list .title:after {content: ":"; float: right; font-weight: bold;}
+.checkout-page .right-panel .food-fummery .data-list .data {font-size: 12px;float: left; color: #636262; width: 50%; font-weight: bold; padding-left: 30px; text-align: right;}
+
+.have-coupon {margin: 20px 0px; width: 100%; clear: both; display: block; padding: 25px; text-align: center;float: left;}
+.have-coupon .title {width: 100%; float: left; text-align: center; text-transform: uppercase; color: #2f93bd; font-size: 12px;}
+.have-coupon .input-text{margin: 20px 0px; width: 100%; text-align: center; padding: 10px; border-radius: 5px; background: #f3f3f3; border: 1px solid #d3d1d1;}
+.have-coupon .input-text:focus{border-color:#2f93bd; }
+.have-coupon .cod-submit {cursor: pointer; background: #282828; border-radius: 2px; border: none; padding: 10px; text-align: center; color: #fff; width: 150px;}
+
+
+
+.checkout-page .add-address .table-view {float: left; width: 100%; padding: 15px 25px;}
+.checkout-page .add-address .table-view .list {float: left; width: 33.3%;padding: 7px 5px; min-height: 65px;}
+.checkout-page .add-address .table-view .field-fillup .input-field-title {float: left; color: #474747; margin-bottom: 5px; width: 100%; font-size: 12px;}  
+.checkout-page .add-address .table-view .field-fillup .input-div {width: 100%; float: left; min-height: 35px;}
+.checkout-page .add-address .table-view .field-fillup .input-div .submit-btn {background: #3dac98; width: 100px; border-color:#3dac98; }
+
+.checkout-page .add-address .table-view .field-fillup .input-div .select-option{height: 35px;}
+.checkout-page .add-address .table-view .field-fillup .input-div .input-box{border-radius: 3px; height: 35px; }
+.checkout-page .add-address .table-view .field-fillup .input-div .input-box:focus {border-color:#333;}
+.checkout-page .add-address .table-view .field-fillup .input-div .fancy-radio-label {margin-right: 0px;}
+.checkout-page .add-address .table-view .list .fancy-radio-label {margin-top: 10px;}
+.checkout-page .add-address .table-view .list .fancy-checkbox-label {margin-top: 10px;}
+.checkout-page .choose-address-title {float: left; width: 100%; text-align: center;}
+.checkout-page .choose-address-title .name {color: #4b4b4b; font-size: 18px; line-height: 13px;}
+.checkout-page .choose-address-title .caption {font-size: 12px; color: #aaaaaa;}
+
+.checkout-page .cart-tiles {float: left; width: 100%; border: 1px solid #e9e9e9; border-radius:3px; padding: 20px 25px;}
+.checkout-page .cart-tiles > .list {float: left; width: 100%; display: table; border-top: 1px solid #e9e9e9;  border-bottom: 1px solid #e9e9e9; border-left:1px solid #e9e9e9;  border-right:1px solid #e9e9e9; }
+.checkout-page .cart-tiles > .list:last-child{border: none;}
+.checkout-page .cart-tiles .list .coloum-div{display: table-cell; vertical-align: middle; padding: 10px; border-left: 1px solid #e9e9e9;}
+.checkout-page .cart-tiles .list .coloum-div:first-child{border: none;}
+.checkout-page .cart-tiles .list.main-name {background: #f6f6f6; /*padding: 10px;*/}
+.checkout-page .cart-tiles .list .coloum-div .title {font-size: 13px; color: #595959;}
+.checkout-page .cart-tiles .list .pro-thumb{ height: 50px;width: 50px; overflow: hidden; display: block; border: 1px solid #dddddd; background: #fff; border-radius: 5px;}
+.checkout-page .cart-tiles .list .pro-thumb img {display: block;}
+.checkout-page .cart-tiles .list .product-details {vertical-align: middle; display: table-cell;}
+.checkout-page .cart-tiles .list .product-details .link {font-size: 13px; color: #6B6B6B;}
+.checkout-page .cart-tiles .list .product-details .link:hover {text-decoration: underline; color: #333;}
+.checkout-page .cart-tiles .list .product-details .attribute {width: 100%; float: left; margin-top: 5px;}
+.checkout-page .cart-tiles .list .product-details .attribute .list {width: 100%; float: left; font-size: 11px; color: #B0B0B0; line-height: 15px;}
+.checkout-page .cart-tiles .list .product-details .remove-btn {margin-top: 5px; float: left; color: #2e98c3; font-size: 11px;}
+.checkout-page .cart-tiles .list .deliver-part {width: 100%; float: left;}
+.checkout-page .cart-tiles .list .deliver-part .amount {float: left; width: 100%;}
+.checkout-page .cart-tiles .list .deliver-part .amount .free {font-size: 13px; color: #15B02C;}
+.checkout-page .cart-tiles .list .deliver-part .amount .charged { font-size: 12px; color: #5D5D5D;}
+.checkout-page .cart-tiles .list .deliver-part .status {float: left; width: 100%; font-size: 11px; color: #888;}
+.checkout-page .cart-tiles .list .deliver-part .not-deliver{float: left; width: 100%; font-size: 11px;color: #993939;}
+.checkout-page .cart-tiles .list .title.price{font-weight: bold; color: #333;}
+.checkout-page .cart-tiles .list .selling-price {font-size: 11px; color: #888; font-style: italic; float: left; width: 100%;}
+.checkout-page .cart-tiles .list .offer-saving {font-size: 11px; color: #34A23D; font-style: italic; float: left; width: 100%;}
+
+.checkout-page .cart-tiles .list .qty-controler {float: left; width:100%; border: 1px solid #ccc;}
+.checkout-page .cart-tiles .list .qty-controler .btn {width: 100%; border: none; background: #fff; cursor: pointer;}
+.checkout-page .cart-tiles .list .qty-controler .form-control {width: 35%; border-top: none; border-bottom: none; border-left: 1px solid #ccc;  border-right: 1px solid #ccc;}
+.checkout-page .cart-tiles .list .input-group-btn {width: 25px; text-align: center; float: left;}
+.checkout-page .cart-tiles .list .input-group-btn:last-child {float: right;}
+
+.checkout-page .cart-tiles .list .cuisines {width: 100%; float: left;}
+.checkout-page .cart-tiles .list .cuisines .subtext {float: left; font-size: 11px; color: #a0a0a0; margin-right: 5px;}
+.checkout-page .cart-tiles .list .cuisines .cuisine-list .list {float: left; font-size: 11px; color: #636261;}
+.checkout-page .cart-tiles .list .cuisines .cuisine-list .list:after{content: ","; margin: 0px 3px;}
+.checkout-page .cart-tiles .list .cuisines .cuisine-list .list:last-child:after {content: ""; display: none;}
+.checkout-page .cart-tiles .list .qty-controller {display: flex;}
+
+.checkout-page .delivey-schedule {float: left; width: 100%;padding: 15px 20px; border-left: 1px solid #e9e9e9; border-bottom: 1px solid #e9e9e9;border-right: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9;}
+.checkout-page .delivey-schedule .choose-date{float: left; width: 50%;}
+.checkout-page .delivey-schedule .choose-date .title {float: left; line-height: 32px; font-size: 13px; color: #888888; margin-right: 20px;}
+.checkout-page .delivey-schedule .choose-date .select-date {float: left; max-width:250px; width: 70%; }
+
+.checkout-page .delivey-schedule .choose-time {float: right; max-width: 50%;}
+.checkout-page .delivey-schedule .choose-time .title {float: left; line-height: 32px; font-size: 13px; color: #888888; margin-right: 20px;}
+.checkout-page .delivey-schedule .choose-time .time-set {float: right; width: 70%; max-width: 170px;}
+.checkout-page .delivey-schedule .choose-time .time-set .list {float: left; width: 33.3%; padding: 0px 5px;}
+.checkout-page .delivey-schedule .choose-time .time-set .list .input-box {border: none; border-top:1px solid #45bed4; border-bottom:1px solid #45bed4; text-align: center;}
+
+/*------------------ Checkout page end here -------------------*/
+
+
+
+/*------------------ order page start here -------------------*/
+
+.order-page .order-number-display {width: 100%; float: left; font-size: 14px; color:  #292929; text-transform: uppercase; padding: 20px;}
+.order-page .order-number-display .items {margin-left: 5px; color: #808080; font-size: 12px;}
+.order-page .order-cat {float: left; width: 100%; }
+.order-page .order-cat .list {float: left;font-size: 12px; background: #fff; color: #000; border-right:1px solid #eee; }
+.order-page .order-cat .list .items {margin-left: 5px; color: #808080; font-size: 12px;}
+.order-page .order-cat .list .link { padding: 10px 30px; float: left;}
+.order-page .order-cat .list.seaTabs_switch_active {background: #59ac3d; color: #fff;}
+.order-page .order-cat .list.seaTabs_switch_active .items {color: #fff;}
+.order-page .order-tabs {margin: 20px 0px; float: left; width: 100%;}
+
+.order-page .order-listing {float: left; width: 100%;}
+.order-page .order-listing > .list {float: left; width: 100%; border: 1px solid #ddd; border-radius: 3px; margin-bottom: 20px; box-shadow: 1px 1px 5px #ccc;}
+.order-page .order-listing .order-base {border-bottom: 1px solid #e1e1e1; width: 100%; float: left; background: #f9f9f9; padding: 10px 20px;}
+.order-page .order-listing .order-base .mini-size {float: left; margin-right: 50px;}
+.order-page .order-listing .order-base .mini-size .label {float: left; font-size: 11px; clear: both; text-transform: uppercase; color: #7A7A7A;}
+.order-page .order-listing .order-base .mini-size .value {float: left; clear: both; font-size: 12px; color: #545454;}
+.order-page .order-listing .order-base .mini-size .trigger {color: #256cc8; font-size: 12px; clear: both; float: left;}
+.order-page .order-listing .order-base .order-number {float: right; padding: 7px 15px; background: #F25656;; border-radius:3px; font-size: 12px; color: #fff;}
+.order-page .order-listing .order-base .order-number:hover {background: #DB4A4A;}
+
+.order-page .order-listing .food-type {float: right;}
+.order-page .order-listing .food-type img {display: block;}
+
+.order-page .order-listing .ordered-product-details {float: left; width: 100%; background: #fff;padding: 20px; padding: 20px 20px 10px 20px;}
+.order-page .order-listing .ordered-product-details .pro-thumb{float: left; height: 50px;width: 50px; overflow: hidden; display: block; border: 1px solid #dddddd; background: #fff; border-radius: 5px;}
+.order-page .order-listing .ordered-product-details .pro-thumb img {display: block;}
+
+.order-page .order-listing .ordered-product-details .product-details {float: left; margin-left: 15px; max-width: 80%;}
+.order-page .order-listing .ordered-product-details .product-details .link {float: left; font-size: 13px; color: #6B6B6B;}
+.order-page .order-listing .ordered-product-details .product-details .link:hover {text-decoration: underline; color: #333;}
+.order-page .order-listing .ordered-product-details .product-details .attribute {width: 100%; float: left; margin-top: 5px;}
+.order-page .order-listing .ordered-product-details .product-details .attribute .list {width: 100%; float: left; font-size: 11px; color: #B0B0B0; line-height: 15px;}
+
+.order-page .order-listing .ordered-product-details .product-details .cuisines {width: 100%; float: left; margin-top: 2px;}
+.order-page .order-listing .ordered-product-details .product-details .cuisines .subtext {float: left; font-size: 11px; color: #59ac3d; margin-right: 5px;}
+.order-page .order-listing .ordered-product-details .product-details .cuisines .cuisine-list .list {float: left; font-size: 11px; color: #636261;}
+.order-page .order-listing .ordered-product-details .product-details .cuisines .cuisine-list .list:after{content: ","; margin: 0px 3px;}
+.order-page .order-listing .ordered-product-details .product-details .cuisines .cuisine-list .list:last-child:after {content: ""; display: none;}
+
+.order-page .order-listing .order-status {padding: 0px 20px 10px 20px; float: left; width: 100%; display: table; background: #fff;}
+.order-page .order-listing .order-status .list {padding: 0px 3px; width: 25%; display: table-cell; vertical-align: middle; text-align: center;}
+.order-page .order-listing .order-status .list .table-row {margin: 7px 0px; width: 100%; display: table; background: #f9f9f9; border-radius:3px; border: 1px solid #dbdbdb;}
+.order-page .order-listing .order-status .list .table-row .data {text-align: center; line-height: 100%; color: #3f3f3f; font-size: 12px;}
+.order-page .order-listing .order-status .list .table-row.single {height: 85px;}
+.order-page .order-listing .order-status .list .table-row.single .data { line-height: 85px;}
+.order-page .order-listing .order-status .list .table-row.double .data { line-height: 38px; font-weight: bold;}
+.order-page .order-listing .order-status .list .table-row .data .get{color: #7c7c7c;}
+.order-page .order-listing .order-status .list .table-row .data .cancel-btn {float: left; width: 100%; background: #464646; color: #fff;}
+
+.order-page .order-listing .total-details {float: left; width: 100%; padding: 7px 20px; border-top: 1px solid #e1e1e1; background: #f9f9f9;}
+.order-page .order-listing .total-details .order-total {float: right;}
+.order-page .order-listing .total-details .order-total .label {float: left; font-size: 11px; color: #888; line-height: 20px;}
+.order-page .order-listing .total-details .order-total .amount {float: left; margin-left: 5px; font-size: 16px; font-weight: bold; color: #4A4A4A;} 
+.order-page .order-listing .total-details .address {float: left; font-size: 12px; color: #888;}
+.order-page .order-listing .total-details .address .title {color: #333;}
+
+.order-page .data-sort {border: 1px solid #ccc;text-transform: none;}
+.order-page .data-sort .sort-by{line-height: 35px;}
+.order-page .order-number-display {line-height: 35px;}
+.order-page .data-sort .sort-well .list {line-height: 20px;}
+/*------------------ order page end here -------------------*/
+
+
+
+/*------------------ cook food page start here -------------------*/
+
+.food-page .page-name {float: left; width: 100%; font-size: 14px; color: #292929; text-transform: uppercase; padding: 20px;}
+.food-page .seaTabs .seaTabs_tab {background: #393939; color: #fff;}
+.food-page .seaTabs .seaTabs_switch_active {background: #fff; color: #2a2a2a;}
+
+.food-page .food-list {float: left; width: 100%;}
+.food-page .food-list > .list{float: left; width: 50%;padding: 10px; }
+.food-page .food-list > .list .style {cursor: pointer; padding: 12px; float: left; width: 100%; border: 1px solid #e7e7e7; border-radius: 3px; display: table;}
+.food-page .food-list > .list .style .type {position: absolute; top: 0px; right: 0px;}
+.food-page .food-list > .list .style .type img {display: block;}
+
+.food-page .food-list > .list .style .floating-buttons {position: absolute; bottom: 0px; right:0px;}
+.food-page .food-list > .list .style .floating-buttons .button-list{float: left;}
+.food-page .food-list > .list .style .floating-buttons .button-list:first-child {margin-right: 5px;}
+.food-page .food-list > .list .style .floating-buttons .button-list .link {float: left; font-size: 12px; text-align: center;}
+.food-page .food-list > .list .style .floating-buttons .button-list .link i {display: block; width: 30px; height: 30px; border-radius: 100%; border: 1px solid #333; line-height: 30px; color: #333;}
+.food-page .food-list > .list .style .floating-buttons .button-list .link:hover i {color: #e75252; border-color:#e75252; }
+
+.food-page .food-list > .list .style:hover {border-color:#888; }
+.food-page .food-list > .list .style .delete-btn {position: absolute; bottom: 0px; right: 0px; font-size: 18px; cursor: pointer;}
+.food-page .food-list > .list .style .delete-btn:hover {color: #f00;}
+
+.food-page .food-list > .list > .style .coloum-div {display: table-cell;}
+.food-page .food-list > .list > .style  .coloum-div.thumb {border: 1px solid #ccc; vertical-align: middle; text-align: center; }
+.food-page .food-list > .list > .style  .coloum-div.thumb .image {display: block;width: 100px; height: 100px; }
+.food-page .food-list > .list > .style  .coloum-div.thumb img {display: block; max-width: 100%;}
+
+.food-page .food-list > .list .style .coloum-div.data {padding:0px 10px; padding-right: 25px;  position: relative;}
+.food-page .food-list > .list .style .coloum-div.data .name {float: left; width: 100%; font-size: 18px; color: #2A2A2A; margin-bottom: 3px;}
+.food-page .food-list > .list .style .coloum-div.data .name:hover {text-decoration: underline;}
+.food-page .food-list > .list .style .coloum-div.data .cuisines {width: 100%; float: left; font-style: italic;}
+.food-page .food-list > .list .style .coloum-div.data .cuisines .subtext {float: left; font-size: 12px; color: #a0a0a0; margin-right: 5px;}
+.food-page .food-list > .list .style .coloum-div.data .cuisines .cuisine-list .list {float: left; font-size: 12px; color: #636261;}
+.food-page .food-list > .list .style .coloum-div.data .cuisines .cuisine-list .list:after{content: ","; margin: 0px 3px;}
+.food-page .food-list > .list .style .coloum-div.data .cuisines .cuisine-list .list:last-child:after {content: ""; display: none;}
+.food-page .food-list > .list .style .coloum-div.data .rupees {margin-top: 25px; float: left; width: 100%;}
+.food-page .food-list > .list .style .coloum-div.data .rupees .price {font-size: 18px; color: #e84d05; float: left;}
+.food-page .food-list > .list .style .coloum-div.data .rupees .caption {font-size: 11px; color: #a7a7a7; float: left; width: 100%;}
+
+.add-food .new-section-head {width: 100%; float: left; text-align: center; padding: 15px; color: #7e7e7e; font-size: 12px; background: #f7f7f7;}
+.add-food .field-fillup{padding: 20px;display: table; width: 100%;}
+.add-food .field-fillup .input-field-title {min-width: 165px; vertical-align: middle;  display: table-cell;padding-right:20px; text-align: right; width: 20%;font-size: 12px; font-weight: bold; color: #545454; margin-bottom: 5px;}
+.add-food .field-fillup .input-field-title.mendatory:before { content: "*"; color: #f00; margin-right: 5px;}
+.add-food .field-fillup .input-div {display: table-cell;}
+.add-food .field-fillup .input-div .input-box {border-radius: 3px;}
+.add-food .field-fillup .input-div .input-box:focus {border-color:#333;}
+
+.add-food .field-fillup .input-div .textarea {border-radius: 3px;}
+.add-food .field-fillup .input-div .textarea:focus {border-color:#333;}
+
+.add-food .field-fillup .section-selector{float: left; width: 100%;}
+.add-food .field-fillup .section-selector .list {float: left; margin: 8px 0px;}
+.add-food .field-fillup .section-selector .list {font-size: 12px; color: #5b5b5b; text-transform: capitalize;}
+.add-food .field-fillup .submit-btn {background: #1b9b51; border-color:#14713b; }
+.add-food .field-fillup .submit-btn:hover {background: #333; border-color: #000;}
+
+.upload-single-image {overflow:hidden;  position: relative; border:1px solid #ddd; border-radius: 5px; cursor: pointer; display: table;}
+.upload-single-image .input-file {cursor: pointer; width: 100%; position: absolute; left: 0px; top: 0px; opacity: 0;}
+.upload-single-image .thumb {background: #fff; display: block; vertical-align: middle; text-align: center; width: 100px; height: 100px; display: table-cell;}
+.upload-single-image .thumb img {display: block; max-width: 100%;}
+.upload-single-image:hover {border-color:#333; }
+
+/*------------------ cook food page end here -------------------*/
+
+
+
+/*------------------ cook profile page start here -------------------*/
+
+.profile-update-page {background: #fff;}
+.profile-update-page .page-name{float: left; width: 100%; padding: 25px 35px; font-size: 14px; text-transform: uppercase; color: #292929; border-bottom: 1px solid #e4e4e4;}
+
+.profile-update-page .seaTabs_switch_active{background: #333;}
+
+.profile-update-page .table-view {float: left; width: 100%; padding: 15px 30px;}
+.profile-update-page .table-view .list {float: left; width: 33.3%;padding: 10px; min-height: 65px;}
+.profile-update-page .table-view .field-fillup .input-field-title {float: left; color: #474747; margin-bottom: 5px; width: 100%; font-size: 12px;}  
+.profile-update-page .table-view .field-fillup .input-div {width: 100%; float: left; min-height: 35px;}
+.profile-update-page .submit-btn {background: #3dac98; width: 100px; border-color:#3dac98; }
+
+.profile-update-page .table-view .field-fillup .input-div .select-option{height: 35px;}
+.profile-update-page .table-view .field-fillup .input-div .input-box{border-radius: 3px; height: 35px; }
+.profile-update-page .table-view .field-fillup .input-div .input-box:focus {border-color:#333;}
+.profile-update-page .table-view .field-fillup .input-div .fancy-radio-label {color: #5b5b5b; margin-right: 0px;}
+.profile-update-page .table-view .list .fancy-radio-label {margin-top: 10px;}
+.profile-update-page .table-view .list .fancy-checkbox-label {margin-top: 10px;}
+.profile-update-page .new-section-head {margin-top: 20px; width: 100%; float: left; text-align: center; padding: 15px; color: #7e7e7e; font-size: 12px; background: #f7f7f7;}
+
+.select-timings {margin: 20px 0px; float: left; width: 100%;}
+.select-timings .list {float: left; width: 100%; margin: 10px 0px;}
+.select-timings .list .v-small {width: 16.6%; float: left; font-size: 12px; color: #5b5b5b; margin-top: 7px;}
+.select-timings .list .input-box{border-radius:3px;text-align: center; color: #424242;}
+.select-timings .list .midd {float: left; width: 33.3%}
+
+/*------------------ cook profile page end here -------------------*/
+
+/*------------------ cook company detail page start here -------------------*/
+
+.company-detail-page .page-name {float: left; width: 100%; padding: 25px 35px; text-transform: uppercase; font-size: 14px; color: #292929; border-bottom: 1px solid #e4e4e4;}
+.company-detail-page .form-layout .textarea {height: 100px;}
+.company-detail-page .form-layout {width: 100%; float: left; padding: 10px 25px; margin-top: 20px;}
+.company-detail-page .form-layout .field-fillup{float: left; margin-bottom: 25px;}
+.company-detail-page .form-layout .field-fillup .label {float: left; width: 100%; color: #3c3c3c; font-size: 13px; margin-bottom: 10px;}
+.company-detail-page .form-layout .field-fillup .input-div {float: left; width: 100%; min-height: 35px;}
+.company-detail-page .form-layout .field-fillup .input-div .input-box {border-radius:3px; }
+.company-detail-page .form-layout .field-fillup .submit-btn  {float: right; text-align: center; background: #3dac98; border-color:#3dac98; }
+.company-detail-page .form-layout .field-fillup .submit-btn:hover {background: #349b88; border-color:#349b88; }
+.company-detail-page .form-layout .field-fillup .input-div .input-box:focus {border-color: #333;}
+.company-detail-page .form-layout .field-fillup .fancy-checkbox-label {font-size: 12px; color: #333; margin-top: 8px;}
+.company-detail-page .form-layout .field-fillup .back-btn {float: left; font-size: 12px; background: #333;color: #fff;padding: 7px 15px; border-radius: 3px;}
+.company-detail-page .form-layout .field-fillup .back-btn i {margin-right: 5px;}
+.company-detail-page .form-layout .field-fillup .back-btn:hover {background: #900;}
+.company-detail-page .form-layout .field-fillup .imp-note {float: left; font-size: 12px; color: #939393; line-height: 22px; padding: 15px 0px; border-top:1px solid #ececec; border-bottom:1px solid #ececec; }
+.company-detail-page .form-layout .field-fillup .imp-note .title{color: #5b5b5b;}
+
+/*------------------ cook company detail page end here -------------------*/
+
+
+/*------------------ cook wallet page start here -------------------*/
+
+.wallet-page .data-sort{border: 1px solid #ccc; border-radius:3px;}
+.wallet-page .data-sort .sort-by {line-height: 35px; }
+
+/*------------------ cook wallet page end here -------------------*/
+
+
+
+
+.need-help-btn {background: #db3838; color: #fff; padding: 7px 15px; border-radius:3px;cursor: pointer;  float: right; font-size: 13px; text-transform: none;}
+.need-help-btn:hover {background: #333;}
+
+.add-review-btn {font-size: 12px; color: #888;}
+.add-review-btn:hover{text-decoration:underline;color: #333 }
+
+.checkout-page .cart-tiles .address-list .list:last-child{margin: 0px;}
+.checkout-page .cart-tiles .address-list .list .add-line {float: left; width: auto; margin-right: 10px;}
+.checkout-page .cart-tiles .address-list .list .add-line:after {content: ",";}
+.checkout-page .cart-tiles .address-list .list:last-child .add-line:after {display: none;}
+.checkout-page .cart-tiles .address-list .list .Phone {margin-top: 0px;}
+
+.checkout-page .pay-wallet {float: left; width: 100%;padding: 20px; font-weight: bold; color: #333;}
+.checkout-page .pay-wallet .title {margin-bottom: 20px; width: 100%; float: left; text-align: center; color: #333; font-size: 12px; text-transform: uppercase;}
+.checkout-page .pay-wallet .current-balance {text-align: center;float: left; width: 100%; padding: 10px; border: 1px dashed #ccc; margin-bottom: 20px;}
+.checkout-page .pay-wallet .pay-amount {text-align: center; float: left; width: 100%; padding: 10px; border: 1px dashed #ccc;}
+.checkout-page .pay-wallet .label {font-size: 12px; font-weight: normal; width: 100%; float: left; color: #7B7B7B;}
+
+.checkout-page .pay-wallet .payment-confirm {cursor: pointer; float: left; width: 100%; background: #333; border: none; color: #fff; padding: 7px; border-radius: 3px;margin-top: 20px;}
+.checkout-page .pay-wallet .payment-confirm:hover {background: #3dac98;}
+/*------------------ user profile page start here -------------------*/
+
+.my-account-page .update-profile .page-name { width: 100%; float: left; padding: 25px 35px; font-size: 14px; text-transform: uppercase; color: #292929; border-bottom: 1px solid #e4e4e4;}
+.my-account-page .update-profile .display-setting {float: left; width: 100%; padding: 25px;}
+.my-account-page .update-profile .form-div {float: left; width: 100%;margin: 10px 0px;}
+.my-account-page .update-profile .form-div .label {float: left; width: 100%; font-size: 13px; color: #414141; margin-bottom: 5px;}
+.my-account-page .update-profile .form-div .input-box {padding: 10px; height: 40px; border-radius: 3px;}
+.my-account-page .update-profile .form-div .submit-btn {width: 100%; float: left; background: #1b9b51; border-color: #1b9b51;}
+.my-account-page .update-profile .form-div .submit-btn:hover{background: #158e48;}
+/*------------------ user profile page end here -------------------*/
+
+
+
+.register_cook_error{
+
+    font-size:12px;
+    color:red;
+    padding-left:10px;
+}	
+
+.disabled{
+    pointer-events: none;
+}
+    /*#loading-bar {
+  pointer-events: all;
+  z-index: 99999;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  cursor: wait;
+  position: fixed;
+  background-color:;
+}
+#loading-bar .bar {
+  position: relative;
+}*/
+
+
+
+
+
+/*------------------ detail page start here -------------------*/
+
+.detail-page {float: left; width: 100%;}
+.detail-page .header {height: 350px; position: relative;}
+.detail-page .banner {float: left; width: 100%; height: 350px; position: absolute; background: #fff; overflow: hidden;}
+.detail-page .banner img{display: block; min-width: 100%; opacity: 0.8}
+.detail-page .bread_ui {float: left; width: 100%; background: #59ac3d; padding: 10px 0px;}
+.detail-page .cook-short-detail {width: 100%; background: rgba(0, 0, 0, 0.7); position: absolute; bottom: 0px; left: 0px;}
+
+.detail-page .cook-short-detail .left-detail {float: left; max-width: 70%; padding: 10px 0px;}
+.detail-page .cook-short-detail .left-detail .name {float: left; width: 100%; font-size: 20px; color: #fff; font-weight: 600; text-transform: uppercase;}
+.detail-page .cook-short-detail .left-detail .contact {float: left; width: 100%; color: #cacaca; font-size: 12px; margin-top: 3px;}
+
+.detail-page .cook-short-detail .right-detail {float: right; max-width: 35%; margin-top: 5px;}
+.detail-page .cook-short-detail .right-detail .total-star {float: right;}
+.detail-page .cook-short-detail .right-detail .total-star img {float: right;}
+.detail-page .cook-short-detail .right-detail .total-star .percent {line-height: 40px; float: left; font-size: 28px; color: #fff; font-weight: bold;}
+.detail-page .cook-short-detail .right-detail .rating {float: right; width: 100%;}
+.detail-page .cook-short-detail .right-detail .rating .stars {float: right;}
+.detail-page .cook-short-detail .right-detail .rating .stars .list {float: left;}
+.detail-page .cook-short-detail .right-detail .rating .stars .list img {display: block; width: 13px;}
+.detail-page .cook-short-detail .right-detail .rating .number {float: right; font-size: 12px; color: #9b9b9b; margin-right: 10px;}
+
+.detail-page .full-detail {float: left; width: 100%; background: #fff; box-shadow: 1px 1px 5px #ccc;}
+.detail-page .full-detail .set-padding {float: left; width: 100%; padding: 20px;}
+.detail-page .full-detail .left-panel {float: left; width: 70%;}
+.detail-page .full-detail .left-panel .tabs {float: left; width: 100%;}
+.detail-page .full-detail .left-panel .tabs .tab-list {float: left; width: 100%;}
+.detail-page .full-detail .left-panel .tabs .tab-list .option-menu {float: left; width: 100%; font-size: 20px; color: #313131; padding: 20px 0px; border-bottom: 1px solid #e3e3e3; line-height: 35px;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list.active .tab-data {display: block;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data-list {float: left; width: 100%;padding: 20px 0px; border-bottom: 1px dashed #ccc;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list .option-menu .tab-toggle-btn {cursor: pointer; float: right; width: 35px; height: 35px; background: #eaeaea; color: #333; text-align: center; line-height: 35px; font-size: 18px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data {display: none; padding: 20px 0px 20px 20px; float: left; width: 100%;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head {float: left; width: 100%; display: table;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .thumb {display: flex; width: 50px; height: 50px; overflow: hidden; border-radius: 100%; border:1px solid #ccc; }
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .thumb img {display: block; width: 100%; height: 100%;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .coloum-div {display: table-cell; vertical-align: middle;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .coloum-div .name {float: left; width: 100%; color: #3d3d3d; font-size: 14px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .coloum-div .name .type {margin-right: 10px; float: left;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .coloum-div .name .type img {display: block;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .cuisines {width: 100%; float: left; margin-top: 3px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .cuisines .subtext {float: left; font-size: 11px; color: #59ac3d; margin-right: 5px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .cuisines .cuisine-list .list {float: left; font-size: 11px; color: #636261;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .cuisines .cuisine-list .list:after{content: ","; margin: 0px 3px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .cuisines .cuisine-list .list:last-child:after {content: ""; display: none;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .price-data {float: right;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .price-data .price {float: left; width: 100%; font-size: 14px; color: #3d3d3d; font-weight: bold;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .price-data .act-for {float: left; width: 100%; font-size:12px; color: #a1a1a1;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .detail-head .qty-controller {display: inline-block;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .food-about {float: left; width: 100%; margin: 20px 0px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .food-about p {padding-left: 15px; float: left; max-width: 70%; font-size: 12px; color: #7d7d7d; line-height: 24px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .food-about .cart-btn {float: right; padding: 10px 25px; background: #59ac3d; color: #fff; border-radius: 3px; font-size: 12px;}
+
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .gallery {float: left; width: 55%;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .gallery .list {float: left; width: 50%; height: 135px; overflow: hidden; padding: 5px; border: 1px solid #ccc;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .gallery .list img {height: 100%; width: 100%; cursor: pointer;}
+.SumoGallery ul.Sthumbnails li a {width: 50px!important; height: 50px!important;}
+.SumoGallery .Sfooter {height: 70px!important;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .calendar {float: right; width: 45%; padding-left: 15px;}
+.detail-page .full-detail .left-panel .tabs .tab-list .tab-data .calendar img {display: block; float: right; width: 100%;}
+
+.detail-page .full-detail .about-cook {float: left; width: 100%;}
+.detail-page .full-detail .about-cook .heading {float: left; width: 100%; text-align: center; padding: 15px; background: #eeeeee; color: #212121; font-size: 18px; margin: 20px 0px;}
+.detail-page .full-detail .about-cook p {font-size: 13px; color: #888888; line-height: 20px;}
+
+.detail-page .full-detail .right-panel {float: right; width: 30%; padding-left: 30px;}
+.detail-page .full-detail .right-panel .cook-availiblity {float: left; width: 100%; box-shadow: 1px 1px 5px #ccc;}
+.detail-page .full-detail .right-panel .cook-availiblity .head{float: left; width: 100%; font-size: 18px; color: #313131; background: #f6f6f6; padding: 10px 25px;}
+.detail-page .full-detail .right-panel .cook-availiblity .head .status{margin-right: 10px;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list { padding: 10px 15px;  float: left; width: 100%;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list .list {padding: 10px; float: left; width: 100%;border: 1px solid #fff; border-radius: 3px;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list .list.active {border-color: #e3e3e3;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list .list .title {float: left; width: 35%; min-width: 100px; font-size: 13px; color: #313131;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list .list .label {float: left; width: 55%; font-size: 12px; color: #9b9b9b;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list .list .label.close {color: #ca5b5b;}
+.detail-page .full-detail .right-panel .cook-availiblity .weekday-list .list .title:after {content: ":"; float: right; padding-right: 10px;}
+.detail-page .full-detail .right-panel .cook-availiblity .call{float: left; text-align: center; width: 100%; padding: 10px; font-size: 13px; background: #e74f4f; color: #fff;}
+
+.detail-page .full-detail .right-panel .video {float: left; width: 100%; height: 200px; margin: 20px 0px; box-shadow: 1px 1px 5px #ccc; background: #fff; padding: 15px;}
+
+.detail-page .full-detail .review-data {float: left; width: 100%; padding-bottom: 30px;}
+
+.detail-page .full-detail .review-data .review-panel .total-review-rate {float: left; width: 100%;padding: 10px 0px 10px 30px; margin-top: 30px;}
+.detail-page .full-detail .review-data .review-panel .total-review-rate .number {float: left; font-size: 18px; width: 60%;}
+.detail-page .full-detail .review-data .review-panel .total-review-rate .number .sum {margin-left: 20px; background: #333; color: #fff; border-radius:3px; padding: 10px; padding: 5px 10px; font-size: 13px;}
+
+.detail-page .full-detail .review-data .review-panel .total-review-rate .sort-by {float: right;}
+.detail-page .full-detail .review-data .review-panel .total-review-rate .sort-by .label {float: left; font-size: 12px; margin-right: 10px; line-height: 30px;}
+.detail-page .full-detail .review-data .review-panel .total-review-rate .sort-by .select-option {float: left; width: 170px; background: url(../images/icon/option-down.png)no-repeat 95% center;}
+
+.detail-page .full-detail .review-data .review-panel .section-title {text-align: center; width: 100%; font-size: 18px; color: #333; margin-bottom: 20px; float: left;}
+.detail-page .full-detail .review-data .review-panel .section-title .caption {float: left; text-align: center; width: 100%; color: #888; font-size: 12px; margin-top: 5px;}
+.detail-page .full-detail .review-data .review-panel .give-first {border-radius: 3px; float: none; margin: 0 auto; display: block; width: 150px; padding: 10px; background: #333; clear: both; text-align: center; font-size: 12px; color: #fff;}
+.detail-page .full-detail .review-data .review-panel .give-first:hover {background: #000;}
+
+.detail-page .full-detail .review-data .review-list {width: 100%; float: left;}
+.detail-page .full-detail .review-data .review-list .list {float: left; width: 100%; display: table; margin: 10px 0px;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum{display: table-cell;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.user-detail .initial-name{display: block; line-height: 50px; height: 50px; width: 50px; vertical-align: middle;border-radius: 100%; color: #fff;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum .user-name {float: left; width: 100%; font-size: 13px; margin-top: 10px;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail {border: 1px solid #eaeaea; padding: 10px 20px; border-radius: 3px;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail .date{font-size: 12px; float: right; color: #888;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail .title {font-size: 14px; color: #333;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail .comment {float: left; width: 100%; font-size: 12px; color: #9F9F9F;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail .star-rating {float: left; clear: both; margin-top: 1px;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail .star-rating .star-list {float: left; font-size: 12px; color: #B7B5B5; padding: 0px 1px;}
+.detail-page .full-detail .review-data .review-list .list .div-coloum.review-detail .star-rating .star-list.given {color: #95be2f;}
+.white-glow {background:#fff; box-shadow: 1px 1px 5px #C0C0C0; }
+
+.detail-page .full-detail .review-data .right-panel{padding-left: 0px; padding-right: 20px; margin-top: 30px;}
+
+.detail-page .full-detail .review-data .rating-distribution {float: left; width: 60%; max-width: 300px; padding-left: 20px; border-left: 1px dashed #ccc;}
+.detail-page .full-detail .review-data .rating-distribution .list { float: left; width: 100%; margin: 3px 0px; font-size: 12px;}
+.detail-page .full-detail .review-data .rating-distribution .list .parameters {width: 50px; float: left;max-width: 20%; color: #171717; font-size: 11px;}
+.detail-page .full-detail .review-data .rating-distribution .list .number {color: #A4A1A1; display: table-cell; float: left; width: 20%; padding-left: 5px;}
+.detail-page .full-detail .review-data .rating-distribution .list .meter-line {margin-top: 5px; height: 5px; width: 60%; float: left; background: #e6e6e6; max-width: 185px;}
+.detail-page .full-detail .review-data .rating-distribution .list .meter-line .speed-up {float: left; background: #e46157; height: 5px;}
+.detail-page .full-detail .review-data .rating-distribution .title {float: left;width: 100%; font-size: 18px; margin-bottom: 10px;}
+
+.detail-page .full-detail .review-data .right-panel  .total-rating {float: left; width: 40%; text-align: center; max-width: 150px;margin-top: 15px;}
+.detail-page .full-detail .review-data .right-panel  .total-rating  .number {display: block; width: 100%; font-size: 36px; color: #363636;}
+.detail-page .full-detail .review-data .right-panel  .total-rating  .total-user {font-size: 12px; color: #888;}
+.detail-page .full-detail .review-data .right-panel  .total-rating  .star-rating {float: none; clear: both; margin-top: 1px; width: 80px; width: 65px; margin: 0 auto;}
+.detail-page .full-detail .review-data .right-panel  .total-rating  .star-rating .star-list {float: left; font-size: 12px; color: #B7B5B5; padding: 0px 1px;}
+.detail-page .full-detail .review-data .right-panel  .total-rating  .star-rating .star-list.given {color: #e46157;}
+.detail-page .full-detail .review-data .total-review-rate {float: left; width: 60%;padding: 10px 0px 10px 30px; margin-top: 30px;}
+.detail-page .full-detail .review-data .total-review-rate .number {float: left; font-size: 18px; width: 60%;}
+.detail-page .full-detail .review-data .total-review-rate .number .sum {margin-left: 20px; background: #333; color: #fff; border-radius:3px; padding: 10px; padding: 5px 10px; font-size: 13px;}
+
+.detail-page .full-detail .review-data .right-panel .review-btn {float: right; padding: 10px 25px; border-radius: 3px; background: #333; font-size: 13px; text-transform: uppercase; font-size: 13px; color: #fff;}
+
+.color-a { background-color:#cfedfb;}
+.color-b { background-color: #f0e3ef;}
+.color-c { background-color: #ffe2d2;}
+.color-d { background-color: #ffebb6;}
+.color-e { background-color: #d2eceb}
+.color-f { background-color: #faf0b5;}
+.color-g { background-color: #fbe2ed;}
+.color-h { background-color: #e5efc7;}
+.color-i { background-color: #e0e2e4;}
+.color-j { background-color: #68c7ec;}
+.color-k { background-color: #cab5d5;}
+.color-l { background-color: #f7a897;}
+.color-m { background-color: #f3b86d;}
+.color-n { background-color: #80ced0;}
+.color-o { background-color: #f4d161;}
+.color-p { background-color: #f6a8ca;}
+.color-q { background-color: #b0d775;}
+.color-r { background-color: #b3b5b7;}
+.color-s { background-color: #00a0dc;}
+.color-t { background-color: #a487ba;}
+.color-u { background-color: #ef6c5a;}
+.color-v { background-color: #e68523;}
+.color-w { background-color: #00aeb3;}
+.color-x { background-color: #edb220;}
+.color-y { background-color: #ee62a2;}
+
+.detail-page .full-detail .review-form-popup {display: none; width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99;background: rgba(0, 0, 0, 0.8);}
+.detail-page .full-detail .review-form-popup .box-model{z-index: 11;position: absolute;top: 0;bottom: 0;right: 0;left: 0;margin: auto;max-width: 500px;max-height: 550px;background-color: #fff;}
+.detail-page .full-detail .review-form-popup .box-model .main-heading {width: 100%; font-size: 18px; color: #333; text-align: center; padding: 20px 20px}
+.detail-page .full-detail .review-form-popup .box-model .review-form {float: left; width: 100%; padding: 0px 20px;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list {float: left; width: 100%; margin-bottom: 15px;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .title-bar {float: left; width: 100%; margin-bottom: 10px;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .title-bar .step {float: left; width: 25px; height: 25px; background: #2d2d2d; text-align: center; line-height: 25px; color: #fff; font-size: 13px; font-weight: bold;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .title-bar .title {font-size: 13px; color: #333; margin-left: 10px; line-height: 25px;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div {float: left; width: 100%;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .input-box {height: 30px; background: #fff; color: #333;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .caption {float: left; width: 100%; font-size: 12px; color: #888; margin-top: 5px;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .textarea{width: 100%; background: #fff; border: 1px solid #ccc; padding: 7px; min-height: 80px;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .input-box:focus{border-color: #2d2d2d;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .textarea:focus{border-color: #2d2d2d;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .rating .material-icons{cursor: pointer; font-size: 18px; color: #888;}
+.detail-page .full-detail .review-form-popup .box-model .review-form .form-list .input-div .rating .material-icons.selected{cursor: pointer; font-size: 18px; color: #52ADDE;}
+.detail-page .full-detail .review-form-popup .box-model .close-popup {position: absolute; right: 20px; top: 20px; cursor: pointer; padding: 7px 10px; background: #fff; border: 1px solid #333; border-radius: 100%;}
+.detail-page .full-detail .review-form-popup .box-model .close-popup:hover {color: #ED675D; border-color:#ED675D; }
+.ng-invalid {
+
+
+    color: red;
+ }
+ 
+
+
+/*------------------ detail page end here -------------------*/

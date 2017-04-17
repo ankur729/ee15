@@ -1,0 +1,54 @@
+<ul class="address-list" ng-init="getUserAddress_checkout()">
+ 
+  <li class="list" ng-repeat="address in user_address_list">
+
+   <div ng-if="address.address_default=='true'">
+
+    <div class="location default">Home - Default</div>
+    <h6 class="name">{{address.address_name}}</h6>
+    <span class="add-line">{{address.address_details}}</span>
+    <span class="add-line">New Delhi - 110033</span>
+    <span class="add-line">Delhi</span>
+    <span class="add-line">near hanuman mandir</span>
+    <span class="Phone"><i class="fa fa-phone"></i>+91 7838 414 681</span>
+
+    <ul class="floating-buttons">
+      <!-- <li class="button-list"><a href="#0" class="link"><i class="fa fa-pencil"></i></a></li> -->
+      <li class="button-list"><div class="link" ng-click="delete_address(address.address_id)" style="cursor: pointer"> <i class="fa fa-trash"></i></div></li>
+    </ul>
+
+
+    </div>
+
+
+   <div ng-if="address.address_default=='false'">
+
+    <div class="location">Home</div>
+    <h6 class="name">{{address.address_name}}</h6>
+    <span class="add-line">{{address.address_details}}</span>
+    <span class="add-line">New Delhi - 110033</span>
+    <span class="add-line">Delhi</span>
+    <span class="add-line">near hanuman mandir</span>
+    <span class="Phone"><i class="fa fa-phone"></i>+91 7838 414 681</span>
+
+    <ul class="floating-buttons">
+      <!-- <li class="button-list"><a href="#0" class="link"><i class="fa fa-pencil"></i></a></li> -->
+      <li class="button-list"><div class="link" ng-click="delete_address(address.address_id)" style="cursor: pointer"> <i class="fa fa-trash"></i></div></li>
+    </ul>
+
+
+    </div>
+
+
+  </li>
+  
+
+
+
+
+ 
+    </ul>
+  </li>
+
+
+</ul>

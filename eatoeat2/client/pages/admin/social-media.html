@@ -1,0 +1,141 @@
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel" ng-init="getSocialInfos()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Social Media</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Social Media</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div ng-click="save_social_setting()" class="blue-btn"><i class="fa fa-floppy-o" aria-hidden="true"></i></div></li>
+					
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Add Social Media</h3>
+					
+						<div class="add-more-section">
+							<ul class="cat-listing-show">
+								<li class="list main-name">
+									<div class="coloum-div center col-md-20">
+										<span class="title" ng-click="getSocialInfos()">Social Media</span>
+									</div>
+									<div class="coloum-div">
+										<span class="title">Add Url</span>
+									</div>
+									<div class="coloum-div col-px-200">
+										<span class="title">Status</span>
+									</div>
+									<div class="coloum-div center  col-px-100">
+										<span class="title">Remove</span>
+									</div>
+								</li>
+							</ul>
+
+
+					
+
+
+
+							
+							<ul class="cat-listing-show create-list" id="create-list-2">
+						
+								  <li  data-ng-repeat="choice in choices" class="list">
+
+									  <div class="coloum-div center col-md-20">
+				      <select  ng-model="choice.social_media" class="select-option" >
+						  <option value="">-Select Social Media-</option>
+				         <option value="facebook">Facebook</option>
+						 <option value="linked_in">Linked In</option>
+						 
+				         <option value="google plus">Google Plus</option>
+				         <option value="youtube">Youtube</option>
+						 <option value="instagram">Instagram</option>
+				     
+				         <option value="p_interest">Pinterest</option>
+						 <option value="twitter">Twitter</option>
+				        
+				       
+				      </select>
+									  </div>
+							
+								<div class="coloum-div">		  
+				    			  <input type="text" ng-model="choice.social_url" name="" placeholder="Input URL" class="input-box">
+								</div>
+
+							
+									  <div class="coloum-div center col-px-200">	
+										<select ng-model="choice.social_status"  class="select-option">
+											<option value="">-select status-</option>
+											<option value="Active">Active</option>
+											<option value="Deactive">Deactive</option>
+										</select>
+									  </div>
+
+						<div class="coloum-div center  col-px-100">
+
+							<button  ng-click="remove_social_media(choice.social_media)">-</button>
+
+						</div>
+						
+				      
+				   </li>
+				   <button class="addfields" ng-click="addNewChoice()">Add fields</button>
+				       
+				  
+								
+							</ul>
+						</div>
+				</div>
+				<!-- table view end here -->
+			
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- main container end herer -->
+<script type="text/javascript">
+
+$(".left-pannel .main-list").click(function(){
+	$(this).children(".nav-fly").slideToggle(200);
+	$(this).nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+// add more add more 
+$(".add-more").click(function(){
+	$(this).parents(".list").prev(this).clone(true).prependTo($(this).parents(".create-list"));
+});
+
+// remove
+$(document).on("click" , ".remove-row" , function(){
+	$(this).parents(".list").remove();
+});
+
+
+</script>

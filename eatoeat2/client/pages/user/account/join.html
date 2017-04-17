@@ -1,0 +1,32 @@
+
+<div ng-controller="user_register" ng-init="login_check_for_login()" ng-cloak>
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+<div class="container">
+	<div class="user-join-page w-shadow">
+		<div class="form-display">
+			<h2 class="page-name">User Account
+			<p class="caption">Join to have awesome food, and save your time to cook</p>
+			</h2>
+			<div class="activity">
+				<ul class="buttons">
+					<li class="list active"><a href="#/user_login" class="link">Login</a></li>
+					<li class="list"><a href="#/user_create" class="link">Sign up</a></li>
+				</ul>
+		
+				<p class="caption">Enter your email and password to <b>login</b></p>
+				<div ng-include="'pages/user/account/login-area.html'"></div>
+
+				<div class="external-button">
+					<a href="#0" class="facebook"><span class="icon"><i class="fa fa-facebook"></i></span>Sign in with <b>Facebook</b></a>
+					<a href="#0" class="google"><span class="icon"><i class="fa fa-google-plus"></i></span>Sign in with <b>Google +</b></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+</div>

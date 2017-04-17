@@ -1,0 +1,25 @@
+[
+    {
+    "id" : 1,
+    "website_name": "Kovill",
+    "title": "Kovill",
+    "header_logo": "images/w-logo.png",
+    "footer_logo": "images/logo.png",
+    "favicon": "Kovill",
+    "title": "Kovill",
+    "email_1": "info@kovill.com",
+    "email_2": "sales@kovill.com",
+    "phone_1": "9555555547",
+    "phone_2": "9595959595",
+    "address_1": "Kovill",
+    "address_2": "Kovill",
+    "google_analytic": "Kovill",
+    "map": "Kovill",
+    "schema": "Kovill",
+    "coyright": "Copyright © 2016, www.kovill.com. All Rights Reserved",
+    "delivery_charge": "40",
+    "meta_keyword": "Kovill",
+    "meta_discription": "Kovill"
+    }
+
+]

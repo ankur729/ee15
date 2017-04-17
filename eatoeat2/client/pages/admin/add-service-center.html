@@ -1,0 +1,133 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" >
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Add Service Center</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Add Service Center</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list">
+							<a   class="blue-btn" ng-click="add_service_center(service_center_detail)"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
+						</li>
+						<li class="list">
+							<a href="#/admin/view-service-center"  class="blue-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Add Service Center</h3>
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Center Name</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Center Name" ng-model="service_center_detail.center_name">
+								</div>
+							</div>
+
+							
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Location</span>
+								<div class="col-md-80 input-div">
+									<div class="col-md-33 left padding-right-10px">
+										<input type="text" id="lat" name="" class="input-box" placeholder="Lattitude" ng-model="service_center_detail.center_lat">
+									</div>
+									<div class="col-md-33 left padding-left-right-5px">
+										<input type="text"  id="long" name="" class="input-box" placeholder="Logitude" ng-model="service_center_detail.center_long">
+									</div>
+									<div class="col-md-33 left padding-left-10px">
+										<span class="locate-me" id="auddtocomplete" ng-click="GetServiceCenterAddress()" >Locate Me <i class="icon"></i><div></div></span>
+									</div>
+								</div>
+							</div>
+
+							<!-- 
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Discount Operation</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="save_coupon_details.coupon_discount_operation">
+										<option value=" - ">' - '</option>
+										<option value=" % ">' % '</option>
+									</select>
+								</div>
+							</div> -->
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Delivery Range</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Delivery Range" ng-model="service_center_detail.center_delivery_range">
+								</div>
+							</div>
+
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Address</span>
+								<div class="col-md-80 input-div">
+									<div class="col-md-25 left padding-right-10px">
+										<input type="text" name="" class="input-box" placeholder="Location" ng-model="service_center_detail.center_location">
+									</div>
+									<div class="col-md-25 left padding-left-right-5px">
+										<input type="text" name="" class="input-box" placeholder="City" ng-model="service_center_detail.center_city">
+									</div>
+									<div class="col-md-25 left padding-left-right-5px">
+										<input type="text" name="" class="input-box" placeholder="State" ng-model="service_center_detail.center_state">
+									</div>
+									<div class="col-md-25 left padding-left-10px">
+										<input type="text" name="" class="input-box" placeholder="Pincode" ng-model="service_center_detail.center_pincode">
+									</div>
+								</div>
+							</div>
+
+							<!-- 
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Total Amount</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Attribute Name"></div>
+							</div> -->
+						
+					
+							<div class="row field-fillup">
+								<span class="input-field-title">Status</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="service_center_detail.center_status">
+										<option value="">--Select--</option>
+										<option value="Enable">Enable</option>
+										<option value="Disable">Disable</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>

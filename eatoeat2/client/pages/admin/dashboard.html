@@ -1,0 +1,133 @@
+ <span us-spinner="{radius:30, width:8, length: 16}"></span>
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="get_admin_id()">
+			<div class="view-pannel">
+				<div class="col-md-50 left">
+					<div class="section-heading">
+						<h2 class="section-name">Total Sale 
+							<span class="number">(57)</span>
+							<span class="price">Rs. 1,60,000</span>
+						</h2>
+					</div>
+
+					<ul class="dashbox">
+						<li class="list col-md-50">
+							<div class="style" style="background: #f9b294;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Online Sale</span>
+										<span class="number">0</span>
+									</div>
+								</div>
+								<span class="price">Rs. 0</span>
+							</div>
+						</li>
+						<li class="list col-md-50">
+							<div class="style" style="background: #f27280;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">COD Sale</span>
+										<span class="number">11</span>
+									</div>
+								</div>
+								<span class="price">Rs. 9,623</span>
+							</div>
+						</li>
+
+						<li class="list col-md-50">
+							<div class="style" style="background: #84af9c;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Total Active User</span>
+										<span class="number">59</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="list col-md-50">
+							<div class="style" style="background: #c6c7aa;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Total Vendor</span>
+										<span class="number">12</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="col-md-50 left">
+					<div class="section-heading">
+						<h2 class="section-name">Total Order 
+							<span class="number">(36)</span>
+						</h2>
+					</div>
+
+					<ul class="dashbox">
+						<li class="list col-md-50">
+							<div class="style" style="background: #c16c86;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Complete</span>
+										<span class="number">11</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="list col-md-50">
+							<div class="style" style="background: #335d7e;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Pending</span>
+										<span class="number">21</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="list col-md-50">
+							<div class="style" style="background: #fbceae;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Cancelled</span>
+										<span class="number">4</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="list col-md-50">
+							<div class="style" style="background: #ef4666;">
+								<div class="result-shown">
+									<div class="records">
+										<span class="title">Returned</span>
+										<span class="number">0</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+

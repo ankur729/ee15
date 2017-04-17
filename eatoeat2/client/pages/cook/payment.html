@@ -1,0 +1,72 @@
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/cook/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel wallet-page">
+
+			<!-- add ammount start here -->
+			<div class="add-money w-shadow">
+				<div class="coloum-div wallet-balance">
+					<h4 class="amount">Rs. 50 </h4>
+					<span class="caption">Your Wallet Balance</span>
+				</div>
+				<div class="coloum-div add-field">
+					<div  class="col-md-70 left padding-right-20px"><input type="text" name="" class="input-box" placeholder="Please enter amount to be added"></div>
+					<div class="col-md-30 left"><input type="submit" name="" class="submit-btn" value="Add Amount"></div>
+				</div>
+			</div>
+			<!-- add ammount end here -->
+
+			<div class="transaction-history w-shadow">
+				<h2 class="main-title">Transaction History</h2>
+
+				<div class="table-view">
+					<ul class="list-show">
+						<li class="list main-name">
+							<div class="coloum-div padding-left-30px"><span class="title">Transactions</span></div>
+							<div class="coloum-div center col-px-100"><span class="title">Debit</span></div>
+							<div class="coloum-div center col-px-100"><span class="title">Credit</span></div>
+							<div class="coloum-div center col-px-100"><span class="title">Status</span></div>
+							<div class="coloum-div padding-left-20px padding-right-20px col-md-25"><span class="title">Comment</span></div>
+						</li>
+						<li class="list">
+							<div class="coloum-div padding-left-30px">
+								<h6 class="order-name">Paid for Order</h6>
+								<span class="order-number">order number #2123094812</span>
+								<span class="order-date">2016-10-12 10:41:00 PM</span>
+							</div>
+							<div class="coloum-div center col-px-100"><span class="amount-number"></span></div>
+							<div class="coloum-div center col-px-100"><span class="amount-number">Rs 500</span></div>
+							<div class="coloum-div center col-px-100"><span class="status complete">Done</span></div>
+							<div class="coloum-div padding-left-20px padding-right-20px col-md-25"><span class="comment">Thanks for using eato eato</span></div>
+						</li>
+						<li class="list">
+							<div class="coloum-div padding-left-30px">
+								<h6 class="order-name">Paid for Order</h6>
+								<span class="order-number">order number #2123094812</span>
+								<span class="order-date">2016-10-12 10:41:00 PM</span>
+							</div>
+							<div class="coloum-div center col-px-100"><span class="amount-number">Rs 500</span></div>
+							<div class="coloum-div center col-px-100"></div>
+							<div class="coloum-div center col-px-100"><span class="status not-complete">Pending</span></div>
+							<div class="coloum-div padding-left-20px padding-right-20px col-md-25"><span class="comment">Thanks for using eato eato</span></div>
+						</li>
+						<li class="list">
+							<div class="coloum-div padding-left-30px">
+								<h6 class="order-name">Paid for Order</h6>
+								<span class="order-number">order number #2123094812</span>
+								<span class="order-date">2016-10-12 10:41:00 PM</span>
+							</div>
+							<div class="coloum-div center col-px-100"></div>
+							<div class="coloum-div center col-px-100"><span class="amount-number">Rs 500</span></div>
+							<div class="coloum-div center col-px-100"><span class="status failed">Done</span></div>
+							<div class="coloum-div padding-left-20px padding-right-20px col-md-25"><span class="comment">Thanks for using eato eato</span></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>

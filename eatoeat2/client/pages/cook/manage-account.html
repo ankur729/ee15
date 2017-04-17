@@ -1,0 +1,50 @@
+<div ng-controller="right_menu_controller" ng-init="login_check_for_cook()">
+
+<div ng-controller="cook_register">
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/cook/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel manage-account">
+			<h4 class="page-name w-shadow">Manage your account</h4>
+			
+			<div class="display-area">
+				<div class="left-pannel">
+					<div class="update-email w-shadow">
+						<h4 class="main-title">Deactivate your account</h4>
+	<p ng-show="after_success_account_deactivate" style="font-size:12px;color:green"><b>Account Successfully Deactivated..!</b><br><b style="color:lightcoral;margin-left: 15px;">Redirecting you in few seconds.</b></p>
+	<p ng-show="after_failed_account_deactivate" style="font-size:12px;color:red">Details Are Incorrect <b>Try Again.!</b></p>
+
+						<div class="form-display">
+							<div class="form-div">
+								<span class="label">Email Address</span>
+								<input name="" class="input-box" placeholder="Email Address" type="text" ng-model="cook_acount_deactivate_details.cook_email">
+							</div>
+							<div class="form-div">
+								<div class="col-md-50 left padding-right-5px">
+									<span class="label">Mobile Number</span>
+									<input name="" class="input-box" placeholder="Mobile Number" type="number" ng-model="cook_acount_deactivate_details.cook_contact_no">
+								</div>
+								<div class="col-md-50 left padding-left-5px">
+									<span class="label">Password</span>
+									<input name="" class="input-box" placeholder="Password" type="password" ng-model="cook_acount_deactivate_details.cook_password">
+								</div>
+							</div>
+							<div class="form-div">
+								<input name="" class="submit-btn" value="Confirm Deactivation" type="submit" ng-click="deactivate_cook(cook_acount_deactivate_details)">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+
+</div>
+
+</div>

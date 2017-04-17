@@ -1,0 +1,83 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel" ng-init="fetch_info_pages()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Information</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Catagories</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-information"  style="cursor: pointer" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div ng-click="fetch_info_pages()" style="cursor: pointer" class="white-btn"><i class="fa fa-refresh" aria-hidden="true"></i></div></li>
+						<li class="list"><div class="red-btn" ng-click="info_page_delete()"  style="cursor: pointer"><i class="fa fa-trash-o" aria-hidden="true"></i></div</li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-list-alt icon-name" aria-hidden="true"></i> Information Pages List</h3>
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-all-btn"  ng-model="hasAllCookChecked" ng-click="checkAll_for_info_pages()" >
+							</div>
+							<div class="coloum-div col-md-70">
+								<span class="title">information Title</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">Sort Order</span>
+							</div>
+							<div class="coloum-div center">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+					<ul class="cat-listing-show list-group">
+						<li class="list" ng-repeat="info in view_info_detail">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-btn" ng-checked="selection.indexOf(user) > -1"
+							 ng-click="toggleSelection(info._id)" ng-model="info.selected">
+							</div>
+							<div class="coloum-div col-md-70">
+								<span class="title">{{info.info_title}}</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">{{info.info_sort_order}}</span>
+							</div>
+							<div class="coloum-div center">
+								<a href="#/admin/edit-information-page" class="red-btn" ng-click="update_info_pages_temp(info._id)"  style="cursor: pointer"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+
+
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

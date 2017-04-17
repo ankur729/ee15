@@ -1,0 +1,119 @@
+<div ng-controller="user_register" ng-init="auth()" >
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/user/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel add-address w-shadow">
+			<h4 class="page-name">Update your Address</h4>
+			
+            
+             <ul class="table-view">
+    <li class="list field-fillup">
+      <span class="input-field-title">Name</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="User Name" type="text" ng-model="user_address_detail.address_name"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Street Address</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="Flat/House No. Colony/Street No." type="text" ng-model="user_address_detail.address_details"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Locality / Landmark</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="Your Near Location/Landmark" type="text" ng-model="user_address_detail.address_locality_landmark"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">City</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="City" type="text" ng-model="user_address_detail.address_city"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">State</span>
+      <div class="input-div">
+        <select class="select-option" ng-model="user_address_detail.address_state">
+          <option value="">--Select--</option>
+          <option value="New Delhi">New Delhi</option>
+          <option value="Delhi/Ncr">Delhi/Ncr</option>
+        </select>
+      </div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Pincode</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="Enter 6 Digit Pincode" type="text" ng-model="user_address_detail.address_pincode"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Mobile Number </span>
+      <div class="input-div"><input name="" class="input-box" placeholder="10 Digit Mobile Number" type="text" ng-model="user_address_detail.address_contact_no"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Address Type</span>
+      <div class="input-div">
+        <input id="check1" name="check" value="Home" class="fancy-radio" type="radio" ng-model="user_address_detail.address_type">
+        <label for="check1" class="fancy-radio-label">Home</label>
+
+        <input id="check2" name="check" value="Office/Commercial" class="fancy-radio" type="radio" ng-model="user_address_detail.address_type">
+        <label for="check2" class="fancy-radio-label"> Office/Commercial </label>
+      </div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Make it default</span>
+      <div class="input-div">
+        <input id="check3" name="check" value="yes" class="fancy-checkbox" type="checkbox" ng-model="user_address_detail.address_default">
+        <label for="check3" class="fancy-checkbox-label">Make this my default address</label>
+      </div>
+    </li>
+    <li class="list field-fillup">
+      <div class="input-div"><input name="" class="submit-btn" value="Save" type="submit" ng-click="update_user_address(user_address_detail)"></div>
+    </li>
+</ul>
+
+
+  <ul class="address-list" ng-init="getUserAddress()">
+
+<div ng-repeat="address in user_address_list">
+    <div ng-if="address.address_default=='true'">
+  <li class="list" >
+    <div class="location default">{{address.address_type}} - Default</div>
+    <h6 class="name">{{address.address_name}}</h6>
+    <span class="add-line">{{address.address_details}}</span>
+    <span class="add-line">{{address.address_city}}-{{address.address_pincode}}</span>
+    <span class="add-line">{{address.address_state}}</span>
+    <span class="add-line">{{address.address_locality}}</span>
+    <span class="Phone"><i class="fa fa-phone"></i>+{{address.address_contact}}</span>
+  
+    <ul class="floating-buttons">
+      <!-- <li class="button-list"><a href="#0" class="link"><i class="fa fa-pencil"></i></a></li> -->
+      <li class="button-list"><div class="link" ng-click="delete_address(address.address_id)" style="cursor: pointer"> <i class="fa fa-trash"></i></div></li>
+    </ul>
+  </li>
+    </div>
+
+    <div ng-if="address.address_default=='false'">
+ <li class="list">
+    <div class="location">{{address.address_type}} </div>
+    
+    <h6 class="name">{{address.address_name}}</h6>
+    <span class="add-line">{{address.address_details}}</span>
+    <span class="add-line">{{address.address_city}}-{{address.address_pincode}}</span>
+    <span class="add-line">{{address.address_state}}</span>
+    <span class="add-line">{{address.address_locality}}</span>
+    <span class="Phone"><i class="fa fa-phone"></i>+{{address.address_contact}}</span>
+    <ul class="floating-buttons">
+      <!-- <li class="button-list"><a href="#0" class="link"><i class="fa fa-pencil"></i></a></li> -->
+      <li class="button-list"><div class="link" ng-click="delete_address(address.address_id)" style="cursor: pointer"> <i class="fa fa-trash"></i></div></li>
+    </ul>
+  </li>
+    </div>
+
+</div>
+
+</ul>
+
+
+		     
+		</div>
+
+	</div>
+<div ng-include="'pages/inc/footer.html'"></div>
+
+</div>
+

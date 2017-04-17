@@ -1,0 +1,33 @@
+<div ng-controller="right_menu_controller" ng-init="login_check_for_cook()">
+
+<div ng-controller="cook_register"   ng-cloak>
+	
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/cook/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel food-page">
+			<div class="page-name w-shadow">Food Section</div>
+
+				<div class="seaTabs row margin-top-20px">
+					<div class="seaTabs_switch row order-cat">
+						<div class="seaTabs_tab seaTabs_switch_active">Add food</div>
+						<div class="seaTabs_tab">VIew Food</div>
+					</div>
+
+					<div class="seaTabs_content w-shadow row" >
+						<div ng-include="'pages/cook/food/add-food.html'" class="seaTabs_item seaTabs_content_active  add-food"	></div>
+						<div ng-include="'pages/cook/food/food-list.html'" class="seaTabs_item padding-10px"></div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+
+</div>
+	</div>

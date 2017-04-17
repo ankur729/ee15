@@ -1,0 +1,268 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name"> Foods</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Foods</li>
+					</ul>
+
+					<ul class="link-icon"><!-- 
+						<li class="list"><a href="add-seller-product.html" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li> -->
+						<li class="list"><a href="#0" class="white-btn"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+						<li class="list"><a href="#0" class="red-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">
+						<i class="fa fa-list-alt icon-name" aria-hidden="true"></i>
+						Unapproved Foods List 
+						<div class="right col-px-200">
+								<select class="select-option">
+								<option>Status</option>
+								<option>Approved</option>
+								<option>Unapproved</option>
+							</select>
+						</div>
+					</h3>
+
+					<div class="search-model">
+						<div class="search-div">
+							<label class="search-name">Cook Name</label>
+							<input type="text" name="" class="input-box" placeholder="Cook Name">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Food Name</label>
+							<input type="text" name="" class="input-box" placeholder="Food Name">
+						</div>
+						<div class="search-div">
+							<label class="search-name">EatoEato SKU</label>
+							<input type="text" name="" class="input-box" placeholder="EatoEato SKU">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Merchant SKU</label>
+							<input type="text" name="" class="input-box" placeholder="Merchant SKU">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Price</label>
+							<input type="text" name="" class="input-box" placeholder="Price">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Status</label>
+							<select class="select-option left">
+								<option>Select</option>
+								<option>Enable</option>
+								<option>Disable</option>
+							</select>
+						</div>
+						<div class="search-div">
+							<label class="search-name">Model</label>
+							<input type="text" name="" class="input-box"  placeholder="Model">
+						</div>
+						<button class="search-btn right">Filter</button>
+					</div>
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-30 center">
+								<input type="checkbox" name="" class="check-all-btn">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Cook Name</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">Image</span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">Food Name</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">SKU</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Model</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">Price</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">Quantity</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">Status</span>
+							</div>
+							<div class="coloum-div center col-px-50">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+					<ul class="cat-listing-show list-group">
+						<li class="list">
+							<div class="coloum-div col-px-30 center">
+								<input type="checkbox" name="" class="check-btn">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Vinay</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="pro-thumb"><img src="images/product/1.jpg"></span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">Apple Cinema 30"</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title row"><b>Gifola SKU :</b>GF-001</span>
+								<span class="title row"><b>Merchant SKU :</b> VS-001</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Product 15</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">90,000</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title in-stock">500</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title ">
+									<a href="#0" class="visit-button">Approved</a>
+								</span>
+							</div>
+							<div class="coloum-div col-px-50 center">
+								<a href="#0" class="red-btn"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+						<li class="list">
+							<div class="coloum-div col-px-30 center">
+								<input type="checkbox" name="" class="check-btn">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Vinay</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="pro-thumb"><img src="images/product/1.jpg"></span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">Apple Cinema 30"</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title row"><b>Gifola SKU :</b>GF-001</span>
+								<span class="title row"><b>Merchant SKU :</b> VS-001</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Product 15</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">90,000</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title in-stock">500</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title "><a href="#0" class="visit-button">Approved</a></span>
+							</div>
+							<div class="coloum-div col-px-50 center">
+								<a href="#0" class="red-btn"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+						<li class="list">
+							<div class="coloum-div col-px-30 center">
+								<input type="checkbox" name="" class="check-btn">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Vinay</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="pro-thumb"><img src="images/product/1.jpg"></span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">Apple Cinema 30"</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title row"><b>Gifola SKU :</b>GF-001</span>
+								<span class="title row"><b>Merchant SKU :</b> VS-001</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Product 15</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">90,000</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title in-stock">500</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title "><a href="#0" class="visit-button">Approved</a></span>
+							</div>
+							<div class="coloum-div col-px-50 center">
+								<a href="#0" class="red-btn"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+						<li class="list">
+							<div class="coloum-div col-px-30 center">
+								<input type="checkbox" name="" class="check-btn">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Vinay</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="pro-thumb"><img src="images/product/1.jpg"></span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">Apple Cinema 30"</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title row"><b>Gifola SKU :</b>GF-001</span>
+								<span class="title row"><b>Merchant SKU :</b> VS-001</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Product 15</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title">90,000</span>
+							</div>
+							<div class="coloum-div col-px-75 center">
+								<span class="title in-stock">500</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title "><a href="#0" class="no-btn">Unapproved</a></span>
+							</div>
+							<div class="coloum-div col-px-50 center">
+								<a href="#0" class="red-btn"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+					
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->

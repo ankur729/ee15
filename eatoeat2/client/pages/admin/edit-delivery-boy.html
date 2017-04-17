@@ -1,0 +1,112 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+
+	<div class="work-pannel" ng-init="fetch_service_center_for_delivery_boy()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="update_delivery_boy_fetch()">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Edit Delivery Boy</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Edit Delivery Boy</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list">
+							<div class="blue-btn" ng-click="add_delivery_boy(delivery_boy_details)" style="cursor: pointer"><i class="fa fa-floppy-o" aria-hidden="true"></i></div>
+						</li>
+						<li class="list">
+							<a href="#/admin/view-delivery-boy"  class="blue-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Edit Delivery Boy</h3>
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Delivery Boy Name</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Delivery Boy Name" ng-model="delivery_boy_details.boy_name">
+								</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Delivery Boy Email</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Delivery Boy Email" ng-model="delivery_boy_details.boy_email">
+								</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Delivery Boy Mobile</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Delivery Boy Mobile" ng-model="delivery_boy_details.boy_contact">
+								</div>
+							</div>
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Password</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Create Password" ng-model="delivery_boy_details.boy_password">
+								</div>
+							</div>
+							
+									<div class="row field-fillup">
+								<span class="input-field-title mendatory">Choose Service Center</span>
+								<div class="col-md-80 input-div">
+									<div class="col-md-33 left padding-right-10px">
+										<input type="text" name="" class="input-box" placeholder="City" ng-model="delivery_boy_details.service_center_city">
+									</div>
+										<div class="col-md-33 left padding-left-5px">
+										<select class="select-option" ng-model="delivery_boy_details.service_center_name" >
+											<option value="">--Select Service Center Name--</option>
+											<option ng-repeat="center in c_list" value="{{center.center_name}}">{{center.center_name}}</option>
+										</select>
+									</div>
+									<div class="col-md-33 left padding-left-10px" ng-init="loadCooks()">
+										<select class="select-option" ng-model="delivery_boy_details.selected_cook">
+											<option value="">--Select Cook--</option>
+											<option  ng-repeat="cook in cooks_list_deatils" value="{{cook.cook_name}}">{{cook.cook_name}}</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+					
+							<div class="row field-fillup">
+								<span class="input-field-title">Status</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="delivery_boy_details.boy_status">
+										<option value="">--Select--</option>
+										<option value="Enable">Enable</option>
+										<option value="Disable">Disable</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>

@@ -1,0 +1,368 @@
+<div ng-controller="user_register" >
+	<div ng-controller="right_menu_controller" ng-init="logged_in_user_check_for_dashboard()">
+<link rel="stylesheet" href="plugin/price-ranger/css/1.css">
+<link href="plugin/calendar/css/1.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/path/to/slider/rzslider.css"/>
+  <style type="text/css">
+      #map {
+        width: 700px;
+        height: 500px;
+      }
+    </style>
+<div ng-include="'pages/popup/select-user.html'"  ng-show="ask_user_type_show" ></div>
+<div class="listing-page" ng-init="get_foods_for_listing()">
+	<div class="header">
+		<div class="container">
+			<span class="logo"><img src="public/images/logo.png"></span>
+		
+			<div ng-include="'pages/inc/right-menu.html'" class="right-menu-pannel"></div>
+		
+			<div class="listing-search">
+<div class="generic-search" >
+	<div class="coloum-div col-px-150">
+		<span class="choose_location">{{loc_show}}</span>
+	</div>
+	<div class="coloum-div">
+		<input type="text" name="" class="search-div" placeholder="Please search your desire food" ng-model="search">
+	</div>
+</div>
+			</div>
+		
+		</div>
+
+		<div class="bread_ui">
+			<div class="container">
+	<ul class="breadcrumbs">
+		<li class="list"><a href="#0" class="link">Home</a></li>
+		<li class="list">{{loc_show}}</li>
+	</ul>
+</div>
+		</div>
+	</div>
+
+	<!-- process details start here -->
+	<div class="process-detail">
+		<div class="container">
+			<p class="detail-title" >food maker in {{loc_show}} ({{food_listing.total_food_count}})</p>
+
+			<div class="data-sort right">
+				<div class="sort-by">	
+					Sort by: <span class="get-data">Sort List</span>
+				</div>
+		   <select class="sort-well" ng-model="order" >
+            
+            <option value="food_price_per_plate">Price (low to high)</option>
+            <option value="-food_price_per_plate">Price (high to low)</option>
+         
+        </select>
+			</div>
+		</div>
+	</div>
+	<!-- process details end here -->
+
+	<div class="container" >
+		<div class="inner-body">
+
+			<!--FILTER SECTION-->
+<!--			<div ng-include="'pages/inc/filter.html'" class="left-panel"></div> -->
+
+<div  class="left-panel">
+
+
+<div class="filter-panel ">
+
+<div class="colum-adjust">
+		<h3 class="filter-name" ng-click="get_user_lat_lon_detail()">By type<i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<ul class="multipe-filter">
+			<li class="list" ng-repeat="occassion in food_listing.occasion_list">
+				<input  type="radio" ng-model="radiobox" name="radiobox" value="{{occassion.group_attr}}"  ng-click="toggleSelection_for_search(occassion)" >
+				<label for="check1">{{occassion.group_attr}}<span class="total-number"></span></label>
+			</li>
+		
+		</ul>
+	</div>
+	
+	<div class="colum-adjust" style="background: #f6f6f6;">
+		<h3 class="filter-name">By Day</h3>
+		<datepicker style="width: 140px;" date-format="dd-MM-yyyy" >
+									
+								<input type="text"  ng-model="dd.date" ng-change="toggleSelection_for_search_date(dd)"/>
+							</datepicker>
+	</div>
+
+	<div class="colum-adjust">
+		<h3 class="filter-name">By Price <i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<div class="inner-filter padding-left-right-20px margin-top-20px row">
+            <rzslider rz-slider-model="slider_translate.minValue" rz-slider-high="slider_translate.maxValue" rz-slider-options="slider_translate.options"  rz-slider-on-change="toggleSelection_for_search(slider_translate)"></rzslider>
+          </div>
+	</div>
+	<div class="colum-adjust">
+		<h3 class="filter-name">By Cuisines<i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<ul class="multipe-filter" style="display: block;">
+			<li class="list" ng-repeat="cuisine in food_listing.cuisine_list">
+				<input type="checkbox"  ng-checked="selection_for_search.indexOf(cuisine) > -1"
+				 ng-click="toggleSelection_for_search(cuisine)" >
+				<label >{{cuisine.category_name}}<span class="total-number"></span></label>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="colum-adjust">
+		<h3 class="filter-name">By Options <div class="clear-this" ng-click="get_foods_for_listing()" style="cursor: pointer">Clear</div></h3>
+		<ul class="filter-by-rate">
+			<li class="list" ng-click="toggleSelection_for_search(food_listing.veg_type[0])">
+				<span class="star-number"><i class="star"><img src="public/images/icon/veg.png"></i></span>
+				<span class="result-number">Veg</span>
+				<input name="" type="hidden">
+			</li>
+			<div ng-if="food_listing.veg_type">	
+				
+			</div>
+			<!-- ng-class="{'disabled':true}"-->
+			<li class="list"  ng-click="toggleSelection_for_search(food_listing.veg_type[1])">
+				<span class="star-number"><i class="star"><img src="public/images/icon/non-veg.png"></i></span>
+				<span class="result-number">Non - Veg</span>
+				<input name="" type="hidden">
+			</li>
+			<li class="list" ng-click="get_foods_for_listing()">
+				<span class="star-number"><i class="star"><img src="public/images/icon/all.png"></i></span>
+				<span class="result-number" >All</span>
+				<input name="" type="hidden">
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="colum-adjust">
+		<h3 class="filter-name">By delivery hours <i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<div class="inner-filter padding-left-right-20px margin-top-20px row">
+             <rzslider rz-slider-model="slider_translate_time.minTime" rz-slider-high="slider_translate_time.maxTime" rz-slider-options="slider_translate_time.options" ></rzslider>
+          </div>
+	</div>
+</div>
+
+</div>
+				<!--END FILTER SECTION-->
+
+			<div class="right-panel" ng-init="fetch_listing_promotional_banner()"> 
+
+				<!-- display ads start here -->
+				<ul class="display-ads">
+					<li class="list" ng-repeat="promo_bann in listing_promo_2_detail">
+						
+						
+						<img ng-src="{{promo_bann.banner_img}}" class="proper-ads"></li>
+
+					<!--<li class="list"><img src="public/images/ads/2.jpg" class="proper-ads"></li>-->
+				</ul>
+				<!-- display ads ends here -->
+  
+			<div class="seaTabs row">
+			<div class="seaTabs_switch row">
+				<div class="seaTabs_tab seaTabs_switch_active">All Foods ({{food_listing.filter_food_count}})</div>
+				<div class="seaTabs_tab">View in Map</div>
+			</div>
+
+			<div class="seaTabs_content">
+				<div class="seaTabs_item seaTabs_content_active">
+
+			<ul class="food-list" ng-controller="product">
+					<!--<p ng-show="food_listing.listing ==''">No Food Found.. <span ng-click="reset_filters()" style="cursor: pointer;color:green;padding:25px;">Click Here To Reset Filters</span> </p>-->
+
+				<li class="list" ng-repeat="product in food_listing.listing  | orderBy: order | filter:search " ng-if="product.food_price_per_plate">
+					
+					<div class="style">
+						<div class="coloum-div thumb">
+							<span class="image"><img src="{{product.food_img_for_web}}" style="width: 150px;height: 100px;padding: 5px;"></span>
+						</div>
+						<div class="coloum-div data">
+							<a href="#/detail" class="name" ng-click="capture_food_id_temp($event,product._id)">{{product.food_name}}</a>
+							<div class="cuisines">
+								<span class="subtext">Cuisines :</span>
+								<ul class="cuisine-list">
+									<li class="list" ng-repeat="cuisine in product.cuisine_list">
+										
+											<div ng-if="cuisine.status=='true'">
+										{{cuisine.category_name}}
+								</div>
+						
+										</li>
+								</ul>
+							</div>
+							<div class="rupees">
+								<span class="price">Rs. {{product.food_price_per_plate}}</span>
+								<span class="caption">per plate price</span>
+							</div>
+							<div class="qty-controller">
+								     
+										 <span class="button"  ng-click="decreaseItemCount(product)">-</span>	
+										 <span class="qty-show">{{product.cart_qty}}</span>
+
+								<span class="button"  ng-click="increaseItemCount(product)">+</span>
+
+
+							</div>
+						<span class="video-btn" ng-click="saveCart()"><img src="public/images/icon/video-icon.png"></span>
+						</div>
+					</div>
+				</li>
+
+			
+				<!--<div class="load-more red">Load More</div>-->
+			</ul>
+
+			</div>
+				<div class="seaTabs_item">
+					<div class="map-view">
+						<div class="styling">
+
+							<div id="dvMap" style="width: 700px; height: 500px">
+				
+					
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+<script src="plugin/price-ranger/js/1.js"></script>
+<script src="plugin/price-ranger/js/2.js"></script>
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+<script src="public/js/libraries/jquery-cookies.js"></script>
+<script src="plugin/calendar/js/1.js"></script> 
+ 
+<script type="text/javascript">
+
+
+</script>	
+<script type="text/javascript">
+
+$(".data-sort .sort-well .list .link").click(function(){
+	$(this).parents(".sort-well").prev(".sort-by").children(".get-data").html(this.innerHTML);
+});
+
+
+$(".filter-by-rate .list").click(function(){
+	$(this).addClass("active");
+	$(this).prevAll(".list").removeClass("active");
+	$(this).nextAll(".list").removeClass("active");
+});
+
+
+$(function() {
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 2000,
+    values: [ 0, 2000 ],
+    slide: function( event, ui ) {
+      $( "#amount" ).val( " INR " + ui.values[ 0 ] + " - INR " + ui.values[ 1 ] );
+    }
+  });
+  $( "#amount" ).val( " INR " + $( "#slider-range" ).slider( "values", 0 ) +
+    " - INR " + $( "#slider-range" ).slider( "values", 1 ) );
+});
+
+$(function() {
+  $( "#hours-range" ).slider({
+    range: true,
+    min: 00,
+    max: 24,
+    values: [ 00, 24 ],
+    slide: function( event, ui ) {
+      $( "#hours" ).val( " HH " + ui.values[ 0] + " - HH " + ui.values[ 1 ] );
+    }
+  });
+  $( "#hours" ).val( " HH " + $( "#hours-range" ).slider( "values", 0 ) +
+    " - HH " + $( "#hours-range" ).slider( "values", 1 ) );
+});
+
+$('#dp1').fdatepicker({
+	closeButton: false
+});
+
+</script>
+	
+
+	</div>
+</div>
+
+
+
+<!--
+
+$('#dp1').fdatepicker({
+	closeButton: false
+});
+</script>
+   <script>
+      function writeAddressName(latLng) {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+          "location": latLng
+        },
+        function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK)
+            document.getElementById("address").innerHTML = results[0].formatted_address;
+          else
+            document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
+        });
+      }
+
+      function geolocationSuccess(position) {
+        var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        // Write the formatted address
+        writeAddressName(userLatLng);
+
+        var myOptions = {
+          zoom : 16,
+          center : userLatLng,
+          mapTypeId : google.maps.MapTypeId.ROADMAP
+        };
+        // Draw the map
+        var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
+        // Place the marker
+        new google.maps.Marker({
+          map: mapObject,
+          position: userLatLng
+        });
+        // Draw a circle around the user position to have an idea of the current localization accuracy
+        var circle = new google.maps.Circle({
+          center: userLatLng,
+          radius: position.coords.accuracy,
+          map: mapObject,
+          fillColor: '#0000FF',
+          fillOpacity: 0.5,
+          strokeColor: '#0000FF',
+          strokeOpacity: 1.0
+        });
+        mapObject.fitBounds(circle.getBounds());
+      }
+
+      function geolocationError(positionError) {
+        document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
+      }
+
+      function geolocateUser() {
+        // If the browser supports the Geolocation API
+        if (navigator.geolocation)
+        {
+          var positionOptions = {
+            enableHighAccuracy: true,
+            timeout: 10 * 1000 // 10 seconds
+          };
+          navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+        }
+        else
+          document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
+      }
+
+      window.onload = geolocateUser;
+
+-->

@@ -1,0 +1,43 @@
+	<style>
+	
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+
+}
+	</style>
+
+<div id="loading-bar-container"></div>
+<div ng-controller="user_register" ng-cloak>
+
+<form name="myForm_login">
+<div class="form-field">
+	<div class="field-fillup">
+		<label class="label required">Email</label>
+		<input type="email" name="email_check" class="input-box" placeholder="Your Email" ng-model="user_login.email" required="true">
+		
+		
+	</div>
+
+	<div class="field-fillup">
+		<label class="label required">Password</label>
+		<input type="password" name="" class="input-box" placeholder="Your Password" ng-model="user_login.password">
+				
+	</div>
+</div>
+
+
+<p ng-show="user_status" style="font-size:12px;color:red">Your Account has been deactivated.! <br><b>Please contact Administrator.!</b></p>
+
+<p ng-show="after_success_login_message" style="font-size:12px;color:green">Login Successfull !!! <br><b>Redirecting You....</b></p>
+<p ng-show="after_failed_login_message" style="font-size:12px;color:red;padding:10px;"><b>Either Bad Credential Or Not Activated Yet</b></p>
+<p ng-show="after_failed_activation" style="font-size:12px;color:red">You have Registered but <b>Not Activated yet</b>,<br> please check your mail</p>
+
+<div class="switch-btn">
+	<div class="list padding-20px"><a href="#/forgot_user" class="forgot">Forgot your password ?</a></div>
+	<div class="list padding-20px"><input type="submit" name="" class="submit-btn" value="Log in" ng-click="user_login_check(user_login)"  ng-disabled="myForm_login.$invalid || myForm_login.isDisabled"></div>
+</div>
+
+</form>
+</div>
+
+

@@ -1,0 +1,320 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Add Cook</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Add Cook</li>
+					</ul>
+
+					<ul class="link-icon">
+							<li class="list"><div class="blue-btn" ng-click="add_cook_via_admin(cook_info)" style="cursor: pointer"><i class="fa fa-floppy-o" aria-hidden="true" ></i></div></li>
+				
+						<li class="list"><a href="#/admin/view-cook" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Add Cook</h3>
+
+					<div class="seaTabs row">
+						<div class="tab-style">
+							<div class="seaTabs_switch row">
+								<div class="seaTabs_tab seaTabs_switch_active">Cook Personal Details</div>
+								<div class="seaTabs_tab">Data</div>
+								<div class="seaTabs_tab">Cook Company Details</div>
+								<div class="seaTabs_tab">Payment & Commission</div>
+							</div>
+
+				
+						<div class="seaTabs_content">
+							<!-- active tab start here -->
+							<div class="seaTabs_item seaTabs_content_active">
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Name</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Name" ng-model="cook_info.cook_pname"></div>
+								</div>
+								<!-- <div class="row field-fillup">
+									<span class="input-field-title mendatory">Last Name</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Last Name" ng-model="cook_info.cook_lname"></div>
+								</div> -->
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Email</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Email" ng-model="cook_info.cook_pemail"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Mobile</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Mobile" ng-model="cook_info.cook_pcontact"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Additional Phone</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Additional Phone" ng-model="cook_info.cook_p_additional_contact"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Password</span>
+									<div class="col-md-80 input-div"><input type="password" name="" class="input-box" placeholder="Password" ng-model="cook_info.cook_password"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Confirm Password</span>
+									<div class="col-md-80 input-div"><input type="password" name="" class="input-box" placeholder="Confirm Password"></div>
+								</div>
+
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">About Cook</span>
+									<div class="col-md-80 input-div">
+										<textarea class="textarea" required ng-model="cook_info.cook_about_us"></textarea>
+									</div>
+								</div>
+								
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Gender</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option" ng-model="cook_info.cook_gender">
+											<option value="">--Select--</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+									</div>
+								</div>
+
+							
+
+
+							
+							</div>
+							<!-- active tab end here -->
+
+
+							<div class="seaTabs_item ">
+
+								<!-- <div class="row field-fillup">
+									<span class="input-field-title mendatory">Seller Group </span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>Default</option>
+										</select>
+									</div>
+								</div> -->
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Delivery By</span>
+									<div class="col-md-80 input-div">
+										<input id="check1" type="radio" name="check" value="Admin" class="fancy-radio" ng-model="cook_info.delivery_by">
+										<label for="check1"  class="fancy-radio-label">Admin</label>
+
+										<input id="check2" type="radio" name="check" value="Cook" class="fancy-radio" ng-model="cook_info.delivery_by">
+										<label for="check2"  class="fancy-radio-label">Cook</label>
+									</div>
+
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Delivery Range</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option" ng-model="cook_info.delivery_range">
+											<option value="">--Select--</option>
+											<option value="With in 1 KM">With in 1 KM</option>
+											<option value="With in 2 KM">With in 2 KM</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Approve Status</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option" ng-model="cook_info.cook_isApproved">
+											<option value="">--Select--</option>
+											<option value="Approved">Approved</option>
+											<option value="Un Appr"> Un Approved</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Status</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option" ng-model="cook_info.cook_isActive">
+											<option value="">--Select--</option>
+											<option value="Active">Active</option>
+											<option value="Inactive">Inactive</option>
+										</select>
+									</div>
+								</div>
+
+					
+							</div>
+
+
+							<div class="seaTabs_item ">
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Cook Company Name</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Company Name" ng-model="cook_info.cook_company_name"></div>
+								</div>
+
+
+						
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Compnay Banner</span>
+									<div class="col-md-80 input-div"   >
+												<label class="upload-single-image left" title="Please upload your logo">
+										<input type="file" id="cook_banner" class="input-file" name="cook_banner"  ngf-change="upload_cook_banner_image_admin($files)" ngf-select ng-model="picFile_cook_banner" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+							
+											<span class="thumb" ><img src="public/images/logo.png"  ngf-src="picFile_cook_banner[0]" 	></span>
+														
+										</label>
+									</div>
+								</div>
+<!-- 
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Cook Display Email</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Company Name" ng-model="cook_info.cook_display_email"></div>
+								</div> -->
+
+								<!-- <div class="row field-fillup">
+									<span class="input-field-title mendatory">Cook Display Contact No.</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Company Name" ng-model="cook_info.cook_display_contact"></div>
+								</div> -->
+<!-- 
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Cook Address</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Company Name" ng-model="cook_info.cook_street_address"></div>
+								</div> -->
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Cook Location</span>
+									<div class="col-md-80 input-div">
+										<div class="col-md-33 left padding-right-10px">
+											<input name="" class="input-box ng-pristine ng-valid ng-touched" placeholder="Lattitude" ng-model="cook_info.cook_lat" type="text">
+										</div>
+										<div class="col-md-33 left padding-left-right-5px">
+											<input name="" class="input-box ng-pristine ng-untouched ng-valid" placeholder="Logitude" ng-model="cook_info.cook_long" type="text">
+										</div>
+										<div class="col-md-33 left padding-left-10px">
+											<span class="locate-me" id="location" ng-click="GetServiceCenterAddress()">Locate Me <i class="icon"></i><div></div></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Address</span>
+									<div class="col-md-80 input-div">
+										<div class="col-md-25 left padding-right-10px">
+											<input name="" class="input-box" placeholder="Location" type="text" ng-model="cook_info.cook_location"> 
+										</div>
+										<div class="col-md-25 left padding-left-right-5px">
+											<select class="select-option"  ng-model="cook_info.cook_city">
+												<option value="">Select City</option>
+												
+												<option value="delhi/ncr">Delhi/NCR</option>
+												<option value="new delhi">New Delhi</option>
+											</select>
+										</div>
+										<div class="col-md-25 left padding-left-right-5px">
+											<select class="select-option" ng-model="cook_info.cook_state" >
+												<option value="">Select State</option>
+												<option value="delhi/ncr">Delhi/NCR</option>
+												<option value="new delhi">New Delhi</option>
+											</select>
+										</div>
+										<div class="col-md-25 left padding-left-10px">
+											<input type="text" name="" class="input-box" placeholder="Pincode"  ng-model="cook_info.cook_pincode">
+										</div>
+									</div>
+								</div>
+
+
+						
+							</div>
+
+
+							<div class="seaTabs_item ">
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Commission</span>
+									<div class="col-md-80 input-div relative">
+										<input type="text" name="" class="input-box" placeholder="Commission"  ng-model="cook_info.cook_commission">
+										<span class="input-group-addon">%</span>
+									</div>
+								</div>
+
+									<div class="row field-fillup">
+									<span class="input-field-title mendatory">Bank Account Type</span>
+									<div class="col-md-80 input-div relative">
+										<select class="select-option" ng-model="cook_info.cook_acc_type" >
+												<option value="">--Select Bank Acc Type--</option>
+												<option value="Saving Account">Saving Account</option>	
+												<option value="Current Account">Current Account</option>
+											</select>
+									</div>
+								</div>
+							
+								<!-- <div class="row field-fillup">
+									<span class="input-field-title mendatory">Other Payment Info (Bank) </span>
+									<div class="col-md-80 input-div">
+										<textarea placeholder="Other Payment Info (Bank) " class="textarea"  ng-model="cook_info.cook_other_payment_info"></textarea>
+									</div>
+								</div> -->
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Bank Name</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Bank Name" ng-model="cook_info.cook_bank_name"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Branch Name</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Branch Name" ng-model="cook_info.cook_branch_name"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">IFSC Code</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="IFSC Code" ng-model="cook_info.cook_ifsc"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Name on Bank Account</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Name on Bank Account" ng-model="cook_info.cook_name_on_bank_acc"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Account Number</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Account Number" ng-model="cook_info.cook_acc_no"></div>
+								</div>
+
+							</div>
+
+						</div>
+					</div> </div>
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+
+

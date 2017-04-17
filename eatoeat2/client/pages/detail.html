@@ -1,0 +1,555 @@
+<style>		
+
+
+</style>
+
+<div ng-controller="user_register">
+
+
+
+
+<link rel="stylesheet" href="plugin/price-ranger/css/1.css">
+<link href="plugin/calendar/css/1.css" rel="stylesheet">
+<link href="plugin/sumogallery/sumogallery.css" rel="stylesheet">
+
+<div ng-include="'pages/popup/select-user.html'"  ng-show="ask_user_type_show"></div>
+<div class="detail-page" ng-init="captured_food_id_fetch()">
+		<div class="banner"><img src="public/images/bg/detail.jpg"></div>
+	<div class="header">
+		<div class="container">
+			<span class="logo"><img src="public/images/logo.png"></span>
+			<div ng-include="'pages/inc/right-menu.html'" class="right-menu-pannel"></div>
+		</div>
+
+		<div class="cook-short-detail">
+			<div class="container">
+				<div class="left-detail">
+					<h1 class="name">{{fetched_food_view.cook_name}}</h1>
+					<!--<p class="contact">Call : +91 -{{fetched_food_view.cook_contact}}</p>-->
+				</div>
+				<div class="right-detail">
+					<div class="total-star">
+						<span class="percent">4.5</span>
+						<img src="public/images/icon/big-star.png">
+					</div>
+					<div class="rating">
+						<ul class="stars">
+							<li class="list"><img src="public/images/icon/big-star.png"></li>
+							<li class="list"><img src="public/images/icon/big-star.png"></li>
+							<li class="list"><img src="public/images/icon/big-star.png"></li>
+							<li class="list"><img src="public/images/icon/big-star.png"></li>
+							<li class="list"><img src="public/images/icon/no-star.png"></li>
+						</ul>
+						<span class="number">28 Total</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div ng-include="'pages/inc/breadcrumbs.html'" class="bread_ui"></div>
+
+	<div class="container">
+		<div class="full-detail">
+			<div class="set-padding">
+
+				<!-- left panel start here -->
+				<div class="left-panel">
+					<ul class="tabs">
+
+					
+						<li class="tab-list active" ng-repeat="(key,menu) in menu_view">
+							
+							<div ng-repeat="(classkey, classprop) in menu">
+									<h4 class="option-menu">{{classkey}} Menu <i class="tab-toggle-btn">+</i></h4>
+
+							<div ng-repeat="class in classprop">
+								
+											<div class="tab-data" >
+								<div class="tab-data-list">
+									<div class="detail-head">
+										<div class="coloum-div col-px-75 center">
+											<span class="thumb"><img src="public/images/product/1.jpg"></span>
+										</div>
+										<div class="coloum-div">
+											<h5 class="name">{{class.food_name}}<i class="type"><img src="public/images/icon/veg.jpg"></i></h5>
+											<div class="cuisines">
+												<span class="subtext">Cuisines :</span>
+												<ul class="cuisine-list">
+													<li class="list">Punjabi</li>
+												</ul>
+											</div>
+										</div>
+										
+										<div class="coloum-div center col-px-100">
+											<div class="qty-controller">
+												<span class="button"  ng-click="decreaseItemCount(class)">-</span>
+												<span class="qty-show">{{class.cart_qty}}</span>
+												<span class="button"  ng-click="increaseItemCount_detail(class)">+</span>
+											</div>
+										</div>
+
+										<div class="coloum-div col-px-50">
+											<div class="price-data">
+												<span class="price">Rs. {{class.food_price_per_plate}}</span>
+												<span class="act-for">Per Plate</span>
+											</div>
+										</div>
+									</div>
+									<div class="food-about">
+										<p>{{class.food_desc}}</p>
+
+										<div class="cart-btn" style="cursor: pointer"  ng-click="add_to_cart_to_detail_page(class,classkey,class.food_id,classprop)">Add to cart</div>
+									</div>
+									<div class="row">
+										<ul class="gallery">
+											<li class="list">
+												<img data-sgallery="group1" title="yup image is cool" data-full="public/images/product/1.jpg" data-thumb="public/images/product/1.jpg" src="public/images/product/1.jpg">
+											</li>
+											<li class="list">
+												<img data-sgallery="group1" title="yup image is cool" data-full="public/images/product/1.jpg" data-thumb="public/images/product/1.jpg" src="public/images/product/1.jpg">
+											</li>
+											<li class="list">
+												<img data-sgallery="group1" title="yup image is cool" data-full="public/images/product/1.jpg" data-thumb="public/images/product/1.jpg" src="public/images/product/1.jpg">
+											</li>
+											<li class="list">
+												<img data-sgallery="group1" title="yup image is cool" data-full="public/images/product/1.jpg" data-thumb="public/images/product/1.jpg" src="public/images/product/1.jpg">
+											</li>
+										</ul>
+										<div class="calendar">
+													<datepicker style="width: 140px;"  date-format="dd-MM-yyyy" datepicker-show="true" ng-click="check_food_avail(class,classkey,class.food_id)" >
+									
+								<input type="text"   style="width: 215px;" id={{classkey}}{{class.food_id}}  />
+		                             		</datepicker>
+										</div>
+									</div>
+								</div>
+						
+							</div>
+
+
+
+							</div>		
+					
+
+							</div>
+						
+						</li>
+
+
+			
+					</ul>
+
+				</div>
+				<!-- left panel end here -->
+
+				<div class="right-panel">
+					<div class="cook-availiblity">
+						<span class="head"><i class="status"><img src="public/images/icon/online.png" id="avail_status"></i> Availablity</span>
+						<ul class="weekday-list">
+
+							<div ng-if="fetched_food_view.available_hours.mon_from">	
+								<li class="list" >
+								<span class="title">Monday</span>
+								<span class="label">{{fetched_food_view.available_hours.mon_from}} - {{fetched_food_view.available_hours.mon_to}}</span>
+							</li>
+
+							</div>
+							<div ng-if="fetched_food_view.available_hours.mon_from==''">	
+								<li class="list" >
+								<span class="title">Monday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+							<div ng-if="fetched_food_view.available_hours.tue_from">	
+								<li class="list" >
+								<span class="title">Tuesday</span>
+								<span class="label">{{fetched_food_view.available_hours.tue_from}} - {{fetched_food_view.available_hours.tue_to}}</span>
+							</li>
+					
+							</div>
+
+							<div ng-if="fetched_food_view.available_hours.tue_from==''">	
+								<li class="list" >
+								<span class="title">Tuesday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+
+
+								<div ng-if="fetched_food_view.available_hours.wed_from">	
+								<li class="list" >
+								<span class="title">Wednesday</span>
+								<span class="label">{{fetched_food_view.available_hours.wed_from}} - {{fetched_food_view.available_hours.wed_to}}</span>
+							</li>
+					
+							</div>
+
+							<div ng-if="fetched_food_view.available_hours.wed_from==''">	
+								<li class="list" >
+								<span class="title">Wednesday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+
+
+							<div ng-if="fetched_food_view.available_hours.thu_from">	
+								<li class="list" >
+								<span class="title">Thursday</span>
+								<span class="label">{{fetched_food_view.available_hours.thu_from}} - {{fetched_food_view.available_hours.thu_to}}</span>
+							</li>
+					
+							</div>
+							
+								<div ng-if="fetched_food_view.available_hours.thu_from==''">	
+								<li class="list" >
+								<span class="title">Thursday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+
+							<div ng-if="fetched_food_view.available_hours.fri_from">	
+								<li class="list" >
+								<span class="title">Friday</span>
+								<span class="label">{{fetched_food_view.available_hours.fri_from}} - {{fetched_food_view.available_hours.fri_to}}</span>
+							</li>
+					
+							</div>
+
+									<div ng-if="fetched_food_view.available_hours.fri_from==''">	
+								<li class="list" >
+								<span class="title">Friday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+							
+							<div ng-if="fetched_food_view.available_hours.sat_from">	
+								<li class="list" >
+								<span class="title">Saturday</span>
+								<span class="label">{{fetched_food_view.available_hours.sat_from}} - {{fetched_food_view.available_hours.sat_to}}</span>
+							</li>
+					
+							</div>
+
+										<div ng-if="fetched_food_view.available_hours.sat_from==''">	
+								<li class="list" >
+								<span class="title">Saturday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+
+							<div ng-if="fetched_food_view.available_hours.sun_from">	
+								<li class="list" >
+								<span class="title">Sunday</span>
+								<span class="label">{{fetched_food_view.available_hours.sun_from}} - {{fetched_food_view.available_hours.sun_to}}</span>
+							</li>
+					
+							</div>
+
+												<div ng-if="fetched_food_view.available_hours.sun_from==''">	
+								<li class="list" >
+								<span class="title">Sunday</span>
+							<span class="label close">Close</span>
+							</li>
+					
+							</div>
+							<!--<div class="call">Call : +91 - {{fetched_food_view.cook_contact}}</div>-->
+						</ul>
+					</div>
+
+					<div class="video">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Vh36NPTjudY" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+
+
+				<div class="about-cook">
+					<h3 class="heading">About Cook </h3>
+					<P> {{fetched_food_view.about_us}}
+				</div>
+
+			</div>
+
+			<div class="review-data">
+				<div class="left-panel">
+					<div class="review-panel">
+						<div class="total-review-rate">
+							<div class="number">Rating & Reviews <span class="sum">200</span></div>
+							
+						</div>			
+						<ul class="review-list padding-15px">
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-a">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-b">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-c">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-c">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-c">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-c">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-c">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+							<li class="list">
+								<div class="div-coloum user-detail col-px-150 center">
+									<span class="initial-name color-c">V</span>
+									<span class="user-name">Vinay Sudan</span>
+								</div>
+								<div class="div-coloum review-detail">
+									<h4 class="title">Perfect Product in range <span class="date">12-08-2016</span></h4>
+									<ul class="star-rating">
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list given"><i class="fa fa-star"></i></li>
+										<li class="star-list "><i class="fa fa-star"></i></li>
+									</ul>
+									<p class="comment">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								</div>
+							</li>
+						</ul>
+						<a href="#0" class="load-more">View More</a>
+					</div>
+					</div>
+
+					<div class="right-panel">
+						<a href="" class="review-btn">Rate/review</a>
+						<div class="row margin-top-50px">
+							<div class="total-rating">
+								<span class="number">4.5</span>
+								<span class="total-user">200 reviews</span>
+								<ul class="star-rating">
+									<li class="star-list given"><i class="fa fa-star"></i></li>
+									<li class="star-list given"><i class="fa fa-star"></i></li>
+									<li class="star-list given"><i class="fa fa-star"></i></li>
+									<li class="star-list given"><i class="fa fa-star"></i></li>
+									<li class="star-list "><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+							<ul class="rating-distribution">
+								<li class="list">
+									<span class="parameters">5 Star</span>
+									<div class="meter-line"><span class="speed-up" style="width:10%;"></span></div>
+									<span class="number">2</span>
+								</li>
+								<li class="list">
+									<span class="parameters">4 Star</span>
+									<div class="meter-line"><span class="speed-up" style="width:25%;"></span></div>
+									<span class="number">2</span>
+								</li>
+								<li class="list">
+									<span class="parameters">3 Star</span>
+									<div class="meter-line"><span class="speed-up" style="width:25%;"></span></div>
+									<span class="number">2</span>
+								</li>
+								<li class="list">
+									<span class="parameters">2 Star</span>
+									<div class="meter-line"><span class="speed-up" style="width:20%;"></span></div>
+									<span class="number">2</span>
+								</li>
+								<li class="list">
+									<span class="parameters">1 Star</span>
+									<div class="meter-line"><span class="speed-up" style="width:20%;"></span></div>
+									<span class="number">2</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="review-form-popup">
+						<div class="box-model">
+							<span class="close-popup"> <i class="fa fa-close"></i> </span>
+							<h2 class="main-heading">Please share your review</h2>
+
+							<ul class="review-form">
+								<li class="form-list">
+									<div class="title-bar">
+										<span class="step">1</span>
+										<span class="title">Review Title</span>
+									</div>
+									<div class="input-div">
+										<input type="text" name="" class="input-box" placeholder="please enter your review title">
+										<span class="caption">(Maximum 60 characters.)</span>
+									</div>
+								</li>
+								<li class="form-list">
+									<div class="title-bar">
+										<span class="step">2</span>
+										<span class="title">Your Name</span>
+									</div>
+									<div class="input-div">
+										<input type="text" name="" class="input-box" placeholder="please enter your name">
+										<span class="caption">(Maximum 60 characters.)</span>
+									</div>
+								</li>
+								<li class="form-list">
+									<div class="title-bar">
+										<span class="step">3</span>
+										<span class="title">Your Review</span>
+									</div>
+									<div class="input-div">
+										<textarea class="textarea" placeholder="please enter your review"></textarea>
+										<span class="caption">(Maximum 60 characters.)</span>
+									</div>
+								</li>
+								<li class="form-list">
+									<div class="title-bar">
+										<span class="step">4</span>
+										<span class="title">Your Rating</span>
+									</div>
+									<div class="input-div">
+										<div class="rating"></div>
+									</div>
+								</li>
+								<input type="submit" name="" value="Submit" class="submit-btn row">
+							</ul>
+						</div>
+					</div>
+
+
+
+			</div>
+
+
+		</div>
+	</div>
+
+</div>
+<div ng-include="'pages/inc/footer.html'"></div>
+
+<script src="plugin/calendar/js/1.js"></script> 
+<script src="plugin/sumogallery/jquery.sumogallery.js"></script> 
+
+<script type="text/javascript">
+
+$(".tab-list .option-menu").click(function(){
+	$(this).next(".tab-data").slideToggle();
+});	
+
+
+
+$(".review-form-popup .close-popup").click(function(){
+$(this).parents(".review-form-popup").fadeOut(200);
+});
+
+$(".review-btn").click(function(){
+$(".review-form-popup").fadeIn();
+});
+</script>
+
+
+</div>

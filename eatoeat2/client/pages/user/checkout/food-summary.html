@@ -1,0 +1,22 @@
+<h3 class="section-name" >Food SUMMARY  <span class="items">({{price_data.total_items}} Item)</span> </h3>
+
+<ul class="order-list">
+	<li class="list" ng-repeat="food in checkout_cart_view">
+		<h4 class="food-name">{{food.food_name}}</h4>
+		<div class="order">
+			<span class="qty">Quantity : &nbsp;{{food.food_qty}}</span>
+			<span class="price">Rs. {{food.food_total_price}}</span>
+		</div>
+	</li>
+
+</ul>
+
+<ul class="data-list">
+	<li class="list"><span class="title">Price</span><span class="data">(Rs. {{price_data.total_price}}.00)</span></li>
+	<li class="list"><span class="title">Delivery Charge</span><span class="data">(Rs. 30.00)</span></li>
+	<li class="list" ng-show="coupon_success_show"><span class="title" style="color: limegreen">Coupon Successfully Applied.</span></li>
+</ul>
+
+<div class="grand-total">
+	<span class="title">Grand Total</span><span class="data">(Rs. {{price_data.grand_total}}.00)</span>
+</div>

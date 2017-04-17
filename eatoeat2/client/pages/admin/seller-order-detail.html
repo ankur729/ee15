@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Gifola</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- css start here-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/media.css">
+
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="plugin/tabs/css/tabs.css" rel="stylesheet">
+
+		<script src="js/min.js"></script>
+		<script type="text/javascript" src="plugin/ckeditor/ckeditor.js"></script>
+		<!-- css end here-->
+	</head>
+<body class="body-color">
+<!-- main container start herer -->
+<div class="main-container dashboard">
+
+<!-- left pannel start here -->
+    <div class="left-pannel">
+        <div class="logo"><img src="images/w-logo.png"></div>
+        <ul class="nav">
+            <li class="main-list"><a href="dashboard.html" class="main-link">Dashboard</a></li>
+            <li class="main-list active"><a href="#0" class="main-link">Market Place</a>
+                <span class="toggle-cat">+</span>
+                <ul class="nav-fly">
+                    <li class="sub-list"><a href="view-seller.html" class="main-link">Seller</a></li>
+                    <li class="sub-list"><a href="view-marketplace-commission.html" class="main-link">Commission</a></li>
+                    <li class="sub-list"><a href="view-seller-product.html" class="main-link">Products</a></li>
+                    <li class="sub-list "><a href="view-seller-orders.html" class="main-link">Orders</a></li>
+                    <li class="sub-list"><a href="view-marketplace-income-list.html" class="main-link">Income</a></li>
+                    <li class="sub-list"><a href="view-marketplace-transaction-list.html" class="main-link">Transaction</a></li>
+                    <!-- <li class="sub-list"><a href="#0" class="main-link">Shipping</a></li> -->
+                    <!-- <li class="sub-list"><a href="#0" class="main-link">Mail</a></li> -->
+                    <li class="sub-list"><a href="view-seller-review.html" class="main-link">Seller Review</a></li>
+                </ul>
+            </li>
+            <li class="main-list"><a href="#0" class="main-link">Catalogue</a>
+                <span class="toggle-cat">+</span>
+                <ul class="nav-fly">
+                    <li class="sub-list"><a href="view-product.html" class="main-link">Manage Products</a></li>
+                    <li class="sub-list"><a href="view-category.html" class="main-link">Manage Category</a></li>
+                    <li class="sub-list"><a href="attribute-group-list.html" class="main-link">Manage Attributes Group</a></li>
+                    <li class="sub-list"><a href="attribute-list.html" class="main-link">Manage Attributes</a></li>
+                    <li class="sub-list"><a href="view-option.html" class="main-link">Manage Options</a></li>
+                    <li class="sub-list"><a href="manufacture-list.html" class="main-link">Manufacturers</a></li>
+                    <li class="sub-list"><a href="view-brands.html" class="main-link">Brands</a></li>
+                    <li class="sub-list"><a href="view-review.html" class="main-link">Reviews</a></li>
+                </ul>
+            </li>
+            <li class="main-list"><a href="#0" class="main-link">System</a>
+                <span class="toggle-cat">+</span>
+                <ul class="nav-fly">
+                    <li class="sub-list"><a href="view-tax-class.html" class="main-link">Tax Classes</a></li>
+                    <li class="sub-list"><a href="view-tax-rate.html" class="main-link">Tax Rate</a></li>
+                    <li class="sub-list"><a href="view-length-class.html" class="main-link">Length Classes</a></li>
+                    <li class="sub-list"><a href="view-weight-class.html" class="main-link">Weight Classes</a></li>
+                    <li class="sub-list"><a href="view-coupon.html" class="main-link">Coupon</a></li>
+                    <li class="sub-list"><a href="information-page.html" class="main-link">Information</a></li>
+                    <li class="sub-list"><a href="view-banners.html" class="main-link">Banner</a></li>
+                    <li class="sub-list"><a href="layouts.html" class="main-link">Layout</a></li>
+                </ul>
+            </li>
+            <li class="main-list"><a href="view-orders.html" class="main-link">Orders</a></li>
+            <li class="main-list"><a href="view-user.html" class="main-link">User</a></li>
+            <li class="main-list"><a href="social-media.html" class="main-link">Social</a></li>
+            <li class="main-list"><a href="global-setting.html" class="main-link">Global Settings</a></li>
+        </ul>
+    </div>
+<!-- left pannel end here -->
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+    <div class="page-name-bar">
+        <h2 class="page-name">Order Details</h2>
+        <ul class="breadcrumbs">
+            <li class="list"><a href="http://www.gifola.com/admin" class="link">Home</a></li>
+            <li class="list"><a href="http://www.gifola.com/admin/orders" class="link">Orders</a></li>
+            <li class="list">Order Details</li>
+        </ul>
+        
+        <ul class="link-icon">
+            <li class="list"><a href="view-seller-orders.html" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        </ul>
+
+    </div>
+    <div class="order-detail-inner-body">
+
+<!--  <h2 class="main-section-heading">Order Details</h2> -->
+<div class="table-view">
+        <h3 class="head-name">Order Details</h3>
+
+        <div class="top-base">
+            <div class="left-details">
+                <div class="row-div">
+                    <snap class="field-title">Order ID</snap>
+                    <div class="inform"> <span class="high">OD0117148465840800077</span> <span class="label"></span></div>
+                </div>
+                <div class="row-div">
+                    <snap class="field-title">Order Date</snap>
+                    <div class="inform"> <span class="normal">17/01/2017</span></div>
+                </div>
+                <div class="row-div">
+                    <snap class="field-title">Amount Paid</snap>
+                    <div class="inform"> <span class="high">Rs. 2090</span> <span class="label">Through COD</span></div>
+                </div>
+                <div class="row-div">
+                    <snap class="field-title"> Shipping Address </snap>
+                    <div class="inform"> <div class="normal"> <b class="clear-both">sooraj</b>  SADF <br> SDF,<br> new delhi , Delhi 110060</div></div>
+                </div>
+				<div class="row-div">
+                    <snap class="field-title"> Contact Detail  </snap>
+                    <div class="inform"> <div class="normal"> <b class="clear-both">Mobile: 9650916408</b>  Email: soorajqmstest@gmail.com <br> </div></div>
+                </div>
+				
+            </div>
+            <div class="right-details">
+                <div class="order-summery">
+                    <h4 class="heading"> Order Summary </h4>
+                    <div class="list">
+                        <span class="field-title">Item(s) Subtotal</span>
+                        <span class="inform">Rs. 1942</span>
+                    </div>
+                    <div class="list">
+                        <span class="field-title">Delivery charge</span>
+                        <span class="inform">Rs. 99</span>
+                    </div>
+					 <div class="list">
+                        <span class="field-title">Shipping Charge</span>
+                        <span class="inform">Rs. 49</span>
+                    </div>
+										
+                    <!-- <div class="list">
+                        <span class="field-title">Total</span>
+                        <span class="inform">Rs. 1540</span>
+                    </div> -->
+                    <div class="list">
+                        <span class="field-title"><b>Grand Total</b></span>
+                        <span class="inform"><b>Rs. 2090</b></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row center"><a href="http://www.gifola.com/admin/orders/invoice/OD0117148465840800077" class="visit-button">Invoice</a> </div>
+        <div class="shippments">
+                            <div class="table-form">
+                    <ul class="cart-tiles">
+                        <li class="list main-name">
+                            <div class="coloum-div col-px-100 center hb-500"><span class="title">Image</span></div>
+                            <div class="coloum-div col-md-30"><span class="title">Item Details </span></div>
+                            <div class="coloum-div col-px-200"><span class="title">Price</span></div>
+                            <div class="coloum-div"><span class="title">Delivery Details</span></div>
+                            <div class="coloum-div col-px-100"><span class="title">Subtotal</span></div>
+                        </li>
+
+                        <li class="list">
+                            <div class="coloum-div col-px-100 center  hb-500"><span class="pro-thumb"><img src="http://www.kovill.com/assets/admin/uploads/images/thumb/tc-6050.jpg"></span></div>
+                            <div class="coloum-div col-md-30">
+                                <div class="product-details">
+                                    <a href="http://www.gifola.com/timer-analog-wrist-watch-for-boys-tc-6050/cC0xMDU" class="link">Timer Analog Wrist Watch for Boys, TC-6050</a>
+                                    <ul class="attribute">
+                                        <li class="list"><b> (1 item)</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="coloum-div col-px-200">
+                                <span class="title price"> Rs. 394 </span>
+                                <!-- <span class="selling-price">Selling Price: Rs. 599</span>
+                                <span class="offer-saving">Offer Savings: Rs. 50</span> -->
+                            </div>
+                            <div class="coloum-div">
+                                <div class="deliver-part">
+                                    <div class="amount">
+                                        <span class="free"><!--Free--></span>                                    </div>
+                                                                            <span class="status">Delivered</span>
+                                                                    </div>
+                            </div>
+                            <div class="coloum-div col-px-100"><span class="title price">Rs. 394</span></div>
+                        </li>
+
+										
+                    </ul>
+                    <ul class="order-status">
+                        <li class="list">
+                            <span class="title">Received</span>
+                            <div class="chasing active active "><span class="action"></span></div>
+                            <div class="status">
+                                <span>								 We have recieved Your Order.
+								</span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Placed</span>
+                            <div class="chasing active "><span class="action"></span></div>
+                            <div class="status">
+								<span>								                                    
+                                    </span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Enroute</span>
+                            <div class="chasing active "><span class="action"></span></div>
+                            <div class="status">
+								<span>
+								 								</span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Delivered !</span>
+                            <div class="chasing active "><span class="action"></span></div>
+                            <div class="status">
+								<span> 								ADD | </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <form action="http://www.gifola.com/admin/orders/view/180" method="post" accept-charset="utf-8">
+                    <div class="form-box">
+                    <div class="row padding-20px">
+
+                    <div class="col-md-25 left">
+                        <select class="select-option" name="order_status">
+                            <option value="approved">Approved</option>
+                            <option value="dispatched">Dispatched</option>
+                            <option value="delivered" selected="">Delivered</option>
+                        </select>
+                    </div>
+                    <div class="col-md-75 left">
+                        <input name="order_product_id" value="252" type="hidden">
+                        <div class="col-md-75 left"><input name="comment" placeholder="comment" class="input-box" required="" type="text"></div>
+                        <div class="col-md-25 left"><input class="submit-btn row" value="submit" type="submit"></div>
+                    </div>
+                   </div>
+                    </div>
+                    </form>                </div>
+                            <div class="table-form">
+                    <ul class="cart-tiles">
+                        <li class="list main-name">
+                            <div class="coloum-div col-px-100 center hb-500"><span class="title">Image</span></div>
+                            <div class="coloum-div col-md-30"><span class="title">Item Details </span></div>
+                            <div class="coloum-div col-px-200"><span class="title">Price</span></div>
+                            <div class="coloum-div"><span class="title">Delivery Details</span></div>
+                            <div class="coloum-div col-px-100"><span class="title">Subtotal</span></div>
+                        </li>
+
+                        <li class="list">
+                            <div class="coloum-div col-px-100 center  hb-500"><span class="pro-thumb"><img src="http://www.kovill.com/assets/admin/uploads/images/thumb/1-b.jpg"></span></div>
+                            <div class="coloum-div col-md-30">
+                                <div class="product-details">
+                                    <a href="http://www.gifola.com/stylish-analog-gifola-wrist-watch-for-boys-kov-000007/cC0zNQ" class="link">Stylish Chronograph  Analog gifola Wrist Watch  for Boys-KOV-000007</a>
+                                    <ul class="attribute">
+                                        <li class="list"><b> (1 item)</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="coloum-div col-px-200">
+                                <span class="title price"> Rs. 699 </span>
+                                <!-- <span class="selling-price">Selling Price: Rs. 599</span>
+                                <span class="offer-saving">Offer Savings: Rs. 50</span> -->
+                            </div>
+                            <div class="coloum-div">
+                                <div class="deliver-part">
+                                    <div class="amount">
+                                        <span class="free"><!--Free--></span>                                    </div>
+                                                                            <span class="status">Delivered</span>
+                                                                    </div>
+                            </div>
+                            <div class="coloum-div col-px-100"><span class="title price">Rs. 699</span></div>
+                        </li>
+
+										
+                    </ul>
+                    <ul class="order-status">
+                        <li class="list">
+                            <span class="title">Received</span>
+                            <div class="chasing active active "><span class="action"></span></div>
+                            <div class="status">
+                                <span>								 We have recieved Your Order.
+								</span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Placed</span>
+                            <div class="chasing active "><span class="action"></span></div>
+                            <div class="status">
+								<span>								                                    
+                                    </span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Enroute</span>
+                            <div class="chasing active "><span class="action"></span></div>
+                            <div class="status">
+								<span>
+								 								ASD | </span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Delivered !</span>
+                            <div class="chasing active "><span class="action"></span></div>
+                            <div class="status">
+								<span> 								AWDSF | AWDSF | </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <form action="http://www.gifola.com/admin/orders/view/180" method="post" accept-charset="utf-8">
+                    <div class="form-box">
+                    <div class="row padding-20px">
+
+                    <div class="col-md-25 left">
+                        <select class="select-option" name="order_status">
+                            <option value="approved">Approved</option>
+                            <option value="dispatched">Dispatched</option>
+                            <option value="delivered" selected="">Delivered</option>
+                        </select>
+                    </div>
+                    <div class="col-md-75 left">
+                        <input name="order_product_id" value="253" type="hidden">
+                        <div class="col-md-75 left"><input name="comment" placeholder="comment" class="input-box" required="" type="text"></div>
+                        <div class="col-md-25 left"><input class="submit-btn row" value="submit" type="submit"></div>
+                    </div>
+                   </div>
+                    </div>
+                    </form>                </div>
+                            <div class="table-form">
+                    <ul class="cart-tiles">
+                        <li class="list main-name">
+                            <div class="coloum-div col-px-100 center hb-500"><span class="title">Image</span></div>
+                            <div class="coloum-div col-md-30"><span class="title">Item Details </span></div>
+                            <div class="coloum-div col-px-200"><span class="title">Price</span></div>
+                            <div class="coloum-div"><span class="title">Delivery Details</span></div>
+                            <div class="coloum-div col-px-100"><span class="title">Subtotal</span></div>
+                        </li>
+
+                        <li class="list">
+                            <div class="coloum-div col-px-100 center  hb-500"><span class="pro-thumb"><img src="http://www.kovill.com/assets/admin/uploads/images/thumb/wallets.jpg"></span></div>
+                            <div class="coloum-div col-md-30">
+                                <div class="product-details">
+                                    <a href="http://www.gifola.com/stylish-analog-gifola-wrist-watch-for-boys-kov-000009/cC0zOA" class="link">Stylish IPS Analog gifola Wrist Watch  for Boys-KOV-000009</a>
+                                    <ul class="attribute">
+                                        <li class="list"><b> (1 item)</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="coloum-div col-px-200">
+                                <span class="title price"> Rs. 849 </span>
+                                <!-- <span class="selling-price">Selling Price: Rs. 599</span>
+                                <span class="offer-saving">Offer Savings: Rs. 50</span> -->
+                            </div>
+                            <div class="coloum-div">
+                                <div class="deliver-part">
+                                    <div class="amount">
+                                        <span class="free"><!--Free--></span>                                    </div>
+                                    <span class="status">Delivery by 24/01/2017 </span>                                </div>
+                            </div>
+                            <div class="coloum-div col-px-100"><span class="title price">Rs. 849</span></div>
+                        </li>
+
+										
+                    </ul>
+                    <ul class="order-status">
+                        <li class="list">
+                            <span class="title">Received</span>
+                            <div class="chasing active active odr-danger"><span class="action"></span></div>
+                            <div class="status">
+                                <span>								 We have recieved Your Order.
+								</span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Placed</span>
+                            <div class="chasing active odr-danger"><span class="action"></span></div>
+                            <div class="status">
+								<span>Cancel Reason : I want to order a diffrent product                                    
+                                    </span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Enroute</span>
+                            <div class="chasing  odr-danger"><span class="action"></span></div>
+                            <div class="status">
+								<span>
+								 								</span>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <span class="title">Delivered !</span>
+                            <div class="chasing  odr-danger"><span class="action"></span></div>
+                            <div class="status">
+								<span> 								</span>
+                            </div>
+                        </li>
+                    </ul>
+                                    </div>
+            
+        </div>
+        </div>
+    </div>
+     </div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+
+<script type="text/javascript">
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+    $(this).next(".nav-fly").slideToggle(200);
+    $(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+    $(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+</script>
+</body>
+</html>

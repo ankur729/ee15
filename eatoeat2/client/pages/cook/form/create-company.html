@@ -1,0 +1,85 @@
+<div class="form-layout" ng-controller="cook_register">
+
+	<div class="row ">
+		
+	<div class="list field-fillup col-md-20 padding-left-right-5px">
+		<span class="label">Upload Photo</span>
+		<label class="upload-single-image left" title="Please upload your logo">
+			<input name="file[]" multiple="" class="input-file" type="file">
+			<span class="thumb"><img src="images/icon/cart.png"></span>
+		</label>
+	</div>
+
+	<div class="list field-fillup col-md-20 padding-left-right-5px">
+		<span class="label">Upload banner</span>
+		<label class="upload-single-image left" title="Please upload your logo">
+			<input name="file[]" multiple="" class="input-file" type="file">
+			<span class="thumb"><img src="images/icon/cart.png"></span>
+		</label>
+	</div>
+
+	<div class="list field-fillup col-md-60 padding-left-right-10px">
+		<span class="label">About us</span>
+		<div class="input-div">
+			<textarea class="textarea" placeholder="Please discribe here about you .."></textarea>
+		</div>
+	</div>
+	</div>
+
+	<div class="row">
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">First name</span>
+			<div class="input-div"><input type="text" name="" placeholder="First name on your bank account" class="input-box"></div>
+		</div>
+	
+
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Last name</span>
+			<div class="input-div"><input type="text" name="" placeholder="Last name on your bank account" class="input-box"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Email to display & Recive order </span>
+			<div class="input-div"><input type="text" name="" placeholder="Email to display or recive mails on" class="input-box"></div>
+		</div>
+
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Phone to display</span>
+			<div class="input-div"><input type="text" name="" placeholder="your service call number" class="input-box"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Select bank account type</span>
+			<div class="input-div"><input type="text" name="" placeholder="Account type" class="input-box"></div>
+		</div>
+
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Bank Account number</span>
+			<div class="input-div"><input type="text" name="" placeholder="Bank account number" class="input-box"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">IFSC Code</span>
+			<div class="input-div"><input type="text" name="" placeholder="Please enter ifsc code " class="input-box"></div>
+		</div>
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Pincode</span>
+			<div class="input-div">
+				<input id="check3" name="check" value="check3" class="fancy-checkbox" type="checkbox">
+		        <label for="check3" class="fancy-checkbox-label">Please check if don’t know IFSC</label>
+	        </div>
+		</div>
+	</div>
+	<div class="row field-fillup">
+		<p class="imp-note"><span class="title">Please note:</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+	</div>
+	<div class="row field-fillup">
+		<div class="back-btn" ng-click="form_section_back_button()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Back</div>
+		<a href="#/cook_make_food_type" class="submit-btn" >Next</a></div>
+</div>

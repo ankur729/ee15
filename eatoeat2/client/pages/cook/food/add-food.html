@@ -1,0 +1,318 @@
+ <span us-spinner="{radius:30, width:8, length: 16}"></span>
+<link rel="stylesheet" href="plugin/time-picker/wickedpicker.css">
+<link href="plugin/calendar/css/1.css" rel="stylesheet">
+<div ng-controller="cook_controller">
+<div class="row">
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Food name</span>
+		<div class="col-md-80 input-div">
+		<input id="check1" name="check" value="General" class="fancy-radio" type="radio" checked="" ng-model="food_details.food_selection">
+        <label for="check1" class="fancy-radio-label">General</label>
+
+        <input id="check2" name="check" value="Special Item" class="fancy-radio" type="radio" ng-model="food_details.food_selection">
+        <label for="check2" class="fancy-radio-label"> Special Item </label>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Food name</span>
+		<div class="col-md-80 input-div">
+		<input name="" class="input-box" placeholder="Please enter food name" type="text" ng-model="food_details.food_name" ></div>
+	</div>
+</div>
+<div class="row">
+<div class="field-fillup">
+		<span class="input-field-title mendatory">Food Image</span>
+		<div class="col-md-80 input-div">
+			<label class="upload-single-image left" title="Please upload your logo">
+			 <input type="file" id="file" class="input-text" ngf-change="upload_food_image($files)" ngf-select ng-model="picFile" name="attachement" accept="image/png, image/jpeg, image/jpg "  style="padding:15px;"/>
+			 
+							
+			</label>
+				<span class="thumb" ng-show="show_image_thumb"><img src="public/images/icon/cart.png"  ngf-src="picFile[0]" style="width:100px;height: 100px;margin-left:15px;border:1px solid #000;"	></span>
+		</div>
+	</div>	
+</div>
+<div class="row">
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Description</span>
+		<div class="col-md-80 input-div">
+		<textarea class="textarea" placeholder="Minimum 100 words required" ng-model="food_details.food_desc"></textarea></div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title mendatory">Food Price Per Plate</span>
+			<div class="col-md-80 input-div">
+			<input name="" class="input-box" placeholder="Food Price Per Plate" type="text" ng-model="food_details.food_price_per_plate"></div>
+		</div>
+	</div>
+	<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title mendatory">Per Day Quantity</span>
+			<div class="col-md-80 input-div">
+			<input name="" class="input-box" placeholder="Total Quantity" type="text" ng-model="food_details.food_total_qty"></div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title mendatory">Minimim Order</span>
+			<div class="col-md-80 input-div">
+			<input name="" class="input-box" placeholder="Minimim Quantity" type="text" ng-model="food_details.food_min_qty"></div>
+		</div>
+	</div>
+	<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title">Maximum Order</span>
+			<div class="col-md-80 input-div">
+			<input name="" class="input-box" placeholder="Total Quantity" type="text" ng-model="food_details.food_max_qty"></div>
+		</div>
+	</div>
+</div>
+
+<label ng-repeat="fruitName in fruits" class="checkbox-inline">
+                <input type="checkbox" 
+				value="{{fruitName}}" ng-checked="selection.indexOf(fruitName) > -1"
+				 ng-click="toggleSelection(fruitName)"> {{fruitName}}
+              </label>
+
+
+<h5 class="new-section-head">Please choose food type</h5>
+<div ng-init="get_occassion_and_veg_type()">
+<div class="row">`
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Meal Type</span>
+		<div class="col-md-80 input-div">
+		<ul class="section-selector" >
+
+
+			<li class="list col-md-25" ng-repeat="occassion in occ_list track by $index">
+				 <input type="checkbox"
+				value="{{occassion}}"
+				 ng-click="toggleSelection(occassion)"> {{occassion.group_attr}}
+
+			</li>
+
+		
+	
+
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Cuisines</span>
+		<div class="col-md-80 input-div">
+		<ul class="section-selector">
+			<li class="list col-md-25" ng-repeat="cuisine in cuisine_list">
+				<input type="checkbox" name="" class="check-btn" ng-checked="selection2.indexOf(cuisine) > -1"
+							 ng-click="toggleSelection2(cuisine)"  >
+				<label >{{cuisine.category_name}}</label>
+			</li>
+		</ul>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Food Option</span>
+		<div class="col-md-80 input-div">
+
+		<ul class="section-selector">
+			<li class="list col-md-33" ng-repeat="veg_type in veg_list track by $index">
+				<input type="radio" ng-model="food_details.food_type"  value={{veg_type.group_attr}}>
+			
+		        <label >{{veg_type.group_attr}}</label>
+	        </li>
+
+	    </ul>
+		</div>
+	</div>
+</div>
+
+</div>
+<h5 class="new-section-head">Delivery Schedule</h5>
+
+<div class="row">
+	
+	<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title mendatory">Select Date From</span>
+			<div class="col-md-80 input-div">
+				<datepicker style="width: 140px;"  date-format="dd-MM-yyyy">
+									
+								<input type="text" style="width:200px;height: 30px; "   ng-model="food_details.selected_date_from"/>
+				</datepicker>
+							
+	</div>
+		</div>
+	</div>
+
+<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title mendatory">Select Date To</span>
+			<div class="col-md-80 input-div">
+				<datepicker style="width: 140px;"  date-format="dd-MM-yyyy" >
+									
+								<input type="text" style="width:200px;height: 30px; "   ng-model="food_details.selected_date_to"/>
+				</datepicker>
+							
+	</div>
+		</div>
+	</div>
+
+<div class="col-md-50 left">
+		<div class="field-fillup">
+			<span class="input-field-title mendatory">Delivery By</span>
+			<div class="col-md-80 input-div">
+
+						<select class="select-option" ng-model="food_details.delivery_by">
+			       			<option value="">--Choose Delivery Option--</option>
+			       			<option value="Self ">By Self</option>
+							   <option value="EatoEato ">By EatoEato</option>
+			       		</select>
+			
+
+			
+							
+	</div>
+		</div>
+	</div>
+
+<div class="field-fillup" ng-init="get_cuisines()">
+	<!-- <span class="input-field-title mendatory">Select Date</span> -->
+	<div class="col-md-80 input-div left padding-left-20">
+		<ul class="select-timings">
+		<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Mon</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.mon_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.mon_to"></div>
+			</li>
+
+				<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Tue</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.tue_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.tue_to"></div>
+			</li>
+	
+		<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Wed</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.wed_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.wed_to"></div>
+			</li>
+	
+
+		<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Thu</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.thu_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.thu_to"></div>
+			</li>
+	
+
+		<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Fri</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.fri_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.fri_to"></div>
+			</li>
+	
+
+		<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Sat</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.sat_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.sat_to"></div>
+			</li>
+	
+
+		<li class="list">	
+				<div class="v-small">
+			        <label for="check3"  >Sun</label>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box" ng-model="food_details.available_hours.sun_from"></div>
+		     	<div class="v-small center">
+		     		<span class="">To</span>
+		     	</div>
+		     	<div class="midd"><input type="text"  name="timepicker"  class="timepicker input-box"  ng-model="food_details.available_hours.sun_to"></div>
+			</li>
+	
+	
+</ul>
+	</div>
+</div>
+
+</div>
+<!-- 
+<div class="row">
+	<div class="field-fillup">
+		<span class="input-field-title mendatory">Status</span>
+		<div class="col-md-80 input-div">
+			<select class="select-option">
+				<option>Active</option>
+				<option>Deactive</option>
+			</select>
+		</div>
+	</div>
+</div> -->
+ 	<p ng-show="after_success_food_add" style="font-size:12px;color:green;padding:10px;text-align: center"><b>Food Successfully Added..!</b></p>
+	
+<div class="row margin-bottom-20px">
+	<div class="field-fillup">
+		<div class="center"><input type="submit" name="" class="submit-btn col-px-150" value="save" ng-click="save_food_details(food_details)"></div>
+	</div>
+</div>
+
+</div>
+
+<script src="plugin/calendar/js/1.js"></script> 
+<script type="text/javascript">
+$('#dp2').fdatepicker({
+	closeButton: false
+});
+</script>
+<script type="text/javascript" src="plugin/time-picker/wickedpicker.js"></script>
+<script type="text/javascript">
+$('.timepicker').wickedpicker({now: '8:16', twentyFour: false, title:
+        'Delivery Time', showSeconds: false});
+
+</script>
+
+
+

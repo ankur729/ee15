@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Gifola</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- css start here-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/media.css">
+
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="plugin/tabs/css/tabs.css" rel="stylesheet">
+		<link href="plugin/calendar/css/1.css" rel="stylesheet">
+		<link href="plugin/upload/css/upload.css" rel="stylesheet">
+
+		<script src="js/min.js"></script>
+		<script type="text/javascript" src="plugin/ckeditor/ckeditor.js"></script>
+		<!-- css end here-->
+	</head>
+<body class="body-color">
+<!-- main container start herer -->
+<div class="main-container dashboard">
+
+<!-- left pannel start here -->
+	<div class="left-pannel">
+		<div class="logo"><img src="images/w-logo.png"></div>
+		<ul class="nav">
+			<li class="main-list"><a href="dashboard.html" class="main-link">Dashboard</a></li>
+			<li class="main-list active"><a href="#0" class="main-link">Market Place</a>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					<li class="sub-list"><a href="view-seller.html" class="main-link">Seller</a></li>
+					<li class="sub-list"><a href="view-marketplace-commission.html" class="main-link">Commission</a></li>
+					<li class="sub-list"><a href="view-seller-product.html" class="main-link">Products</a></li>
+					<li class="sub-list"><a href="view-seller-orders.html" class="main-link">Orders</a></li>
+					<li class="sub-list"><a href="view-marketplace-income-list.html" class="main-link">Income</a></li>
+					<li class="sub-list"><a href="view-marketplace-transaction-list.html" class="main-link">Transaction</a></li>
+					<!-- <li class="sub-list"><a href="#0" class="main-link">Shipping</a></li> -->
+					<!-- <li class="sub-list"><a href="#0" class="main-link">Mail</a></li> -->
+					<li class="sub-list"><a href="view-seller-review.html" class="main-link">Seller Review</a></li>
+				</ul>
+			</li>
+			<li class="main-list"><a href="#0" class="main-link">Catalogue</a>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					<li class="sub-list"><a href="view-product.html" class="main-link">Manage Products</a></li>
+					<li class="sub-list"><a href="view-category.html" class="main-link">Manage Category</a></li>
+					<li class="sub-list"><a href="attribute-group-list.html" class="main-link">Manage Attributes Group</a></li>
+					<li class="sub-list"><a href="attribute-list.html" class="main-link">Manage Attributes</a></li>
+					<li class="sub-list"><a href="view-option.html" class="main-link">Manage Options</a></li>
+					<li class="sub-list"><a href="manufacture-list.html" class="main-link">Manufacturers</a></li>
+					<li class="sub-list"><a href="view-brands.html" class="main-link">Brands</a></li>
+					<li class="sub-list"><a href="view-review.html" class="main-link">Reviews</a></li>
+				</ul>
+			</li>
+			<li class="main-list"><a href="#0" class="main-link">System</a>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					<li class="sub-list"><a href="view-tax-class.html" class="main-link">Tax Classes</a></li>
+					<li class="sub-list"><a href="view-tax-rate.html" class="main-link">Tax Rate</a></li>
+					<li class="sub-list"><a href="view-length-class.html" class="main-link">Length Classes</a></li>
+					<li class="sub-list"><a href="view-weight-class.html" class="main-link">Weight Classes</a></li>
+					<li class="sub-list"><a href="view-coupon.html" class="main-link">Coupon</a></li>
+					<li class="sub-list"><a href="information-page.html" class="main-link">Information</a></li>
+					<li class="sub-list"><a href="view-banners.html" class="main-link">Banner</a></li>
+					<li class="sub-list"><a href="layouts.html" class="main-link">Layout</a></li>
+				</ul>
+			</li>
+			<li class="main-list"><a href="view-orders.html" class="main-link">Orders</a></li>
+			<li class="main-list"><a href="view-user.html" class="main-link">User</a></li>
+			<li class="main-list"><a href="social-media.html" class="main-link">Social</a></li>
+			<li class="main-list"><a href="global-setting.html" class="main-link">Global Settings</a></li>
+		</ul>
+	</div>
+<!-- left pannel end here -->
+
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Add Products</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Add Products</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="view-seller-product.html" class="blue-btn"><i class="fa fa-floppy-o" aria-hidden="true"></i></a></li>
+						<li class="list"><a href="view-seller-product.html" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Add Products</h3>
+					<div class="seaTabs row">
+					<div class="tab-style">
+						<div class="seaTabs_switch row">
+							<div class="seaTabs_tab seaTabs_switch_active">General</div>
+							<div class="seaTabs_tab">Data</div>
+							<div class="seaTabs_tab">Links</div>
+							<div class="seaTabs_tab">Attribute</div>
+							<div class="seaTabs_tab">Option</div>
+							<div class="seaTabs_tab">Discount</div>
+							<div class="seaTabs_tab">Image</div>
+						</div>
+
+						<div class="seaTabs_content">
+							<!-- active tab start here -->
+							<div class="seaTabs_item seaTabs_content_active">
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Product Name</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Product Name"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Description</span>
+									<div class="col-md-80 input-div">
+										<textarea  cols="100" id="editor1" name="text" rows="10" required></textarea>
+										<script type="text/javascript">
+										CKEDITOR.replace( 'editor1',
+										 {
+											filebrowserBrowseUrl : 'texteditor/ckfinder/ckfinder.html',
+											filebrowserImageBrowseUrl : 'texteditor/ckfinder/ckfinder.html?type=Images',
+											filebrowserFlashBrowseUrl : 'texteditor/ckfinder/ckfinder.html?type=Flash',
+											filebrowserUploadUrl : 'texteditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+											filebrowserImageUploadUrl : 'texteditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+											filebrowserFlashUploadUrl : 'texteditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+										 } 
+										 );			
+										 </script>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Meta Tag Title</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Title"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Meta Tag Description</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Description"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Meta Tag Keyword</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Keyword"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Product Tags</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Keyword"></div>
+								</div>
+							</div>
+							<!-- active tab end here -->
+
+
+							
+							<div class="seaTabs_item ">
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Model</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Model"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">SKU</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="SKU"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">ISBN</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="ISBN"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Location</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Location"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Price</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Price"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Tax Class</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>----- None -----</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Quantity</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Quantity"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Minimum Quantity</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Minimum Quantity"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Substrack Stock</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>Yes</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Out Of Stock Status</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>2-3 Days</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Product Type</span>
+									<div class="col-md-80 input-div">
+
+										<input id="custom" type="radio" name="product-type" value="custom" class="fancy-radio">
+										<label for="custom"  class="fancy-radio-label">Customizable</label>
+
+										<input id="no-custom" type="radio" name="product-type" value="no-custom" class="fancy-radio">
+										<label for="no-custom"  class="fancy-radio-label">Non-Customizable</label>
+
+										<input id="both" type="radio" name="product-type" value="both" class="fancy-radio">
+										<label for="both"  class="fancy-radio-label">Both</label>
+
+										<!-- <label><input type="radio" name="" class="radio-btn">Yes</label>
+										<label><input type="radio" name="" class="radio-btn">No</label> -->
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Required Shipping</span>
+									<div class="col-md-80 input-div">
+
+										<input id="check1" type="radio" name="check" value="check2" class="fancy-radio">
+										<label for="check1"  class="fancy-radio-label">Yes</label>
+
+										<input id="check2" type="radio" name="check" value="check2" class="fancy-radio">
+										<label for="check2"  class="fancy-radio-label">No</label>
+
+										<!-- <label><input type="radio" name="" class="radio-btn">Yes</label>
+										<label><input type="radio" name="" class="radio-btn">No</label> -->
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">SEO Url</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="SEO Url"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Length Class</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>Inch</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Dimensions (L x W x H)</span>
+									<div class="col-md-80 input-div">
+										<div class="col-md-33 left padding-right-10px"><input type="text" name="" class="input-box" placeholder="Length"></div>
+										<div class="col-md-33 left padding-right-10px"><input type="text" name="" class="input-box" placeholder="Width"></div>
+										<div class="col-md-33 left padding-left-10px"><input type="text" name="" class="input-box" placeholder="Height"></div>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Weight Class</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>Kilogram</option>
+											<option>Gram</option>
+											<option>Pound</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Weight</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Weight"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Status</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option">
+											<option>Enabled</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Sort Order</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="1"></div>
+								</div>
+							</div>
+
+
+							<div class="seaTabs_item ">
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Manufacturer</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Manufacturer"></div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Catagories</span>
+									<div class="col-md-80 input-div relative">
+										<input name="" class="input-box add-sugges" placeholder="" id="category" type="text">
+										
+										<ul class="dropdown-sugges" id="category_dropdown">
+											<li class="list" data-value="1"><a href="#0" class="link">Watches</a></li>
+											<li class="list" data-value="2"><a href="#0" class="link">T-shirt</a></li>
+											<li class="list" data-value="3"><a href="#0" class="link">Combos</a></li>
+											<li class="list" data-value="4"><a href="#0" class="link">ACCESSORIES</a></li>
+										</ul>
+										<ul class="add-well">
+											<li class="list" data-value="4"><a href="#0" class="link">ACCESSORIES</a> <i class="fa fa-minus-circle move"></i></li></ul>
+										
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Related Products</span>
+									<div class="col-md-80 input-div relative">
+										<input name="" class="input-box add-sugges" placeholder="" id="category" type="text">
+										
+										<ul class="dropdown-sugges" id="category_dropdown">
+											<li class="list" data-value="1"><a href="#0" class="link">Watches</a></li>
+											<li class="list" data-value="2"><a href="#0" class="link">T-shirt</a></li>
+											<li class="list" data-value="3"><a href="#0" class="link">Combos</a></li>
+											<li class="list" data-value="4"><a href="#0" class="link">ACCESSORIES</a></li>
+										</ul>
+										<ul class="add-well">
+											
+										</ul>
+										
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Parent (For variant) </span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Parent (For variant) "></div>
+								</div>
+
+							</div>
+
+
+							<!-- attribute start here-->
+							<div class="seaTabs_item ">
+								<div class="add-more-section">
+									<ul class="cat-listing-show"  id="create-list-1">
+										<li class="list main-name">
+											<div class="coloum-div col-md-25">
+												<span class="title">Attribute</span>
+											</div>
+											<div class="coloum-div col-md-60">
+												<span class="title">Text</span>
+											</div>
+											<div class="coloum-div center">
+												<span class="title">Action</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="cat-listing-show create-list">
+										 <li class='list'><div class='coloum-div col-md-25'><input type='text' name='' class='input-box' placeholder='attribute'></div><div class='coloum-div col-md-60'><input type='text' name='' class='input-box' placeholder='Text'></div><div class='coloum-div center'><a href='#0' class="remove-row"><i class='fa fa-minus-circle' aria-hidden='true'></i></a></div></li>
+
+										<li class="list ">
+											<div class="coloum-div col-md-25">
+											</div>
+											<div class="coloum-div col-md-60">
+											</div>
+											<div class="coloum-div center">
+												<a href="#0" class="add-more" ><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- attribute end here-->
+
+							<!-- Option start here-->
+							<div class="seaTabs_item ">
+								<div class="col-md-25 left option-tabs-switch padding-right-20px">
+									<ul class="dynamic-option margin-top-20px">
+										<li class="list"> <a href="#0" class="expand-option"><i class="fa fa-minus-circle move"></i>Available Colours</a></li>
+										<li class="list"><a href="#0" class="expand-option"><i class="fa fa-minus-circle move"></i>Available Colours</a></li>
+										<li class="list active"><a href="#0" class="expand-option"><i class="fa fa-minus-circle move"></i>Available Colours</a></li>
+										<li class="list"> <a href="#0" class="expand-option"><i class="fa fa-minus-circle move"></i>Available Colours</a></li>
+										<li class="list"><input type="text" name="" class="input-box" placeholder="Option"></li>
+									</ul>
+								</div>
+								<div class="col-md-75 right option-tab">
+									<div class="add-more-section">
+										<div class="row field-fillup">
+											<span class="input-field-title">Required</span>
+											<div class="col-md-80 input-div">
+												<select class="select-option">
+													<option>Yes</option>
+													<option>No</option>
+												</select>
+											</div>
+										</div>
+										<ul class="cat-listing-show">
+											<li class="list main-name">
+												<div class="coloum-div center">
+													<span class="title">Option Value</span>
+												</div>
+												<div class="coloum-div center col-md-15">
+													<span class="title">Quantity</span>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<span class="title">Subtract Stock</span>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<span class="title">Price</span>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<span class="title">Weight</span>
+												</div>
+												<div class="coloum-div center  col-px-75">
+													<span class="title">Action</span>
+												</div>
+											</li>
+										</ul>
+										<ul class="cat-listing-show create-list" id="create-list-2">
+										<li class="list">
+												<div class="coloum-div center">
+													<select class="select-option">
+														<option>Default</option>
+													</select>
+												</div>
+												<div class="coloum-div center col-md-15">
+													<input type="text" name="" class="input-box" placeholder="Quantity">
+												</div>
+												<div class="coloum-div center col-px-100">
+													<select class="select-option">
+														<option>Yes</option>
+														<option>No</option>
+													</select>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<select class="select-option">
+														<option>+</option>
+														<option>-</option>
+													</select>
+													<input type="text" name="" class="input-box" placeholder="Price">
+												</div>
+												<div class="coloum-div center col-px-100">
+													<select class="select-option">
+														<option>+</option>
+														<option>-</option>
+													</select>
+													<input type="text" name="" class="input-box" placeholder="Weight">
+												</div>
+												<div class="coloum-div center  col-px-75">
+													<a href='#0' class="remove-row"><i class='fa fa-minus-circle' aria-hidden='true'></i></a>
+												</div>
+											</li>
+											
+
+											<li class="list">
+												<div class="coloum-div center">
+													<span class="title"></span>
+												</div>
+												<div class="coloum-div center col-md-15">
+													<span class="title"></span>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<span class="title"></span>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<span class="title"></span>
+												</div>
+												<div class="coloum-div center col-px-100">
+													<span class="title"></span>
+												</div>
+												<div class="coloum-div center col-px-75">
+													<a href="#0" class="add-more"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- Option end here-->
+
+							<!-- Discount start here-->
+							<div class="seaTabs_item ">
+								<div class="add-more-section">
+									<ul class="cat-listing-show">
+										<li class="list main-name">
+											<div class="coloum-div  col-px-100">
+												<span class="title">Priority</span>
+											</div>
+											<div class="coloum-div center col-px-100">
+												<span class="title">Price</span>
+											</div>
+											<div class="coloum-div center col-md-20">
+												<span class="title">Date Start</span>
+											</div>
+											<div class="coloum-div center col-md-20">
+												<span class="title">Date End</span>
+											</div>
+											<div class="coloum-div center  col-px-100">
+												<span class="title">Action</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="cat-listing-show create-list" id="create-list-2">
+									<li class="list">
+											<div class="coloum-div col-px-100">
+												<input type="text" name="" class="input-box">
+											</div>
+											<div class="coloum-div col-px-100">
+												<input type="text" name="" class="input-box">
+											</div>
+											<div class="coloum-div center col-md-20">
+												<input type="text" class="span2 input-box" value="" id="dpd1" placeholder="Date Start">
+											</div>
+											<div class="coloum-div center col-md-20">
+												<input type="text" class="span2 input-box" value="" id="dpd2" placeholder="Date End">
+											</div>
+											<div class="coloum-div center  col-px-100">
+												<a href='#0' class="remove-row"><i class='fa fa-minus-circle' aria-hidden='true'></i></a>
+											</div>
+										</li>
+										
+
+										<li class="list">
+											<div class="coloum-div col-px-100">
+												<span class="title"></span>
+											</div>
+											<div class="coloum-div center col-px-100">
+												<span class="title"></span>
+											</div>
+											<div class="coloum-div center col-md-20">
+												<span class="title"></span>
+											</div>
+											<div class="coloum-div center col-md-20">
+												<span class="title"></span>
+											</div>
+											<div class="coloum-div center col-px-100">
+												<a href="#0" class="add-more"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Discount end here-->
+
+							<!-- Image start here-->
+							<div class="seaTabs_item ">
+								<div class="add-more-section">
+									<ul class="cat-listing-show">
+										<li class="list main-name">
+											<div class="coloum-div center">
+												<span class="title">Images</span>
+											</div>
+										</li>
+									</ul>
+								
+									<ul class="image-tiling">
+										<li class="list main-heading">
+											<div class="coloum center col-px-150"><span class="title">Image</span></div>
+											<div class="coloum"><span class="title">Name</span></div>
+											<div class="coloum center col-px-100"><span class="title">Size</span></div>
+											<div class="coloum center col-px-100"><span class="title">Sort Order</span></div>
+											<div class="coloum center col-px-100"><span class="title">Action</span></div>
+										</li>
+										<li class="list">
+											<div class="coloum center col-px-150"><span class="thumb"><img src="images/product/1.jpg"></span></div>
+											<div class="coloum"><span class="title">untitled.jpg</span></div>
+											<div class="coloum center col-px-100"><span class="title">200px</span></div>
+											<div class="coloum center col-px-100"><input type="text" name="" placeholder="" value="1" class="input-box center"></div>
+											<div class="coloum center col-px-100"><span class="title"><a href="#0" class="remove-row"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></span></div>
+											<input type="hidden" name="">
+										</li>
+									</ul>
+
+									<div class="add-multiple-images">
+										<lable class="title"><input type="file" name="file[]" multiple class="input-file">Add Images</lable>
+									</div> 
+								</div>
+							</div>
+							<!-- Image end here-->
+
+						</div>
+					</div> </div>
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+<script src="plugin/calendar/js/1.js"></script> 
+<script src="plugin/upload/js/upload.js"></script>
+<script type="text/javascript">
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+// add more add more 
+$(".add-more").click(function(){
+	$(this).parents(".list").prev(this).clone(true).prependTo($(this).parents(".create-list"));
+});
+
+
+// remove
+$(document).on("click" , ".remove-row" , function(){
+	$(this).parents(".list").remove();
+});
+
+
+// calendar
+var nowTemp = new Date();
+var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+var checkin = $('#dpd1').fdatepicker({
+	onRender: function (date) {
+		return date.valueOf() < now.valueOf() ? 'disabled' : '';
+	}
+}).on('changeDate', function (ev) {
+	if (ev.date.valueOf() > checkout.date.valueOf()) {
+		var newDate = new Date(ev.date)
+		newDate.setDate(newDate.getDate() + 1);
+		checkout.update(newDate);
+	}
+	checkin.hide();
+	$('#dpd2')[0].focus();
+}).data('datepicker');
+var checkout = $('#dpd2').fdatepicker({
+	onRender: function (date) {
+		return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+	}
+}).on('changeDate', function (ev) {
+	checkout.hide();
+}).data('datepicker');
+
+
+(function(){
+            var options = {};
+            $('.js-uploader__box').uploader(options);
+        }());
+</script>
+</body>
+</html>

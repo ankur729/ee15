@@ -1,0 +1,189 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="fetch_global_setting()"> 
+					<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Global Setting</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Global Setting</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="save_global_setting(global_setting)"><i class="fa fa-floppy-o" aria-hidden="true"></i></div></li>
+					
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name">Global Setting</h3>
+
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Site Name</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Site Name" ng-model="global_setting.site_name"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Email to display</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Email to display" ng-model="global_setting.display_email"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Send From Email</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Send From Email" ng-model="global_setting.send_from_email"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Receive On</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Email" ng-model="global_setting.receive_on"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Phone</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Phone" ng-model="global_setting.phone"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Alternate Phone</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Alternate Phone" ng-model="global_setting.alt_phn"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Address</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Address" ng-model="global_setting.addrress"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Wesbite Logo</span>
+								<div class="col-md-80 input-div">
+								
+							<label class="upload-single-image left" title="Please upload your logo">
+							<input type="file" id="web_logo" class="input-file" name="web_logo"  ngf-change="upload_websiste_logo($files)" ngf-select ng-model="picFile2" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+							
+							<span class="thumb" ><img ng-src="{{global_setting.website_logo 	}}"  ngf-src="picFile2[0]" 	></span>
+										
+							</label>
+
+
+								</div>
+							</div>
+
+						<!-- 	<div class="row field-fillup">
+								<span class="input-field-title">Wesbite Footer Logo</span>
+								<div class="col-md-80 input-div">
+									<label class="upload-single-image left" title="Please upload your logo">
+							<input type="file" id="footer_logo" class="input-file" name="footer_logo"  ngf-change="upload_footer_logo($files)" ngf-select ng-model="picFile3" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+							
+							<span class="thumb" ><img ng-src="{{global_setting.footer_logo}}"  ngf-src="picFile3[0]" 	></span>
+										
+							</label>
+								</div>
+							</div> -->
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Favicon</span>
+								<div class="col-md-80 input-div">
+								<label class="upload-single-image left" title="Please upload your logo">
+							<input type="file" id="favicon" class="input-file" name="favicon"  ngf-change="upload_favicon($files)" ngf-select ng-model="picFile4" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+							
+							<span class="thumb" ><img ng-src="{{global_setting.favicon }}"  ngf-src="picFile4[0]" 	></span>
+										
+							</label>
+								</div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Tax Rate</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Tax Rate (%)"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Delivery Charges</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Delivery Charges"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Android Link</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Android Link"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">IOS Link</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="IOS Link"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Meta Tag Title</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Title" ng-model="global_setting.meta_tag_title"></div>
+							</div>
+
+	
+							<div class="row field-fillup">
+								<span class="input-field-title">Meta Tag Description</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Description" ng-model="global_setting.meta_tag_desc"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Meta Tag Keywords</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Keywords" ng-model="global_setting.meta_tag_keyword"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Google Analytics Code</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Google Analytics Code" ng-model="global_setting.google_analytic_code"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Google Map Code</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Google Map Code" ng-model="global_setting.google_map_code"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Schema</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Schema" ng-model="global_setting.schema"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Copyright</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Copyright" ng-model="global_setting.copyright"></div>
+							</div>
+<!-- 
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Shipping Charge</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Shipping Charge"></div>
+							</div> -->
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="pages/admin/plugin/tabs/js/sea.tabs.js"></script>
+

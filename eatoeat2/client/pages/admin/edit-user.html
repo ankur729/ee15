@@ -1,0 +1,111 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+	<div class="work-pannel" ng-init="view_user_details_admin_fetch()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Edit User</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Edit User</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="update_user_by_admin(user_view_full)" style="cursor: pointer"><i class="fa fa-floppy-o" aria-hidden="true"></i></div></li>
+						<li class="list"><a href="#/admin/view-user" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name">Edit User</h3>
+
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Name</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="First Name" ng-model="user_view_full.username"></div>
+							</div>
+
+							
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Email</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Email" ng-model="user_view_full.email"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Mobile</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Mobile" ng-model="user_view_full.phone"></div>
+							</div>
+
+					
+
+							<!-- 
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Image</span>
+								<div class="col-md-80 input-div">
+									<label class="upload-single-image left" title="Please upload your logo">
+										<input type="file" name="file[]" multiple class="input-file">
+										<span class="thumb"><img src="images/icon/cart.png"></span>
+									</label>
+								</div>
+							</div> -->
+
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Wallet Amount</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Wallet Amount" ng-model="user_view_full.eatoeat_points"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Status</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="user_view_full.status">
+										<option value="">--Select Status--</option>
+										<option value="Active">Active</option>
+										<option value="Inactive">Inactive</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	
+$(".left-pannel .main-list").click(function(){
+	$(this).children(".nav-fly").slideToggle(200);
+	$(this).nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+</script>

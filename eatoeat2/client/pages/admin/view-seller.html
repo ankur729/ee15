@@ -1,0 +1,186 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Cooks Info</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Cooks Info</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-seller" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><a href="#0" class="white-btn"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+						<li class="list"><a href="#0" class="red-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">
+						<i class="fa fa-list-alt icon-name" aria-hidden="true"></i>
+						Cooks Info
+						<div class="right col-px-200">
+								<select class="select-option">
+								<option>Status</option>
+								<option>Enable</option>
+								<option>Disable</option>
+							</select>
+						</div>
+					</h3>
+
+					<div class="search-model">
+					
+						<div class="search-div">
+							<label class="search-name">Cook Name</label>
+							<input type="text" name="" class="input-box" placeholder="Cook Name">
+						</div>
+						<div class="search-div">
+							<label class="search-name">E-mail</label>
+							<input type="text" name="" class="input-box" placeholder="E-mail">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Phone</label>
+							<input type="text" name="" class="input-box" placeholder="Phone">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Approved</label>
+							<select class="select-option left">
+								<option>Select</option>
+								<option>Yes</option>
+								<option>No</option>
+							</select>
+						</div>
+						<div class="search-div">
+							<label class="search-name">Status</label>
+							<select class="select-option left">
+								<option>Select</option>
+								<option>Enable</option>
+								<option>Disable</option>
+							</select>
+						</div>
+						<button class="search-btn right">Filter</button>
+					</div>
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-all-btn">
+							</div>
+						
+							<div class="coloum-div">
+								<span class="title">Cook Name</span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">Email / Phone</span>
+							</div>
+							<!-- 
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Seller Group</span>
+							</div> -->
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Commission</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Approved</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Status</span>
+							</div>
+							<div class="coloum-div center col-md-10">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+					<ul class="cat-listing-show list-group">
+						<li class="list">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-btn">
+							</div>
+						
+							<div class="coloum-div">
+								<span class="title">Raj</span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">
+									<p><i class="fa fa-envelope-o col-px-20" aria-hidden="true"></i>sudan.vinay@gmail.com</p>
+									<p><i class="fa fa-phone col-px-20"></i>9999999999</p>
+								</span>
+							</div><!-- 
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Default</span>
+							</div> -->
+							<div class="coloum-div col-md-10 center">
+								<span class="title">10.00%</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title in-stock">Yes</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title ">Enable</span>
+							</div>
+							<div class="coloum-div center  col-md-10">
+								<a href="#0" class="blue-btn"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+						<li class="list">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-btn">
+							</div>
+						
+							<div class="coloum-div">
+								<span class="title">Raj</span>
+							</div>
+							<div class="coloum-div col-md-20">
+								<span class="title">
+									<p><i class="fa fa-envelope-o col-px-20" aria-hidden="true"></i>sudan.vinay@gmail.com</p>
+									<p><i class="fa fa-phone col-px-20"></i>9999999999</p>
+								</span>
+							</div><!-- 
+							<div class="coloum-div col-md-10 center">
+								<span class="title">Default</span>
+							</div> -->
+							<div class="coloum-div col-md-10 center">
+								<span class="title">10.00%</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title out-stock">No</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title ">Enable</span>
+							</div>
+							<div class="coloum-div center  col-md-10">
+								<a href="#0" class="blue-btn"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+					
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+

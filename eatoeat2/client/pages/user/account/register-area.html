@@ -1,0 +1,68 @@
+
+	<style>
+	
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+
+}
+	</style>
+<div ng-controller="user_register"  ng-cloak>
+
+<form name="myForm">
+
+<div class="form-field">
+	<div class="field-fillup">
+		<label class="label required">name</label>
+		<input type="text" name="my_username" class="input-box" placeholder="Your Email" ng-model="user_details.user_name" ng-minlength="5" 
+        					ng-maxlength="20" required >
+
+			 <p class="register_cook_error"  ng-show="myForm.my_username.$error.minlength">Username is too short.</p>
+
+						<!-- show an error if username is too long -->
+			<p  class="register_cook_error"   ng-show="myForm.my_username.$error.maxlength">Username is too long.</p>
+
+						<!-- show an error if this isn't filled in -->
+			<p class="register_cook_error" ng-show="myForm.my_username.$touched && myForm.my_username.$pristine "  ng-messages="myForm.my_username.$error">* Your Name is required.</p>
+
+	</div>
+	<div class="field-fillup">
+		<label class="label required">Email</label>
+		<input type="email" name="email_check" class="input-box" placeholder="Your Email" ng-model="user_details.user_email" >
+
+			<p class="register_cook_error" ng-show="myForm.email_check.$invalid ">* Email is Invalid</p>
+			<p  class="register_cook_error"   ng-show="myForm.email_check.$touched && myForm.email_check.$pristine "  ng-messages="myForm.email_check.$error">*Email is Required</p>
+			
+
+	</div>
+	<div class="field-fillup">
+		<label class="label required">mobile</label>
+		<input type="number" name="mobile" class="input-box" placeholder="Your mobile" ng-model="user_details.user_contact_no" ng-minlength="10" ng-maxlength="10"  ng-required="true" ng-blur='verifyOTP()'>
+
+			<p  class="register_cook_error"   ng-show="myForm.mobile.$error.minlength || myForm.mobile.$error.maxlength || myForm.mobile.$error.number  ">* Enter Valid Phone Number</p>
+		</div>
+
+			<div class="field-fillup" ng-show="verify_otp_textbox">
+		<label class="label required" style="color:orangered">Verify Your Mobile No</label>
+		<input type="text" name="phone" class="input-box" placeholder="Enter OTP"   ng-model="user_mobile_otp" >
+		
+		</div>
+
+	<div class="field-fillup">
+		<label class="label required">Password</label>
+		<input type="password" name="password" class="input-box" placeholder="Your Password" ng-model="user_details.user_password"  ng-minlength="5" required >
+		<p  class="register_cook_error"   ng-show="myForm.password.$error.minlength ">* Password is too Weak.!</p>
+		<p  class="register_cook_error"   ng-show="myForm.password.$touched && myForm.password.$pristine "  ng-messages="myForm.password.$error">* Password is Required</p>
+
+	</div>
+</div>
+
+<p ng-show="after_success_reg_message" style="font-size:12px;color:green"> You are Successfully Registered. <br><b>Please Check Your Email To Verify Your Account.</b></p>
+<p ng-show="already_register_user" style="font-size:12px;color:red"> <b>Email Already Exist.</b></p>
+
+<div class="switch-btn">
+	<div class="list padding-20px"><input type="submit" name="" class="submit-btn" value="Create" ng-click="add_user_details(user_details)" ng-disabled="myForm.$invalid || myForm.isDisabled"></div>
+</div>
+
+</form>
+
+</div>

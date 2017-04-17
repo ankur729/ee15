@@ -1,0 +1,63 @@
+<div ng-controller="location_controller">
+
+<div ng-include="'pages/popup/select-user.html'"  ng-show="ask_user_type_show"></div>
+
+<div class="main-page" >
+	<div class="header">
+		<div class="container">
+			<span class="logo"><img src="public/images/logo.png"></span>
+			<div ng-include="'pages/inc/right-menu.html'" class="right-menu-pannel"></div>
+		</div>
+	</div>
+
+	<div class="container" >
+		<div class="slang"><img src="public/images/slang.png"></div>
+		<div ng-include="'pages/search/location-search.html'" class="home-search"></div>
+
+		<div class="tagline">
+			<h3 class="heading">Build The Perfect Food Ordering & Delivery. {{kk}}</h3>
+			<p class="caption">Detailed Features Study </p>
+		</div>
+	</div>
+
+	<ul class="instructions">
+		<li class="list">
+			<div class="style">
+				<span class="icon"><img src="public/images/icon/location.png"></span>
+				<span class="text">Select your Location</span>
+			</div>
+		</li>
+		<li class="list">
+			<div class="style">
+				<span class="icon"><img src="public/images/icon/food.png"></span>
+				<span class="text">Choose your Food</span>
+			</div>
+		</li>
+		<li class="list">
+			<div class="style">
+				<span class="icon"><img src="public/images/icon/timeline.png"></span>
+				<span class="text">Set your timeline</span>
+			</div>
+		</li>
+		<li class="list">
+			<div class="style">
+				<span class="icon"><img src="public/images/icon/delivery.png"></span>
+				<span class="text">Delivery at your door step</span>
+			</div>
+		</li>
+	</ul>
+</div>
+
+ <div id="map"></div>
+
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+<script type="text/javascript">
+	
+	$(window).load(function(){
+		$(".cart-btn").hide();
+	});
+</script>
+
+</div>

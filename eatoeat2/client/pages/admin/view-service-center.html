@@ -1,0 +1,168 @@
+<div ng-controller="admin_controller">
+
+<div class="main-container dashboard">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="fetch_service_center()">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Service Center</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Service Center</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-service-center" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div class="white-btn" style="cursor: pointer" ng-click="fetch_service_center()"><i class="fa fa-refresh" aria-hidden="true"></i></div></li>
+						<li class="list"><div class="red-btn" style="cursor: pointer" ng-click="service_center_delete()"><i class="fa fa-trash-o" aria-hidden="true"></i></div></li>
+					</ul>
+
+		<p style="margin-left: 50px; padding:5px;color:red;font-weight: bold" ng-show="success_user_delete">Record Successfully Deleted.! </p>
+			
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">Service Center List
+						<div class="right col-px-200">
+							<select class="select-option" ng-model="selectedItem_ServiceCenter"  ng-change="selectedItemChanged_ServiceCenter(selectedItem_ServiceCenter)">
+								
+								<option value="">--Select--</option>
+								<option value="Enable">Enable</option>
+								<option value="Disable">Disable</option>
+							</select>
+						</div>
+					</h3>
+					
+
+					<div class="search-model">
+						<div class="search-div">
+							<label class="search-name">Center Name</label>
+							<input type="text" name="" class="input-box" placeholder="Center Name"  ng-model="fcenter.center_name" >
+						</div>
+						<div class="search-div">
+							<label class="search-name">Join Date</label>
+							<input type="text" name="" class="input-box"  placeholder="Join Date" ng-model="fcenter.joined_on">
+						</div>
+						
+						<div class="search-div">
+							<label class="search-name">Status</label>
+							<select class="select-option left"  ng-model="fcenter.center_status">
+								<option value="">-Select-</option>
+								<option value="Enable">Enable</option>
+								<option value="Disable">Disable</option>
+							</select>
+						</div>
+						
+					</div>
+
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-all-btn" ng-model="hasAllCookChecked" ng-click="checkAll_for_Service_center()" >
+							</div>
+							<div class="coloum-div">
+								<span class="title">Center Name</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">No. of Delivery Boys</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">Join Date</span>
+							</div>
+							<!-- <div class="coloum-div col-px-150 center">
+								<span class="title">Last Login</span>
+							</div> -->
+							<div class="coloum-div col-px-150 center">
+								<span class="title">Status</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Total Orders</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">View Orders</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+				
+
+					<ul class="cat-listing-show list-group">
+						<li class="list"  dir-paginate="center in view_service_center | filter:{ center_name:fcenter.center_name } | filter:{ joined_on:fcenter.joined_on } | filter:{ center_status:fcenter.center_status } | itemsPerPage: 10"  >
+							
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-btn" ng-checked="selection.indexOf(user) > -1"
+							 ng-click="toggleSelection(center._id)" ng-model="center.selected" >
+							</div>
+								<div class="coloum-div">
+								<span class="title">{{center.center_name}}</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">10</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+									<span class="title">{{center.joined_on}}</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">{{center.center_status}}</span>
+							</div>
+
+							<div class="coloum-div center  col-px-100">
+								<span class="title">27</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#0" class="visit-button">Order</a>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#/admin/edit-service-center" title="edit" class="view-btn" ng-click="update_service_center_temp(center._id)"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+					
+					</ul>
+					   <div class="other-controller">
+         
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true"  template-url="public/js/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+
+<script type="text/javascript">
+	
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+	
+</script>
+
+</div>

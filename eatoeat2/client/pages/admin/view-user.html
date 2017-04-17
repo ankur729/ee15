@@ -1,0 +1,175 @@
+<div ng-controller="admin_controller">
+
+<div class="main-container dashboard">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Customers Info</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Customers Info</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-user" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div class="white-btn" ng-click="loadUsers()" style="cursor: pointer"><i class="fa fa-refresh" aria-hidden="true"></i></div></li>
+						<li class="list"><div class="red-btn" ng-click="user_delete()" style="cursor: pointer"><i class="fa fa-trash-o" aria-hidden="true"></i></div></li>
+					</ul>
+
+		<p style="margin-left: 50px; padding:5px;color:red;font-weight: bold" ng-show="success_user_delete">Record Successfully Deleted.! </p>
+			
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">Customer List
+						<div class="right col-px-200">
+							<select class="select-option" ng-model="selectedItem_User" ng-change="selectedItemChanged_User(selectedItem_User)">
+								<option value="">--Select Status--</option>
+								<option value="Active">Active</option>
+								<option value="Inactive">Inactive</option>
+							</select>
+						</div>
+					</h3>
+					
+
+					<div class="search-model">
+						<div class="search-div">
+							<label class="search-name">Customer Name</label>
+							<input type="text" name="" class="input-box" placeholder="Customer Name"  ng-model="fuser.username">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Customer Email </label>
+							<input type="text" name="" class="input-box" placeholder="Customer Email" ng-model="fuser.email">
+						</div>
+							<div class="search-div">
+							<label class="search-name">Customer Mobile </label>
+							<input type="text" name="" class="input-box" placeholder="Customer Mobile" ng-model="fuser.phone">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Join Date</label>
+							<input type="text" name="" class="input-box"  placeholder="Join Date" ng-model="fuser.joined_on">
+						</div>
+						
+						<div class="search-div">
+							<label class="search-name">Status</label>
+							<select class="select-option left">
+								<option>Select</option>
+								<option>Active</option>
+								<option>Inactive</option>
+							</select>
+						</div>
+						
+					</div>
+
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-all-btn" ng-model="hasAllCookChecked" ng-click="checkAll_for_user()" >
+							</div>
+							<div class="coloum-div">
+								<span class="title">Customer Name</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">Customer Email</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">Customer Mobile</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">Join Date</span>
+							</div>
+							<!-- <div class="coloum-div col-px-150 center">
+								<span class="title">Last Login</span>
+							</div> -->
+							<div class="coloum-div col-px-150 center">
+								<span class="title">Status</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Total Orders</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">View details</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+				
+
+					<ul class="cat-listing-show list-group" ng-init="loadUsers()">
+						<li class="list"  dir-paginate="user in user_list_deatils | filter:{ username:fuser.username }   | filter:{ joined_on:fuser.joined_on } | filter:{ email:fuser.email } | filter:{ phone:fuser.phone }	 | itemsPerPage: 10"  >
+							
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-btn" ng-checked="selection.indexOf(user) > -1"
+							 ng-click="toggleSelection(user._id)" ng-model="user.selected" >
+							</div>
+								<div class="coloum-div">
+								<span class="title">{{user.username}}</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">{{user.email}}</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">{{user.phone}}</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">{{user.joined_on}}</span>
+							</div>
+							<div class="coloum-div col-px-150 center">
+								<span class="title">Inactive</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+							<a href="#admin/user-order" class="visit-button">Order</a>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#/admin/view-user-full-details" class="yes-btn" ng-click="view_user_details_admin_temp(user._id)">View</a>
+								<a href="#/admin/edit-user" class="view-btn margin-top-10px" ng-click="view_user_details_admin_temp(user._id)">Edit</a>
+							</div>
+						</li>
+					
+					</ul>
+					   <div class="other-controller">
+         
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true"  template-url="public/js/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+
+<script type="text/javascript">
+	
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+	
+</script>
+
+</div>

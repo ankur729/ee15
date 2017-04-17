@@ -1,0 +1,138 @@
+
+
+<div class="main-container dashboard" ng-controller="admin_controller">
+<!-- main container start herer -->
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+
+	<div class="work-pannel" ng-init="update_info_pages_fetch()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Edit Information</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Edit Information</li>
+					</ul>
+		
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="update_info_page()"  style="cursor: pointer"><i class="fa fa-floppy-o" aria-hidden="true" ></i></div></li>
+						<li class="list"><a href="#/admin/information-page" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name"><i class="fa fa-plus icon-name" aria-hidden="true"></i>Edit Information</h3>
+						<p ng-show="after_success_info_add" style="font-size:12px;color:green;padding: 10px"> <b>Information Page Successfully Added.!	</b></p>
+	
+					<div class="seaTabs row">
+						<div class="tab-style">
+						<div class="seaTabs_switch row">
+							<div class="seaTabs_tab seaTabs_switch_active">General</div>
+							<div class="seaTabs_tab">Data</div>
+						</div>
+
+						<div class="seaTabs_content">
+							<!-- active tab start here -->
+							<div class="seaTabs_item seaTabs_content_active">
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Information Title</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Information Title" ng-model="update_page_info_model.info_title"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Page Description</span>
+									<div class="col-md-80 input-div">
+										<input type="text" name="" class="input-box" placeholder="Page Description" ng-model="update_page_info_model.info_page_desc">
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title">Content</span>
+									<div class="col-md-80 input-div">
+									 <div ckeditor="options" ng-model="update_page_info_model.info_desc" ready="onReady()"></div>
+									</div>
+								</div>
+
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Meta Tag Title</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Title" ng-model="update_page_info_model.info_meta_tag" ></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Meta Tag Description</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Description" ng-model="update_page_info_model.info_meta_desc"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title ">Meta Tag Keyword</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Meta Tag Keyword" ng-model="update_page_info_model.info_meta_keyword" ></div>
+								</div>
+							</div>
+							<!-- active tab end here -->
+
+
+							<div class="seaTabs_item ">
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">SEO URL</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="SEO URL" ng-model="update_page_info_model.info_seo_url"></div>
+								</div>
+								
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Status</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option" ng-model="update_page_info_model.info_status"  >
+											<option value="">Select-</option>
+											<option value="Enable">Enable</option>
+											<option value="Disable">Disable</option>
+										</select>
+									</div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Sort Order</span>
+									<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Sort Order" ng-model="update_page_info_model.info_sort_order"></div>
+								</div>
+								<div class="row field-fillup">
+									<span class="input-field-title mendatory">Tags</span>
+									<div class="col-md-80 input-div">
+										<select class="select-option" ng-model="update_page_info_model.info_tag"	>
+											<option value="">Select</option>
+											<option value="quick_links">Quick links</option>
+											<option value="policy_info">Policy Info</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div></div>
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+
+<script type="text/javascript">
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+</script>

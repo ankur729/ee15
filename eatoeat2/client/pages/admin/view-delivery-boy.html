@@ -1,0 +1,180 @@
+<div ng-controller="admin_controller">
+
+<div class="main-container dashboard">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="fetch_delivery_boy_all()">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Delivery Boy</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Delivery Boy</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-delivery-boy" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div class="white-btn" ng-click="fetch_delivery_boy_all()" style="cursor: pointer"><i class="fa fa-refresh" aria-hidden="true"></i></div></li>
+						<li class="list"><div class="red-btn" ng-click="delivery_boy_delete()" style="cursor: pointer"><i class="fa fa-trash-o" aria-hidden="true"></i></div></li>
+					</ul>
+
+			
+				</div>
+				<!-- page bar end here -->
+
+
+
+
+				<div class="table-view">
+					<h3 class="head-name">Delivery Boy List</h3>
+					
+
+					<div class="search-model">
+						<div class="search-div">
+							<label class="search-name">Delivery Boy Name</label>
+							<input type="text" name="" class="input-box" placeholder="Delivery Boy Name"  ng-model="fboy.boy_name">
+						</div>
+							<div class="search-div">
+							<label class="search-name">Service Center</label>
+							<input type="text" name="" class="input-box" placeholder="Service Center" ng-model="fboy.service_center_name">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Email</label>
+							<input type="text" name="" class="input-box" placeholder="Email" ng-model="fboy.boy_email" >
+						</div>
+						<div class="search-div">
+							<label class="search-name">Mobile</label>
+							<input type="text" name="" class="input-box" placeholder="Mobile"  ng-model="fboy.boy_contact">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Join Date</label>
+							<input type="text" name="" class="input-box"  placeholder="Join Date" ng-model="fboy.joined_on" >
+						</div>
+						
+					</div>
+
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-30 center">
+							<input type="checkbox" name="" class="check-all-btn" ng-model="hasAllCookChecked" ng-click="checkAll_for_delivery_boy()">
+							</div>
+							<div class="coloum-div col-px-150">
+								<span class="title">Delivery Boy Name</span>
+							</div>
+							<div class="coloum-div">
+								<span class="title">Service Center</span>
+							</div>
+							<div class="coloum-div col-px-150">
+								<span class="title">Cook Name</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">Email / Mobile</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">Join Date</span>
+							</div>
+							<!-- <div class="coloum-div col-px-150 center">
+								<span class="title">Last Login</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Today's Order</span>
+							</div> -->
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Total Orders</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">View Orders</span>
+							</div>
+							<div class="coloum-div center  col-px-75">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+				
+
+					<ul class="cat-listing-show list-group" >
+						<li class="list"  dir-paginate="boy in view_delivery_boy | filter:{ boy_name:fboy.boy_name }   | filter:{ boy_contact:fboy.boy_contact }  | filter:{ boy_email:fboy.boy_email }  | filter:{ joined_on:fboy.joined_on }   | filter:{ service_center_name:fboy.service_center_name }   | itemsPerPage: 10"  >
+							
+							<div class="coloum-div col-px-30 center">
+								<input type="checkbox" name="" class="check-btn" ng-checked="selection.indexOf(boy) > -1"
+							 ng-click="toggleSelection(boy._id)" ng-model="boy.selected" >
+
+							</div>
+								<div class="coloum-div">
+								<span class="title">{{boy.boy_name}}</span>
+							</div>
+							<div class="coloum-div">
+								<span class="title">{{boy.service_center_name}}</span>
+							</div>
+							<div class="coloum-div col-px-150">
+								<span class="title">{{boy.assigned_cook}}</span>
+							</div>
+							<div class="coloum-div col-px-200">
+								<span class="title">
+									<p class="ng-binding"><i class="fa fa-envelope-o col-px-20" aria-hidden="true"></i>{{boy.boy_email}}</p>
+									<p class="ng-binding"><i class="fa fa-phone col-px-20"></i>{{boy.boy_contact}}</p>
+								</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">{{boy.joined_on}}</span>
+							</div>
+
+							<div class="coloum-div center  col-px-100">
+								<span class="title">5</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">27</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#0" class="visit-button">Order</a>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#/admin/edit-delivery-boy" title="edit" class="view-btn" ng-click="update_delivery_boy_temp(boy._id)"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+					
+					</ul>
+					   <div class="other-controller">
+         
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true"  template-url="public/js/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+
+<script type="text/javascript">
+	
+
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+	
+</script>
+
+</div>

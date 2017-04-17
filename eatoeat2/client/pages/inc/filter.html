@@ -1,0 +1,70 @@
+<div ng-controller="user_register"  ng-init="get_foods_for_listing()" >
+
+<div class="filter-panel">
+
+	<div class="colum-adjust">
+		<h3 class="filter-name">By type<i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<ul class="multipe-filter">
+			<li class="list" ng-repeat="occassion in food_listing.occasion_list">
+				<input id="check1" name="check" value="check1" class="fancy-radio" type="radio">
+				<label for="check1" class="fancy-radio-label">{{occassion.group_attr}}<span class="total-number">(20)</span></label>
+			</li>
+		
+		</ul>
+	</div>
+
+	<div class="colum-adjust" style="background: #f6f6f6;">
+		<h3 class="filter-name">By Day</h3>
+		<input name="" class="input-box" id="dp1" placeholder="Select Date" type="text">
+	</div>
+
+	<div class="colum-adjust">
+		<h3 class="filter-name">By Price <i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<div class="inner-filter padding-left-right-20px margin-top-20px row">
+            <div id="slider-range" class="row"></div>
+              <center><input type="text" id="amount" name="amount" class="margin-top-20px" style="border:0; text-align:center; color:#333;" readonly></center>
+          </div>
+	</div>
+	<div class="colum-adjust">
+		<h3 class="filter-name">By Cuisines<i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<ul class="multipe-filter" style="display: block;">
+			<li class="list" ng-repeat="cuisine in food_listing.cuisine_list">
+				<input type="checkbox"   value={{cuisine.category_name}}   >
+				<label >{{cuisine.category_name}}<span class="total-number">(20)</span></label>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="colum-adjust">
+		<h3 class="filter-name">By Options <a href="#0" class="clear-this">Clear</a></h3>
+		<ul class="filter-by-rate">
+			<li class="list">
+				<span class="star-number"><i class="star"><img src="public/images/icon/veg.png"></i></span>
+				<span class="result-number">Veg</span>
+				<input name="" type="hidden">
+			</li>
+			<li class="list">
+				<span class="star-number"><i class="star"><img src="public/images/icon/non-veg.png"></i></span>
+				<span class="result-number">Non - Veg</span>
+				<input name="" type="hidden">
+			</li>
+			<li class="list">
+				<span class="star-number"><i class="star"><img src="public/images/icon/all.png"></i></span>
+				<span class="result-number">All</span>
+				<input name="" type="hidden">
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="colum-adjust">
+		<h3 class="filter-name">By delivery hours <i class="drop-toggle"><img src="public/images/icon/r-drop.png"></i></h3>
+		<div class="inner-filter padding-left-right-20px margin-top-20px row">
+            <div id="hours-range" class="row"></div>
+              <center><input type="text" id="hours" name="amount" class="margin-top-20px" style="border:0; text-align:center; color:#333;" readonly></center>
+          </div>
+	</div>
+</div>
+
+
+</div>

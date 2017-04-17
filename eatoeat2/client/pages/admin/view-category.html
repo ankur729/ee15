@@ -1,0 +1,100 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+	<div class="work-pannel" ng-init="fetch_all_cuisine()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Cuisines</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Cuisines</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-category"  class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div class="white-btn" ng-click="fetch_all_cuisine()" style="cursor: pointer"><i class="fa fa-refresh" aria-hidden="true"></i></div></li>
+						<li class="list"><div class="red-btn" ng-click="cuisine_delete()" style="cursor: pointer"><i class="fa fa-trash-o" aria-hidden="true"></i></div></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">Cuisine List
+						<div class="right col-px-200">
+							<select class="select-option" ng-model="selectedItem_Cuisine" ng-change="selectedItemChanged_Cuisine(selectedItem_Cuisine)">
+								<option value="">--Status--</option>
+								<option value="Enable">Enable</option>
+								<option value="Disable">Disable</option>
+							</select>
+						</div>
+					</h3>
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-50 center">
+							<input type="checkbox" name="" class="check-all-btn" ng-model="hasAllCookChecked" ng-click="checkAll_for_cuisine()">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Cuisine Name</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">Sort Order</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+					<ul class="cat-listing-show list-group">
+						<li class="list"  dir-paginate="cuisine in view_cuisine_details | itemsPerPage: 5">
+							<div class="coloum-div col-px-50 center">
+							
+									<input type="checkbox" name="" class="check-btn" ng-checked="selection.indexOf(cuisine) > -1"
+							 ng-click="toggleSelection(cuisine._id)" ng-model="cuisine.selected" >
+							</div>
+							<div class="coloum-div">
+								<span class="title">{{cuisine.category_name}}</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">{{cuisine.category_order}}</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#/admin/edit-category" class="red-btn" ng-click="update_cuisine_temp(cuisine._id)"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+
+					
+					</ul>
+							   <div class="other-controller">
+         
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true"  template-url="public/js/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+

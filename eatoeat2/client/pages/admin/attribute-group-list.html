@@ -1,0 +1,84 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+	<div class="work-pannel" ng-init="fetch_attribute_group()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Attribute Groups</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Attribute Groups</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-attribute-group" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div class="white-btn" ng-click="fetch_attribute_group()" style="cursor: pointer"><i class="fa fa-refresh" aria-hidden="true" ></i></div></li>
+						<li class="list"><div class="red-btn" ng-click="attr_group_delete()"><i class="fa fa-trash-o" aria-hidden="true" ></i></div></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">Attribute Groups List</h3>
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div center">
+								<input type="checkbox" name="" class="check-all-btn" ng-model="hasAllCookChecked" ng-click="checkAll_attr_group()" >
+							</div>
+							<div class="coloum-div col-md-70">
+								<span class="title">Attribute Groups Name</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">Sort Order</span>
+							</div>
+							<div class="coloum-div center col-px-100">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+					<ul class="cat-listing-show list-group">
+						<li class="list" ng-repeat="group in view_attribute_group">
+							<div class="coloum-div center">
+								<input type="checkbox" name="" class="check-btn"  ng-checked="selection.indexOf(group) > -1"
+							 ng-click="toggleSelection(group._id)" ng-model="group.selected">
+							</div>
+							<div class="coloum-div col-md-70">
+								<span class="title">{{group.group_name}}</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">{{group.sort_order}}</span>
+							</div>
+							<div class="coloum-div center col-px-100">
+								<a href="#admin/edit-attribute-group" class="red-btn" ng-click="update_attyr_group_temp(group._id)"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+
+					
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

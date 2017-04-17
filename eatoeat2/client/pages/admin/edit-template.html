@@ -1,0 +1,120 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="fetch_template_by_name()">
+			<div class="view-pannel" >
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Edit SMS Template</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">System</li>
+						<li class="list">Sms Template</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="sms_temp_save()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></div></li>
+						<li class="list"><a href="#/admin/view-sms-template" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name">Edit Sms Template</h3>
+
+						<div class="row ">
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Editing File</span>
+								<div class="col-md-80 input-div">
+									<select class="select-option" ng-model="sms_temp_detail.order_detail" ng-change="fetch_sms_template_on_select(sms_temp_detail.order_detail)">
+										<!-- <option>Select</option> -->
+										<option value="">--Select--</option>
+										<optgroup label="Cook">
+											<option value="Order Received">Order Received</option>
+											<option value="Order Received">Order Returned</option>
+											<option value="Order Dispatched">Order Dispatched</option>
+											<option value="Order Complete">Order Complete</option>
+										</optgroup>
+										<optgroup label="User">
+											<option value="Order Received">Order Received</option>
+											<option value="Order Received">Order Returned</option>
+											<option value="Order Dispatched">Order Dispatched</option>
+											<option value="Order Complete">Order Complete</option>
+										</optgroup>
+										<optgroup label="Admin">
+											<option value="Order Received">Order Received</option>
+											<option value="Order Received">Order Returned</option>
+											<option value="Order Dispatched">Order Dispatched</option>
+											<option value="Order Complete">Order Complete</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+
+						<!-- 	<div class="row field-fillup">
+								<span class="input-field-title">Subject</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Subject"></div>
+							</div> -->
+
+							<div class="row field-fillup">
+								<span class="input-field-title">Body</span>
+								<div class="col-md-80 input-div">
+										<textarea class="textarea row-px-200" id="mail_body" >
+{{basic_sms_template}}
+
+
+</textarea>
+									
+								</div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Useable Variables For Subject</span>
+								<div class="col-md-80 input-div">
+										<div ng-click="sms_temp('^^FIRST_NAME^^')" style="cursor: pointer;border:1px solid gray"> First name</div>	
+										<div ng-click="sms_temp('^^LAST_NAME^^')" style="cursor: pointer;border:1px solid gray"> Last Name</div>
+										<div ng-click="sms_temp('^^EMAIL_ID^^')" style="cursor: pointer;border:1px solid gray"> Email Id</div>
+										<div ng-click="sms_temp('^^PHONE^^')" style="cursor: pointer;border:1px solid gray"> Phone number</div>	
+								</div>
+							</div>
+
+
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+
+
+<script type="text/javascript">
+	
+$(".left-pannel .main-list").click(function(){
+	$(this).children(".nav-fly").slideToggle(200);
+	$(this).nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+</script>

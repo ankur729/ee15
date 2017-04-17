@@ -1,0 +1,146 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="fetch_coupon()">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Coupon</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Coupon</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><a href="#/admin/add-coupon" class="blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+						<li class="list"><div ng-click="fetch_coupon()" class="white-btn" style="cursor: pointer"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+						<li class="list"><div class="red-btn" ng-click="coupon_delete()" style="cursor: pointer"><i class="fa fa-trash-o" aria-hidden="true"></i></div></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<div class="table-view">
+					<h3 class="head-name">Coupon List
+						<div class="right col-px-200">
+							<select class="select-option" ng-model="selectedItem_Coupon" ng-change="selectedItemChanged_Coupon(selectedItem_Coupon)">
+								<option value="">--Select Status--</option>
+								<option value="Enable">Enable</option>
+								<option value="Disable">Disable</option>
+							</select>
+						</div>
+					</h3>
+
+
+					<div class="search-model">
+						<div class="search-div">
+							<label class="search-name"> Coupon Name </label>
+							<input type="text" name="" class="input-box" placeholder=" Coupon Name "  ng-model="fcoupon.coupon_name">
+						</div>
+						<div class="search-div">
+							<label class="search-name"> Coupon Code </label>
+							<input type="text" name="" class="input-box" placeholder=" Coupon Code " ng-model="fcoupon.coupon_code">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Discount</label>
+							<input type="text" name="" class="input-box" placeholder="Discount" ng-model="fcoupon.coupon_discount_operation">
+						</div>
+						<div class="search-div">
+							<label class="search-name">Status</label>
+							<select class="select-option left" ng-model="fcoupon.coupon_status">
+								<option value="">Select</option>
+								<option value="Enable">Enable</option>
+								<option value="Disable">Disable</option>
+							</select>
+						</div>
+					
+						
+					</div>
+
+					<ul class="cat-listing-show">
+						<!-- heading part start here-->
+						<li class="list main-name">
+							<div class="coloum-div col-px-50 center">
+								<input type="checkbox" name="" class="check-all-btn" ng-model="hasAllCookChecked" ng-click="checkAll_for_coupon()">
+							</div>
+							<div class="coloum-div">
+								<span class="title">Coupon Name</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">Code</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title"> Operation </span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">Discount</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">Date Start</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">Date End</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">Status</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<span class="title">Action</span>
+							</div>
+						</li>
+					</ul>
+					<!-- heading part end here-->
+					<ul class="cat-listing-show list-group">
+						<li class="list"  dir-paginate="coupon in coupon_fetch_detail | filter:{ coupon_name:fcoupon.coupon_name } | filter:{ coupon_code:fcoupon.coupon_code } | filter:{ coupon_discount_operation:fcoupon.coupon_discount_operation } | filter:{ coupon_status:fcoupon.coupon_status }  | itemsPerPage: 10" >
+							<div class="coloum-div col-px-50 center">			
+							<input type="checkbox" name="" class="check-btn"  ng-checked="selection.indexOf(coupon) > -1"
+									ng-click="toggleSelection(coupon._id)"	 ng-model="coupon.selected">
+							</div>
+							<div class="coloum-div">
+								<span class="title"> {{coupon.coupon_name}} </span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">{{coupon.coupon_code}}</span>
+							</div>
+							<div class="coloum-div col-md-10 center">
+								<span class="title">{{coupon.coupon_discount_operation}}</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">{{coupon.coupon_discount_amount}}</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">{{coupon.coupon_due_start}}</span>
+							</div>
+							<div class="coloum-div col-md-15 center">
+								<span class="title">{{coupon.coupon_due_end}}</span>
+							</div>
+							<div class="coloum-div col-px-100 center">
+								<span class="title">{{coupon.coupon_status}}</span>
+							</div>
+							<div class="coloum-div center  col-px-100">
+								<a href="#/admin/edit-coupon" class="red-btn" ng-click="update_coupon_details_temp(coupon._id)"><i class="fa fa-edit" aria-hidden="true"></i></a>
+							</div>
+						</li>
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,136 @@
+ <span us-spinner="{radius:30, width:8, length: 16}"></span>
+
+<div ng-init="cook_login_check_for_cookie()">
+<div ng-controller="cook_register" ng-init="get_cook_profile_data()">
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/cook/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel company-detail-page w-shadow">
+			<h4 class="page-name">Update your company Details</h4>
+			
+			<div class="form-layout">
+
+	
+
+	<div class="list field-fillup col-md-15 padding-left-right-5px">
+		<span class="label">Upload banner</span>
+	 	<label class="upload-single-image left" title="Please upload your logo">
+			 <input type="file" id="file2" class="input-file" name="file2"  ngf-change="upload_cook_banner_image($files)" ngf-select ng-model="picFile2" name="attachement" accept="image/png, image/jpeg, image/jpg "/>
+			 
+			<span class="thumb" ><img ng-src="{{cook_data_for_view.cook_banner_img_for_web }}"  ngf-src="picFile2[0]" 	></span>
+						
+			</label>
+	</div>
+
+	<div class="list field-fillup col-md-70 padding-left-right-10px">
+		<span class="label">About us</span>
+		<div class="input-div">
+			<textarea class="textarea" placeholder="Please discribe here about you .."  ng-model="cook_data_for_view.about_us"></textarea>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Brand name</span>
+			<div class="input-div"><input type="text" name="" placeholder="Enter Your Brand Name" class="input-box" ng-model="cook_data_for_view.cook_company_name"></div>
+		</div>
+	
+
+		
+			 <div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Bank Account Type</span>
+
+					<select class="select-option" ng-model="cook_data_for_view.bank_type">
+			       			<option value="">--Select bank Acc Type--</option>
+			       			<option value="Saving Account">Saving Account</option>
+							   <option value="Current Account">Current Account</option>
+			       		</select>
+			
+			</div>
+				</div>
+
+				<div class="row">
+						<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Name On Bank Account</span>
+			<div class="input-div"><input type="text" name="" placeholder="Enter Name On Bank Acc" class="input-box" ng-model="cook_data_for_view.cook_name_on_bank_acc"></div>
+		</div>
+
+
+					<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Branch Name</span>
+			<div class="input-div"><input type="text" name="" placeholder="Enter Your Brand Name" class="input-box" ng-model="cook_data_for_view.branch_name"></div>
+		</div>
+
+				</div>
+	<div class="row">
+		
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Bank Name</span>
+				<select class="select-option" ng-model="cook_data_for_view.bank_name">
+			       			<option value="">--Select bank Name--</option>
+			       			<option value="Allahabad Bank">Allahabad Bank</option>
+							<option value="Andhra Bank">Andhra Bank</option>
+							<option value="Bank of India">Bank of India </option>
+							<option value="Bank of Baroda">Bank of Baroda </option>
+							<option value="Bank of Maharashtra">Bank of Maharashtra </option>
+							<option value="Canara Bank">Canara Bank </option>
+							<option value="Central Bank of India">Central Bank of India </option>
+						
+							<option value="Indian Bank">Indian Bank </option>
+							<option value="ICICI Bank">ICICI Bank </option>
+							<option value="Indian Overseas Bank">Indian Overseas Bank </option>
+							<option value="Oriental Bank of Commerce">Oriental Bank of Commerce </option>
+							<option value="Punjab and Sindh Bank">Punjab and Sindh Bank </option>
+							<option value="Punjab National Bank">Punjab National Bank </option>
+							<option value="Syndicate Bank">Syndicate Bank </option>
+							<option value="State Bank of India">State Bank of India </option>
+							<option value="UCO Bank">UCO Bank </option>
+							<option value="Union Bank of India">Union Bank of India </option>
+							<option value="United Bank of India">United Bank of India </option>
+							<option value="Vijaya Bank">Vijaya Bank </option>
+
+			       		</select>
+		</div>
+
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Bank Account number</span>
+			<div class="input-div"><input type="text" name="" placeholder="Bank account number" class="input-box" ng-model="cook_data_for_view.bank_account_no"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">IFSC Code</span>
+			<div class="input-div"><input type="text" name="" placeholder="Please enter ifsc code " class="input-box" ng-model="cook_data_for_view.bank_ifsc"></div>
+		</div>
+		<div class="list field-fillup col-md-50 padding-left-right-10px">
+			<span class="label">Check</span>
+			<div class="input-div">
+				<input id="check3" name="check" value="check3" class="fancy-checkbox" type="checkbox">
+		        <label for="check3" class="fancy-checkbox-label">Please check if don’t know IFSC</label>
+	        </div>
+		</div>
+	</div>
+	<div class="row field-fillup">
+		<p class="imp-note"><span class="title">Please note:</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+	</div>
+	<div class="row field-fillup">
+		<p ng-show="after_success_company_details" style="font-size:12px;color:green;padding:10px;"><b>Your Company Details Are Successfully Updated..!</b></p>
+
+		<div class="submit-btn" style="width: 100%" ng-click="update_cook_company_details(cook_data_for_view)"> Save</div>
+</div>
+
+		</div>
+	</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+
+</div>
+
+</div>
+
+</div>

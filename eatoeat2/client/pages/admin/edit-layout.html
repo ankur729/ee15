@@ -1,0 +1,170 @@
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel" ng-init="fetch_all_banner_detail()">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container" ng-init="update_layout_fetch_admin()">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Edit Layout</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Add Layout</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div ng-click="update_layout_page(update_layout_model)" class="blue-btn"><i class="fa fa-floppy-o" aria-hidden="true"></i></div></li>
+						<li class="list"><a href="#/admin/layouts" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<div class="table-view">
+					<h3 class="head-name">Add Layout</h3>
+					<div class="row ">
+
+						<!-- <div class="row field-fillup">
+							<span class="input-field-title mendatory">Banner Name</span>
+							<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Option Name"></div>
+						</div> -->
+
+						<div class="row field-fillup">
+							<span class="input-field-title mendatory">Select Layout Type</span>
+							<div class="col-md-80 input-div">
+
+								 <select class="select-option" ng-model="update_layout_model.layout_type" ng-change="onSelectBannerChange(update_layout_model.layout_type)">
+									<option value="">--Select--</option>
+									<option value="home_page_banner">Home Page Banner</option>
+									<option value="listing_banner_2">Lising-Banner 2</option>
+									<option value="listing_background_banner">Listing-Background-Banner</option>
+								</select>
+
+
+							</div>
+						</div>
+
+						<div class="row field-fillup">
+							<span class="input-field-title mendatory">Layout Image</span>
+							<div class="col-md-80 input-div">
+								<div class="image-view">
+									<span class="thumb"><img src="uploads/global_setting_uploads/UVgDxldTcpohd.jpg" id="l_image"></span>
+
+									<div class="popup">
+										<div class="box-model">
+											<div class="layout-details">
+												<h4>Lising-Banner 2</h4>
+												<span class="close-btn" title="Close Popup"><img src="images/icon/close-1.png"></span>
+											</div>
+											<div class="display-setting">
+												<div class="layout-image">
+													<img src="uploads/global_setting_uploads/UVgDxldTcpohd.jpg" id="l_image_pop_up">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row field-fillup">
+							<span class="input-field-title mendatory">Select Banner Name</span>
+							<div class="col-md-80 input-div">
+
+								 <select  ng-model="update_layout_model.assined_banner_name" ng-options="t.banner_name for t in fetch_banner_details track by t._id" class="select-option">
+									<option value="">--Select--</option>
+								</select>
+
+
+							</div>
+						</div>
+
+						<!--  <div class="row field-fillup">
+							<span class="input-field-title mendatory">Layout Name</span>
+							<div class="col-md-80 input-div">
+								<input type="text" name="" class="input-box" placeholder="Layout Name" ng-model="banner_detail.layout_name">
+							</div>
+						</div> --> 
+
+						<div class="row field-fillup">
+							<span class="input-field-title mendatory">Status</span>
+							<div class="col-md-80 input-div">
+								<select class="select-option"  ng-model="update_layout_model.layout_status">
+									<option value="">--Select--</option>
+									<option value="Enable">Enable</option>
+									<option value="Disable">Disable</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- table view end here -->
+
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<script type="text/javascript">
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+
+// add more add more 
+$(".add-more").click(function(){
+	$(this).parents(".list").prev(this).clone(true).prependTo($(this).parents(".create-list"));
+});
+
+// remove
+$(document).on("click" , ".remove-row" , function(){
+	$(this).parents(".list").remove();
+});
+
+
+$(".field-fillup .add-sugges").focus(function(){
+	$(this).next(".dropdown-sugges").show();
+});
+
+$(".field-fillup .add-sugges").blur(function(){
+	$(this).next(".dropdown-sugges").fadeOut(300);
+});
+
+$(document).on("click" , ".dropdown-sugges .list", function(){
+$(this).appendTo(".add-well");
+var e= "<input type='hidden' class='inp-hidden'>";
+$(".add-well").append(e);
+e.attr('value' , $(this).attr("data-value") );
+});
+
+$(document).on("click" , ".add-well .list", function(){
+$(this).appendTo(".dropdown-sugges");
+$(this).next(".inp-hidden").remove();
+});
+
+
+$(".image-view .thumb").click(function(){
+	$(this).next(".popup").show();
+});
+$(".image-view .popup .close-btn").click(function(){
+	$(".popup").hide();
+});
+
+</script>

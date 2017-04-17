@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1 ,
+        "name": "gfg" ,
+        "cuisines": "punjabi",
+        "old_price": "1200",
+        "new_price": "800",
+        "max_qty": "12",
+        "image": "images/products/1.jpg"
+    },
+    {
+        "id": 8,
+        "name": "product name 1",
+        "value": "Rolex Bl7110-51L Silver/Blue",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/4.jpg"
+    },
+    {
+        "id": 1 ,
+        "name": "Mix Veg Delicious dish" ,
+        "cuisines": "punjabi",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/1.jpg"
+    },
+    {
+        "id": 8,
+        "name": "product name 1",
+        "value": "Rolex Bl7110-51L Silver/Blue",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/4.jpg"
+    },
+    {
+        "id": 1 ,
+        "name": "Mix Veg Delicious dish" ,
+        "cuisines": "punjabi",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/1.jpg"
+    },
+    {
+        "id": 8,
+        "name": "product name 1",
+        "value": "Rolex Bl7110-51L Silver/Blue",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/4.jpg"
+    },
+    {
+        "id": 1 ,
+        "name": "Mix Veg Delicious dish" ,
+        "cuisines": "punjabi",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/1.jpg"
+    },
+    {
+        "id": 8,
+        "name": "product name 1",
+        "value": "Rolex Bl7110-51L Silver/Blue",
+        "manufacture": "Rolex Watch",
+        "old_price": "1200",
+        "new_price": "800",
+        "image": "images/products/4.jpg"
+    }
+
+]

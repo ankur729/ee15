@@ -1,0 +1,80 @@
+<!-- left pannel start here -->
+	<div class="left-pannel">
+		<div class="logo"><img src="pages/admin/images/w-logo.png"></div>
+		<ul class="nav">
+			<li class="main-list active"><a href="#/admin" class="main-link">Dashboard</a></li>
+
+			<li class="main-list"><div class="main-link" style="cursor: pointer">Cook Center</div>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					<li class="sub-list"><a href="#/admin/view-cook"  class="main-link">Cook</a></li><!-- 
+					<li class="sub-list"><a href="#/admin/view-marketplace-commission" class="main-link">Commission</a></li> -->
+					<li class="sub-list"><a href="#/admin/view-seller-product"  class="main-link">Foods</a></li><!-- 
+					<li class="sub-list"><a href="#/admin/view-seller-unapproved-product" class="main-link">Unapproved Foods</a></li> -->
+					<li class="sub-list"><a href="#/admin/view-seller-orders"  class="main-link">Orders</a></li>
+					<li class="sub-list"><a href="#/admin/view-marketplace-income-list" class="main-link">Income</a></li>
+					<li class="sub-list"><a href="#/admin/view-marketplace-transaction-list" class="main-link">Transaction</a></li>
+					<!-- <li class="sub-list"><a href="#0" class="main-link">Shipping</a></li> -->
+					<!-- <li class="sub-list"><a href="#0" class="main-link">Mail</a></li> -->
+					
+				</ul>
+			</li>
+			<li class="main-list"><div class="main-link" style="cursor: pointer">Food Catalogue</div>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly"><!-- 
+					<li class="sub-list"><a href="#/admin/view-product" class="main-link">Manage Foods</a></li> -->
+					<li class="sub-list"><a href="#/admin/view-category" class="main-link">Manage Cuisines</a></li>
+					<li class="sub-list"><a href="#/admin/attribute-group-list" class="main-link">Manage Attribute Group</a></li>
+					<li class="sub-list"><a href="#/admin/attribute-list" class="main-link">Manage Attribute</a></li>
+				
+					<li class="sub-list"><a href="#/admin/view-review" class="main-link">Reviews</a></li>
+				</ul>
+			</li>
+			<li class="main-list"><div class="main-link" style="cursor: pointer">System</div>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					
+					<li class="sub-list"><a href= "#/admin/view-sms-template"  class="main-link">SMS Template</a></li>
+					<li class="sub-list"><a href= "#/admin/view-email-template"  class="main-link">EMAIL Template</a></li>
+					<li class="sub-list"><a href= "#/admin/view-coupon"  class="main-link">Coupon</a></li>
+					<li class="sub-list"><a href= "#/admin/information-page"  class="main-link">Information</a></li>
+					<li class="sub-list"><a href= "#/admin/view-banners" class="main-link">Banner</a></li>
+					<li class="sub-list"><a href= "#/admin/layouts"  class="main-link">Layout</a></li>
+				</ul>
+			</li>
+			<li class="main-list"><div class="main-link" style="cursor: pointer">Orders</div>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					<li class="sub-list"><a href= "#/admin/view-orders"  class="main-link">All Orders</a></li>
+					<li class="sub-list"><a href= "#/admin/complete-order"  class="main-link">Complete Orders</a></li>
+				
+					<li class="sub-list"><a href= "#/admin/open-order"  class="main-link">Open Orders</a></li>
+					<li class="sub-list"><a href= "#/admin/cancelled-order"  class="main-link">Cancelled Orders</a></li>
+				</ul>
+			</li>
+			<li class="main-list"><div class="main-link" style="cursor: pointer">Management Center</div>
+				<span class="toggle-cat">+</span>
+				<ul class="nav-fly">
+					<li class="sub-list"><a href= "#/admin/view-service-center"  class="main-link">Center</a></li>
+					<li class="sub-list"><a href= "#/admin/view-delivery-boy"  class="main-link">Delivery Boy</a></li>
+				</ul>
+			</li>
+
+
+			<li class="main-list "><a href="#/admin/view-user" class="main-link">Customers Info</a></li>
+		
+	
+	
+			
+			<li class="main-list "><a href="#/admin/social-setting" class="main-link">Social</a></li>
+			<li class="main-list"><a href="#/admin/global-setting" class="main-link">Global Settings</a></li>
+		</ul>
+	</div>
+<!-- left pannel end here -->
+<script type="text/javascript">
+$(".left-pannel .main-list").click(function(){
+	$(this).children(".nav-fly").slideToggle(200);
+	$(this).nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+</script>

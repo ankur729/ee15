@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="public_view" ng-controller="home_controller" ng-cloak>
+
+<head>
+
+	<style>
+	
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+	</style>
+<title ng-bind="title"></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name='keywords' content='your, tags'>
+
+
+
+<div>
+
+	<link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" />
+</div>
+
+
+
+<link href="pages/admin/css/720kbdatepicker.css" rel="stylesheet">
+
+
+<!--<link href="plugin/preety-time-picker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">-->
+<link href="plugin/tabs/css/tabs.css" rel="stylesheet">
+<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.0.2/rzslider.min.css"
+/>
+
+<style>
+	.paginate {
+    display: inline-block;
+}
+
+.paginate a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+</style>
+
+
+
+<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css'
+	media='all' />
+<link rel="stylesheet" type="text/css" href="public/css/angular-ui-notify.css" />
+<link rel="stylesheet" type="text/css" href="public/css/sweet-alert.css" />
+
+<link rel="stylesheet" type="text/css" href="public/css/angular-dropdown-multiselect.css" />
+
+<base href="/">
+
+</head>
+
+<body class="body-color">
+
+	<div class="main-container">
+
+		<div ng-view>
+
+		</div>
+
+	</div>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+	<!--<script src="public/js/libraries/jquery-min.js"></script>-->
+		<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+			
+
+
+	<script src="public/js/libraries/jquery-cookies.js"></script>
+	<script src="public/js/libraries/angular-min.js"></script>
+	<script src="public/js/libraries/route-min.js"></script>
+	<script src="public/js/libraries/cookies.js"></script>
+	<script src="public/js/libraries/route.js"></script>
+
+	<script type="text/javascript" src="public/js/angular-local-storage.js"></script>
+
+
+	<script type="text/javascript" src="public/js/libraries/angular-datepicker.js"></script>
+	<script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+	<script type="text/javascript" src="pages/admin/js/angular-ckeditor.min.js"></script>
+<script type="text/javascript" src="plugin/time-picker/wickedpicker.js"></script>
+	<script type="text/javascript" src="public/js/angular-base64.js"></script>
+
+	<!--<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="plugin/preety-time-picker/js/bootstrap-material-datetimepicker.js"></script>-->
+
+	<script type="text/javascript" src="public/js/angular-ui-notify.js"></script>
+	<!--for notify-->
+
+		<script type="text/javascript" src="public/js/dir-pagination.js"></script>
+		<!--for Pagination-->
+
+
+		<script type="text/javascript" src="public/js/sweet-alert.min.js"></script>
+		<!--for Alert-->
+		<script type="text/javascript" src="public/js/angular-dropdown-multiselect.min.js"></script>
+		<!--for DROPDOWN MULTISELECT-->
+	<script type="text/javascript" src="public/js/ng-f-fileupload.js"></script>
+
+	<script type="" src="public/js/libraries/angular-sanitize.js">	</script>
+
+	<script src="public/js/controllers/data_control.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.min.js"></script>
+
+	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.0.2/rzslider.min.js"></script>
+	
+	<link ng-repeat="scirpt in scripts" ng-href="{{scripts.href}}" />
+
+
+
+
+</body>
+
+</html>

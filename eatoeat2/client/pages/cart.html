@@ -1,0 +1,112 @@
+<div ng-controller="user_register">
+
+
+<div ng-include="'pages/inc/header.html'"  class="common-header"></div>
+<div ng-include="'pages/popup/select-user.html'"  ng-show="ask_user_type_show"></div>
+<div class="container">
+	<div class="cart-page w-shadow">
+
+		<!-- activity cart show start here-->
+		<div class="cart-activity">
+			<span class="thumb"><img src="public/images/icon/cart-icon.png"></span>
+			<p class="display">We have found in your cart <span class="number">( {{manage_cart_total.total_item}} Items )</span></p>
+		</div>
+		<!-- activity cart show end here-->
+
+		<div class="cart-management" ng-init="fetch_cart()">
+
+			<div class="left-panel">
+				<ul class="cart-tiles">
+					<li class="list main-name">
+						<div class="coloum-div col-px-100 center"><span class="title">Image</span></div>
+						<div class="coloum-div col-md-30"><span class="title">Item Details </span></div>
+						<div class="coloum-div col-px-65 center"><span class="title">Type</span></div>
+						<div class="coloum-div col-px-100 center"><span class="title">Quantity</span></div>
+						<div class="coloum-div col-px-200"><span class="title">Price</span></div>
+						<div class="coloum-div col-px-100"><span class="title">Subtotal</span></div>
+					</li>
+					<li class="list" ng-repeat="item in view_cart_val">
+						<div class="coloum-div col-px-100 center"><span class="pro-thumb"><img ng-src="{{item.food_img}}" class="properproduct" style="  background-size: 100% auto;"></span></div>
+						<div class="coloum-div col-md-30">
+							<div class="product-details">
+								<a href="#0" class="link">{{item.food_name}}</a>
+								<div class="cuisines">
+									<span class="subtext">Cuisines :</span>
+									<ul class="cuisine-list">
+									<li class="list ng-binding">punjabi</li>
+									</ul>
+								</div>
+								<div class="remove-btn" style="cursor: pointer" ng-click="remove_item_from_cart(item.food_id)">Remove</div>
+							</div>
+						</div>
+
+						<div ng-if="item.food_type=='Vegetarian'">
+
+			<div class="coloum-div col-px-65 center"><span class="title"><img src="public/images/icon/veg.jpg"></span></div>
+
+						</div>
+						<div ng-if="item.food_type=='Non Vegetarian'">
+
+								<div class="coloum-div col-px-65 center"><span class="title"><img src="public/images/icon/non-veg.jpg"></span></div>
+						</div>
+						
+
+						<div class="coloum-div col-px-100 center">
+							<div class="qty-controller">
+								<span class="button"  ng-click="decreaseItemCount_for_cart_page(item)">-</span>
+								<span class="qty-show" id="food_qty">{{item.food_qty}}</span>
+								<span class="button"  ng-click="increaseItemCount_for_cart_page(item)">+</span>
+							</div>
+						</div>
+
+						<div class="coloum-div col-px-200">
+							<span class="title price"> Rs. {{item.food_price}} </span><!-- 
+							<span class="selling-price">Selling Price: Rs. 599</span> -->
+							<span class="offer-saving">Delivery Charge : Rs. 30</span>
+						</div>
+						<div class="coloum-div col-px-100"><span class="title price">Rs. {{item.food_total_price}}</span></div>
+					</li>
+				
+				</ul>
+			</div>
+
+			<div class="right-panel">
+				<div class="your-order-cart">
+					<h3 class="head" ng-click="place_order()">Your Order</h3>
+					<ul class="data-list">
+						<li class="list"><span class="title">Total Items</span><span class="data">( {{manage_cart_total.total_item}} )</span></li>
+						<li class="list"><span class="title">Price</span><span class="data">(Rs. {{manage_cart_total.total_price}}.00)</span></li>
+						<li class="list"><span class="title">Delivery Charge</span><span class="data">(Rs. {{delivery_charge}}.00)</span></li>
+					</ul>
+					<div class="grand-total">
+						<span class="title">Total Amount</span><span class="data">(Rs.{{manage_cart_total.total_price_final}}.00)</span>
+					</div>
+					<div class="action-buttons">
+						<span class="continue"><a href="#/listing" class="link">Continue Shop</a></span>
+						<span class="order"><a href="#/checkout" class="link" ng-click="place_order()">Place Order</a></span>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+</div>
+<div ng-include="'pages/inc/footer.html'"></div>
+
+<script type="text/javascript">
+$( ".properproduct").load(function() {
+if ( $( this ).height() > 50){
+	
+	$(this).addClass( "if-bigimg" );		
+    }
+    else {
+	// $(this).addClass( "if-smallimg" );
+     }
+
+});
+</script>
+
+
+</div>

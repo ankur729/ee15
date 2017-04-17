@@ -1,0 +1,43 @@
+<div ng-controller="user_register" >
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+<div class="container">
+	<div class="user-join-page w-shadow">
+		<div class="form-display">
+			<h2 class="page-name">User Account
+			<p class="caption">We will send you a link to reset your password. Enter Email Address</p>
+			</h2>
+			<div class="activity">
+				<ul class="buttons">
+					<li class="list active"><a href="#/user_login" class="link">Login</a></li>
+					<li class="list"><a href="#/user_create" class="link">Sign up</a></li>
+				</ul>
+
+				<p class="caption">Enter your email and password to <b>get your password</b></p>
+					<p ng-show="after_forget_mail_send" style="font-size:12px;color:green"><b>Email Has Been Sent. Check your Mail.</b></p>
+						<p ng-show="after_forget_mail_failed" style="font-size:12px;color:red"><b>Email is Not Registered With Us.!</b></p>
+		
+				<div class="form-field">
+					<div class="field-fillup">
+						<label class="label required">Email</label>
+						<input type="text" name="" class="input-box" placeholder="Your Email" ng-model="forget_user_details.user_email">
+					</div>
+				</div>
+
+				<div class="switch-btn">
+					<div class="list padding-20px"><input type="submit" name="" class="submit-btn" value="Get My Password" ng-click="get_user_password(forget_user_details)"></div>
+				</div>
+
+				<div class="external-button">
+					<a href="#0" class="facebook"><span class="icon"><i class="fa fa-facebook"></i></span>Sign in with <b>Facebook</b></a>
+					<a href="#0" class="google"><span class="icon"><i class="fa fa-google-plus"></i></span>Sign in with <b>Google +</b></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+</div>

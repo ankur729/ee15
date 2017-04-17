@@ -1,0 +1,141 @@
+<div ng-controller="home_controller" ng-cloak>
+
+<footer>
+	<div class="container" ng-init="fetch_footer_detail()">
+		<div class="link-section">
+
+			<div class="coloum-div">
+				<h4 class="title">Quick links</h4>
+				<ul class="link-list">
+				
+					<li class="list" ng-repeat="footer in footer_link_quick_links">
+
+						<a href="#/info" class="link" target="_blank"  ng-click="save_info_temp(footer.info_desc)">{{footer.info_title}}</a>
+					
+					</li>
+
+
+					<!--<li class="list">
+
+						<a href="#0" class="link">Home</a>
+					
+					</li>
+
+					<li class="list"><a href="#0" class="link">About Us</a></li>
+					<li class="list"><a href="#0" class="link">FAQ</a></li>
+					<li class="list"><a href="#0" class="link">Contact Us</a></li>-->
+				</ul>
+			</div>
+
+			<div class="coloum-div">
+				<h4 class="title">Policy Info</h4>
+				<ul class="link-list">
+					<li class="list" ng-repeat="privacy in footer_link_privay">
+						<a href="#/info" class="link" target="_blank" ng-click="save_info_temp(privacy.info_desc)">{{privacy.info_title}}</a>
+					
+					</li>
+				
+				</ul>
+			</div>
+
+		
+			<div class="coloum-div">
+				<h4 class="title">Popular cuisines</h4>
+				<ul class="link-list">
+					<li class="list"><a href="#0" class="link">Biryani in Hyderabad</a></li>
+					<li class="list"><a href="#0" class="link">Biryani in Bangalore</a></li>
+					<li class="list"><a href="#0" class="link">Ice Cream in Bangalore</a></li>
+					<li class="list"><a href="#0" class="link">Biryani in Chennai</a></li>
+				</ul>
+			</div>
+
+	
+			<div class="coloum-div">
+				<h4 class="title">My Account</h4>
+				<ul class="link-list">
+					<li class="list"><a href="#/list" class="link">My Cart</a></li>
+					<li class="list"><a href="#/my_password" class="link">User</a></li>
+					<li class="list"><a href="#/deactive_cook" class="link">Cook</a></li>
+					<li class="list"><a href="#/cook_basic_info" class="link">basic profile</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="social-media-section" >
+			<ul class="social-media">
+				<li class="list" ng-repeat="social in social_footer_link">
+					
+					<div class="list" ng-if="social.social_media=='facebook' ">
+
+						<a href="{{social.social_url}}" class="link" target="_blank"><i class="fa fa-facebook"></i></a>
+					</div>
+
+						<div class="list" ng-if="social.social_media=='linked_in'">
+	
+				<a href="{{social.social_url}}" class="link" target="_blank"><i class="fa fa-linkedin"></i></a>
+
+					</div>
+							
+					<div class="list" ng-if="social.social_media=='google plus'">
+						<a href="{{social.social_url}}" class="link" target="_blank"><i class="fa fa-google-plus"></i></a>
+						
+					</div>
+					
+					<div class="list" ng-if="social.social_media=='twitter'">
+					
+						<a href="{{social.social_url}}" class="link" target="_blank"><i class="fa fa-twitter"></i></a>
+					</div>
+
+					<div class="list" ng-if="social.social_media=='p_interest'">
+					
+					
+						<a href="{{social.social_url}}" class="link" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+					</div>
+
+					<div class="list" ng-if="social.social_media=='youtube'">
+					
+						<a href="{{social.social_url}}" class="link" target="_blank"><i class="fa fa-youtube"></i></a>
+					</div>
+					
+					
+
+					</li>
+				</ul>
+		</div>
+
+	</div>
+
+	<div class="base-line">
+		<div class="container">
+			<p class="copyright">Copyright © 2016, www.eatoeato.com  All Rights Reserved</p>
+		</div>
+	</div>
+
+</footer>
+
+<script type="text/javascript">
+
+$(".right-menu-pannel .menu-btn").click(function(){
+	$(".right-menu-slide").show();
+});
+
+$(".close-menu , .right-menu-slide .overlay").click(function(){
+	$(".right-menu-slide").hide();
+});
+
+$(".right-menu-slide .right-panel .menu-list .view-more").click(function(){
+	$(".more-food-list").show();
+});
+
+$(".right-menu-slide .more-food-list .box-model .close-food-menu").click(function(){
+$(".right-menu-slide .more-food-list").hide();
+});
+
+	$(".right-menu-slide .sub-cat-link .toggle-cat").click(function(){
+		$(this).parent(".sub-cat-link").next(".sub-inner").slideToggle();
+	});
+
+</script>
+
+</div>

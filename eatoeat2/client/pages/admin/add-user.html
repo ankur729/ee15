@@ -1,0 +1,111 @@
+
+<!-- main container start herer -->
+<div class="main-container dashboard" ng-controller="admin_controller">
+
+<div ng-include="'pages/admin/admin-left-menu.html'"></div>
+
+	<div class="work-pannel">
+		<!-- top header start here -->
+		<div class="top-header">
+			<div class="container">
+				<ul class="menu">
+					<li class="logout-btn"><a href="#0" class="main-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- top header end here -->
+
+		<div class="container">
+			<div class="view-pannel">
+
+				<!-- page bar start here -->
+				<div class="page-name-bar">
+					<h2 class="page-name">Add User</h2>
+					<ul class="breadcrumbs">
+						<li class="list"><a href="#0" class="link">Home</a></li>
+						<li class="list">Add User</li>
+					</ul>
+
+					<ul class="link-icon">
+						<li class="list"><div class="blue-btn" ng-click="add_user_via_admin(user_info)" style="cursor: pointer"><i class="fa fa-floppy-o" aria-hidden="true" ></i></div></li>
+						<li class="list"><a href="#/admin/view-user" class="white-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+					</ul>
+
+			
+					<p style="margin-left: 50px; padding:5px;color:green;font-weight: bold" ng-show="success_user_add">User Successfully Registered.! </p>
+		
+				</div>
+				<!-- page bar end here -->
+
+				<!-- table view start here -->
+				<form name="myForm">
+
+				<div class="table-view">
+					<h3 class="head-name">Add User</h3>
+
+						<div class="row ">
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Name</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="First Name" ng-model="user_info.user_name"></div>
+							</div>
+
+						
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Email</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Email" ng-model="user_info.user_email"></div>
+							</div>
+							
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Mobile</span>
+								<div class="col-md-80 input-div"><input type="text" name="" class="input-box" placeholder="Mobile No" ng-model="user_info.user_contact_no"></div>
+							</div>
+							
+							<!-- 
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Image</span>
+								<div class="col-md-80 input-div">
+									<label class="upload-single-image left" title="Please upload your logo">
+										<input type="file" name="file[]" multiple class="input-file">
+										<span class="thumb"><img src="images/icon/cart.png"></span>
+									</label>
+								</div>
+							</div> -->
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Password</span>
+								<div class="col-md-80 input-div"><input type="password" name="" class="input-box" placeholder="Password" ng-model="user_info.user_password"></div>
+							</div>
+
+							<div class="row field-fillup">
+								<span class="input-field-title mendatory">Confirm Password</span>
+								<div class="col-md-80 input-div"><input type="password" name="confirm_password" class="input-box" placeholder="Confirm Password" ng-model="user_info.confirm_password"></div>
+									
+								</div>
+								<p class="register_cook_error"  ng-show="myForm.confirm_password.$dirty && user_info.user_password != user_info.confirm_password">Password Mismatch.!</p>
+
+						
+						</div>
+
+				</div>
+				<!-- table view end here -->
+
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main container end herer -->
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+
+<script type="text/javascript">
+	
+$(".left-pannel .main-list .toggle-cat").click(function(){
+	$(this).next(".nav-fly").slideToggle(200);
+	$(this).parent(".main-list").nextAll(".main-list").children(".nav-fly").slideUp(1000);
+	$(this).parent(".main-list").prevAll(".main-list").children(".nav-fly").slideUp(1000);
+});
+</script>

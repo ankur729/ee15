@@ -1,0 +1,55 @@
+<link href="plugin/calendar/css/1.css" rel="stylesheet">
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page cook-account">
+		<div ng-include="'pages/cook/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel order-page">
+			<div class="order-number-display w-shadow">
+				Total order &nbsp; <span class="items">(2 Items)</span>
+
+				<div class=" right">
+					<span class="left f-12 margin-right-10px"> Find Order</span>
+					<div class="left"><input class="input-box span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" type="text" placeholder="find order"></div>
+				</div>
+			</div>
+
+
+				<div class="seaTabs row margin-top-20px">
+					<div class="seaTabs_switch row order-cat">
+						<div class="seaTabs_tab seaTabs_switch_active list">Open Order <span class="items">(1 items)</span></div>
+						<div class="seaTabs_tab list">Cancel Order <span class="items">(1 items)</span></div>
+						<div class="seaTabs_tab list">Delivered Order <span class="items">(1 items)</span></div>
+					</div>
+
+					<div class="seaTabs_content">
+						<div class="seaTabs_item seaTabs_content_active">
+							<div ng-include="'pages/cook/order/open-order.html'"></div>
+						</div>
+						<div class="seaTabs_item">
+							<div ng-include="'pages/cook/order/cancel-order.html'"></div>
+						</div>
+						<div class="seaTabs_item">
+							<div ng-include="'pages/cook/order/delivered-order.html'"></div>
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+<div ng-include="'pages/inc/footer.html'"></div>
+
+<script src="plugin/calendar/js/1.js"></script> 
+<script src="plugin/tabs/js/sea.tabs.js"></script>
+<script type="text/javascript">
+	$(".data-sort .sort-well .list .link").click(function(){
+	$(this).parents(".sort-well").prev(".sort-by").children(".get-data").html(this.innerHTML);
+});
+
+$('#dp2').fdatepicker({
+	closeButton: false
+});
+
+
+</script>

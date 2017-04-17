@@ -1,0 +1,116 @@
+ <span us-spinner="{radius:30, width:8, length: 16}"></span>
+
+<div ng-include="'pages/inc/header.html'" class="common-header"></div>
+
+	<div class="container my-account-page">
+		<div ng-include="'pages/user/inc/account-panel.html'" class="left-panel"></div>
+
+		<div class="right-panel add-address w-shadow">
+			<h4 class="page-name">Update your password</h4>
+			
+			<ul class="table-view">
+            <li class="list field-fillup">
+              <span class="input-field-title">Name</span>
+              <div class="input-div"><input name="" class="input-box" placeholder="User Name" type="text"></div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">Street Address</span>
+              <div class="input-div"><input name="" class="input-box" placeholder="Flat/House No. Colony/Street No." type="text"></div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">Locality / Landmark</span>
+              <div class="input-div"><input name="" class="input-box" placeholder="Your Near Location/Landmark" type="text"></div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">City</span>
+              <div class="input-div"><input name="" class="input-box" placeholder="City" type="text"></div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">State</span>
+              <div class="input-div">
+                <select class="select-option">
+                  <option value="Select">Select</option>
+                </select>
+              </div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">Pincode</span>
+              <div class="input-div"><input name="" class="input-box" placeholder="Enter 6 Digit Pincode" type="text"></div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">Mobile Number </span>
+              <div class="input-div"><input name="" class="input-box" placeholder="10 Digit Mobile Number" type="text"></div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">Address Type</span>
+              <div class="input-div">
+                <input id="check1" name="check" value="check1" class="fancy-radio" type="radio">
+                <label for="check1" class="fancy-radio-label">Home</label>
+
+                <input id="check2" name="check" value="check2" class="fancy-radio" type="radio">
+                <label for="check2" class="fancy-radio-label"> Office/Commercial </label>
+              </div>
+            </li>
+            <li class="list field-fillup">
+              <span class="input-field-title">Make it default</span>
+              <div class="input-div">
+                <input id="check3" name="check" value="check3" class="fancy-checkbox" type="checkbox">
+                <label for="check3" class="fancy-checkbox-label">Make this my default address</label>
+              </div>
+            </li>
+            <li class="list field-fillup">
+              <div class="input-div"><input name="" class="submit-btn" value="Save" type="submit"></div>
+            </li>
+          </ul>
+
+			<ul class="address-list">
+	            <li class="list">
+	              <div class="location default">Home - Default</div>
+	              <h6 class="name">Vinay Sudan</h6>
+	              <span class="add-line">3 veer savarkar block 3rd floor shakarpur delhi Nirman Vihar</span>
+	              <span class="add-line">New Delhi - 110033</span>
+	              <span class="add-line">Delhi</span>
+	              <span class="add-line">near hanuman mandir</span>
+	              <span class="Phone"><i class="fa fa-phone"></i>+91 7838 414 681</span>
+
+	              <ul class="floating-buttons">
+	                <!-- <li class="button-list"><a href="#0" class="link"><i class="fa fa-pencil"></i></a></li> -->
+	                <li class="button-list"><a href="#0" class="link"> <i class="fa fa-trash"></i></a></li>
+	              </ul>
+	            </li>
+	            <li class="list">
+	              <div class="location">Home - Default</div>
+	              <h6 class="name">Vinay Sudan</h6>
+	              <span class="add-line">3 veer savarkar block 3rd floor shakarpur delhi Nirman Vihar</span>
+	              <span class="add-line">New Delhi - 110033</span>
+	              <span class="add-line">Delhi</span>
+	              <span class="add-line">near hanuman mandir</span>
+	              <span class="Phone"><i class="fa fa-phone"></i>+91 7838 414 681</span>
+
+	              <ul class="floating-buttons">
+	                <!-- <li class="button-list"><a href="#0" class="link"><i class="fa fa-pencil"></i></a></li> -->
+	                <li class="button-list"><a href="#0" class="link"> <i class="fa fa-trash"></i></a></li>
+	              </ul>
+	            </li>
+         	 </ul>
+		</div>
+
+	</div>
+<div ng-include="'pages/inc/footer.html'"></div>
+
+<script type="text/javascript">
+
+	function randomPassword(length) {
+    var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    return pass;
+}
+
+function generate() {
+    myform.row_password.value = randomPassword(myform.length.value);
+}
+</script>

@@ -1,0 +1,54 @@
+ <ul class="table-view">
+    <li class="list field-fillup">
+      <span class="input-field-title">Name</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="User Name" type="text" ng-model="user_address_detail.address_name"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Street Address</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="Flat/House No. Colony/Street No." type="text" ng-model="user_address_detail.address_details"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Locality / Landmark</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="Your Near Location/Landmark" type="text" ng-model="user_address_detail.address_locality_landmark"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">City</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="City" type="text" ng-model="user_address_detail.address_city"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title" ng-model="user_address_detail.address_state">State</span>
+      <div class="input-div">
+        <select class="select-option">
+          <option value="Select">Select</option>
+        </select>
+      </div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Pincode</span>
+      <div class="input-div"><input name="" class="input-box" placeholder="Enter 6 Digit Pincode" type="text" ng-model="user_address_detail.address_pincode"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Mobile Number </span>
+      <div class="input-div"><input name="" class="input-box" placeholder="10 Digit Mobile Number" type="text" ng-model="user_address_detail.address_contact_no"></div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Address Type</span>
+      <div class="input-div">
+        <input id="check1" name="check" value="check1" class="fancy-radio" type="radio" ng-model="user_address_detail.address_type">
+        <label for="check1" value="" class="fancy-radio-label">Home</label>
+
+        <input id="check2" name="check" value="check2" class="fancy-radio" type="radio">
+        <label for="check2" value="" class="fancy-radio-label"> Office/Commercial </label>
+      </div>
+    </li>
+    <li class="list field-fillup">
+      <span class="input-field-title">Make it default</span>
+      <div class="input-div">
+        <input id="check3" name="check" value="check3" class="fancy-checkbox" type="checkbox">
+        <label for="check3" class="fancy-checkbox-label">Make this my default address</label>
+      </div>
+    </li>
+    <li class="list field-fillup">
+      <div class="input-div"><input name="" class="submit-btn" value="Save" type="submit" ng-click="update_user_address_checkout(user_address_detail)"></div>
+    </li>
+</ul>
